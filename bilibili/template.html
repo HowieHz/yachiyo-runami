@@ -436,6 +436,58 @@
         font-weight: 700;
         white-space: nowrap;
       }
+      /* ★N after a nickname: the newest uploads that carry one of the highlighted tags.
+         The <details> itself makes no box, so the ★ stays inline next to the nickname
+         while the opened list becomes a block that lines up with the nickname link. */
+      .upload-badge {
+        display: contents;
+      }
+      .upload-badge > summary {
+        display: inline-block;
+        margin-left: 6px;
+        padding: 0 6px;
+        border: 1px solid var(--accent);
+        border-radius: 999px;
+        color: var(--accent);
+        font-size: 0.85em;
+        font-weight: 700;
+        line-height: 1.6;
+        vertical-align: middle;
+        cursor: pointer;
+        list-style: none;
+      }
+      .upload-badge > summary::-webkit-details-marker {
+        display: none;
+      }
+      .upload-badge[open] > summary {
+        background-color: var(--yellow);
+      }
+      .upload-badge ul {
+        display: block;
+        margin: 6px 0 0;
+        padding: 0;
+        list-style: none;
+        font-size: 0.9em;
+        font-weight: 400;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+      }
+      .upload-badge li + li {
+        margin-top: 4px;
+      }
+      .upload-badge .more {
+        color: #888;
+      }
+      .upload-badge a {
+        color: #007bff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .upload-badge a:hover,
+      .upload-badge a:focus-visible {
+        color: #ff69b4;
+        text-decoration: underline;
+      }
       .id-table .col-qq {
         color: #555;
         overflow-wrap: anywhere;
@@ -552,6 +604,8 @@
           colQqName: 'QQ昵称',
           updatedLabel: '昵称与粉丝数更新于',
           timezoneLabel: '北京时间',
+          badgeHintClosed: '点击展开带上指定标签的投稿☆',
+          badgeHintOpen: '点击收回☆',
           note: '表格按粉丝数从多到少排列，昵称和粉丝数每天都会自动同步哦～',
           backHome: '← 回到链接角落首页',
           footer:
@@ -574,6 +628,8 @@
           colQqName: 'QQ 닉네임',
           updatedLabel: '닉네임·팔로워 수 갱신：',
           timezoneLabel: '베이징 시간',
+          badgeHintClosed: '클릭하면 지정 태그가 붙은 업로드를 펼쳐요☆',
+          badgeHintOpen: '클릭하면 접어요☆',
           note: '표는 팔로워 수가 많은 순서로 정리돼 있고, 닉네임과 팔로워 수는 매일 哔哩哔哩에서 자동으로 가져와요～',
           backHome: '← 링크 코너 첫 페이지로',
           footer:
@@ -597,6 +653,8 @@
           colQqName: 'QQニックネーム',
           updatedLabel: 'ニックネームとフォロワー数の更新：',
           timezoneLabel: '北京時間',
+          badgeHintClosed: 'クリックで指定タグ付きの投稿を開くよ☆',
+          badgeHintOpen: 'クリックで閉じるよ☆',
           note: '表はフォロワー数が多い順に並んでいて、ニックネームとフォロワー数は毎日哔哩哔哩から自動で取り込んでるよ～',
           backHome: '← リンクコーナーのトップへ',
           footer:
@@ -620,6 +678,8 @@
           colQqName: 'QQ nickname',
           updatedLabel: 'Nicknames and followers updated: ',
           timezoneLabel: 'Beijing time',
+          badgeHintClosed: 'Click to open the uploads with a highlighted tag☆',
+          badgeHintOpen: 'Click to close☆',
           note: 'The table is sorted by follower count, and nicknames and follower counts are pulled from Bilibili every day～',
           backHome: '← Back to the Link Corner',
           footer:
@@ -634,8 +694,20 @@
         en: { html: 'en', locale: 'en_US' }
       };
 
+      let currentLanguage = 'zh';
+
+      /** The ★ chip says what a click does, and that changes once it is open. */
+      function setBadgeHints(lang) {
+        document.querySelectorAll('details.upload-badge').forEach((badge) => {
+          const summary = badge.querySelector('summary');
+          if (summary) summary.title = translations[lang][badge.open ? 'badgeHintOpen' : 'badgeHintClosed'];
+        });
+      }
+
       function setLanguage(lang, updateUrl = true) {
         if (!translations[lang]) lang = 'zh';
+        currentLanguage = lang;
+        setBadgeHints(lang);
         document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
         document.title = translations[lang].metaTitle;
         document.querySelectorAll('[data-i18n]').forEach((element) => {
@@ -661,6 +733,9 @@
 
       const queryLanguage = new URLSearchParams(window.location.search).get('lang');
       setLanguage(languageMeta[queryLanguage] ? queryLanguage : 'zh', false);
+      document.querySelectorAll('details.upload-badge').forEach((badge) => {
+        badge.addEventListener('toggle', () => setBadgeHints(currentLanguage));
+      });
       document.getElementById('id-count').textContent = String(
         document.querySelectorAll('#bili-id-table tbody tr').length
       );

@@ -36,6 +36,7 @@ const root = path.resolve(here, '..');
 
 const membersFile = path.join(here, 'data', 'members.json');
 const cacheFile = path.join(here, 'data', 'bilibili.json');
+const highlightsFile = path.join(here, 'data', 'highlights.json');
 const templateFile = path.join(here, 'template.html');
 const pageFile = path.join(root, 'bilibili.html');
 
@@ -45,6 +46,13 @@ const STAT_API = 'https://api.bilibili.com/x/relation/stat';
 const NAV_API = 'https://api.bilibili.com/x/web-interface/nav';
 const SEARCH_API = 'https://api.bilibili.com/x/space/wbi/arc/search';
 const TAGS_API = 'https://api.bilibili.com/x/tag/archive/tags';
+// The Android app endpoint answers far more readily than the web one, which is behind
+// hard risk control. It is signed with the app key the app itself uses.
+const APP_API = 'https://app.bilibili.com/x/v2/space/archive/cursor';
+const APP_APPKEY = '1d8b6e7d45233436';
+const APP_APPSECRET = '560c52ccd288fed045859ed18bffd973';
+const APP_BUILD = 7710300;
+const APP_USER_AGENT = 'Mozilla/5.0 BiliDroid/7.71.0 (bbcallen@gmail.com) os/android';
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
 const ATTEMPTS = 3;
@@ -53,17 +61,24 @@ const REQUEST_GAP_MS = 800;
 // them slowly, back off when Bilibili says no, and give up on it for the rest of the
 // run after a couple of refusals. Reaching everybody then takes several runs, which is
 // exactly what the rotating order below is for.
-const UPLOAD_GAP_MS = 5000;
+const UPLOAD_GAP_MS = 2500;
 const UPLOAD_JITTER_MS = 2000;
-const TAG_GAP_MS = 1500;
+const TAG_GAP_MS = 400; // the tag page is the light one; the first full walk is what this pace is for
 const BLOCK_BACKOFF_MS = 10000;
 const BLOCK_LIMIT = 2;
-const VIDEO_LIMIT = 10;
+const UPLOAD_PAGE_SIZE = 20; // the most either endpoint hands out in one page
+const UPLOAD_PAGE_LIMIT = 200; // safety net: never walk more than 4000 uploads per member
+const BADGE_ITEM_LIMIT = 20; // how many matching uploads the page lists
 const TAG_LIMIT = 12;
 const TITLE_LIMIT = 120;
+const UPLOAD_TITLE_LIMIT = 40;
 
 const PLACEHOLDER = /\{\{BILI_TABLE\}\}/;
 const TOTAL_PLACEHOLDER = /\{\{BILI_TOTAL\}\}/;
+
+// The ★ chip's tooltip, in the page's own language; the script swaps it per language
+// and per open state.
+const BADGE_HINT_CLOSED = '点击展开带上指定标签的投稿☆';
 
 // Layout of the generated table, kept in step with the repository's .prettierrc.json
 // so that a generated page is already Prettier-formatted.
@@ -72,6 +87,9 @@ const ANCHOR_INDENT = '                      ';
 const PRINT_WIDTH = 120;
 
 const offline = process.argv.includes('--offline');
+
+/** BILI_WEB_ONLY=1 skips the Android app endpoint and only uses the web one. */
+const webOnly = Boolean(process.env.BILI_WEB_ONLY);
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -128,6 +146,7 @@ function plainTitle(value) {
     .replaceAll('&gt;', '>')
     .replaceAll('&quot;', '"')
     .replaceAll('&#39;', "'")
+    .replace(/\s+/g, ' ')
     .trim()
     .slice(0, TITLE_LIMIT);
 }
@@ -157,6 +176,16 @@ function signedQuery(params, imgKey, subKey) {
     )
     .join('&');
   return `${query}&w_rid=${md5(query + mixinKey(imgKey, subKey))}`;
+}
+
+/** The app endpoint is signed with the app key instead of wbi. */
+function appSignedQuery(params) {
+  const withAppKey = { ...params, appkey: APP_APPKEY, ts: Math.round(Date.now() / 1000) };
+  const query = Object.keys(withAppKey)
+    .sort()
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(String(withAppKey[key]))}`)
+    .join('&');
+  return `${query}&sign=${md5(query + APP_APPSECRET)}`;
 }
 
 function apiHeaders(referer, cookie = requestCookie) {
@@ -254,8 +283,17 @@ async function fetchAccount(uid, previous) {
   throw lastError;
 }
 
-async function fetchVideoList(uid, wbi) {
-  const params = { mid: uid, ps: VIDEO_LIMIT, pn: 1, order: 'pubdate', tid: 0, platform: 'web', web_location: 1550101 };
+/** One page of a member's uploads from the web endpoint, newest first. */
+async function fetchUploadPageFromWeb(uid, page, wbi) {
+  const params = {
+    mid: uid,
+    ps: UPLOAD_PAGE_SIZE,
+    pn: page,
+    order: 'pubdate',
+    tid: 0,
+    platform: 'web',
+    web_location: 1550101
+  };
   const query = signedQuery(params, wbi.imgKey, wbi.subKey);
   const data = await getJson(`${SEARCH_API}?${query}`, `https://space.bilibili.com/${uid}/video`);
   return (data?.list?.vlist ?? [])
@@ -264,7 +302,74 @@ async function fetchVideoList(uid, wbi) {
       bvid: String(item.bvid),
       title: plainTitle(item.title),
       publishedAt: new Date(Number(item.created ?? 0) * 1000).toISOString()
-    }));
+    }))
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+}
+
+/**
+ * One page from the app endpoint. It pages with `aid`, the av of the last video of the
+ * previous page — its `pn`, `page`, `offset` and `cursor` parameters are all ignored.
+ */
+async function fetchUploadPageFromApp(uid, aid) {
+  const params = {
+    vmid: uid,
+    ps: UPLOAD_PAGE_SIZE,
+    mobi_app: 'android',
+    platform: 'android',
+    build: APP_BUILD,
+    c_locale: 'zh_CN'
+  };
+  if (aid) params.aid = aid;
+  const query = appSignedQuery(params);
+  const response = await fetch(`${APP_API}?${query}`, {
+    headers: { 'User-Agent': APP_USER_AGENT, Accept: 'application/json' }
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const body = await response.json();
+  if (body.code !== 0) throw new Error(`API code ${body.code} (${body.message ?? ''})`);
+  const items = (body.data?.item ?? []).filter((item) => item?.bvid);
+  return {
+    videos: items.map((item) => ({
+      bvid: String(item.bvid),
+      title: plainTitle(item.title),
+      publishedAt: new Date(Number(item.ctime ?? 0) * 1000).toISOString()
+    })),
+    lastAid: items.at(-1)?.param ?? null
+  };
+}
+
+/**
+ * Walk a member's uploads, newest first, page by page.
+ *
+ * The app endpoint is asked first: it needs no cookie and answers while the web one is
+ * being refused. The web endpoint is the fallback for the whole walk rather than per
+ * page, because the two page in different ways.
+ */
+async function* iterateUploads(uid, wbi) {
+  const errors = [];
+  if (!webOnly) {
+    try {
+      let aid = null;
+      for (let page = 0; page < UPLOAD_PAGE_LIMIT; page += 1) {
+        const { videos, lastAid } = await fetchUploadPageFromApp(uid, aid);
+        for (const video of videos) yield video;
+        if (videos.length === 0 || !lastAid) return;
+        aid = lastAid;
+      }
+      return;
+    } catch (error) {
+      errors.push(`app: ${error.message}`);
+    }
+  }
+  if (wbi) {
+    for (let page = 1; page <= UPLOAD_PAGE_LIMIT; page += 1) {
+      const videos = await fetchUploadPageFromWeb(uid, page, wbi);
+      for (const video of videos) yield video;
+      if (videos.length === 0) return;
+    }
+    return;
+  }
+  throw new Error(errors.join('; ') || 'no upload source is available');
 }
 
 async function fetchVideoTags(bvid) {
@@ -276,43 +381,60 @@ async function fetchVideoTags(bvid) {
 }
 
 /**
- * Merge the freshly listed uploads with the cache.
+ * Walk a member's uploads, newest first, and keep the ones that carry a highlighted tag.
  *
- * - A video that is already cached keeps its tags: no request for it.
- * - As soon as a known bvid shows up, every video below it is older and therefore
- *   already cached too, so the tag requests stop right there.
- * - Only the newest VIDEO_LIMIT uploads are kept, so the cache cannot grow forever.
- * - `tags: null` means "asked but failed"; such a video is asked again next run.
+ * - A member that has never been walked is walked right through its whole archive, so
+ *   that "does this upload have one of our tags?" is answered for every video once.
+ * - Afterwards only the uploads newer than `crawledUpTo` are looked at; the archive
+ *   below `crawledBackTo` is picked up where the last run left off, which is what makes
+ *   a long first walk safe to interrupt.
+ * - Only matching uploads are kept, with their tags, so the cache stays small even
+ *   though everything was asked about once.
+ * - A tag request that fails stops the walk right there: the watermarks are not moved
+ *   past it, so the next run picks it up again.
  */
-async function refreshVideos(uid, cachedVideos, wbi) {
-  const list = await fetchVideoList(uid, wbi);
-  const cachedByBvid = new Map((cachedVideos ?? []).map((video) => [video.bvid, video]));
-  const merged = [];
-  let fresh = 0;
-  let stopped = false;
+async function crawlUploads(row, wbi, keywords) {
+  const kept = new Map((row.videos ?? []).map((video) => [video.bvid, video]));
+  let upper = row.crawledUpTo ?? null; // newest upload we have answered for
+  let lower = row.crawledBackTo ?? null; // oldest upload of the range we walked
+  let all = Boolean(row.crawledAll);
+  let asked = 0;
+  let error = null;
+  let reachedEnd = true;
 
-  for (const video of list) {
-    const known = cachedByBvid.get(video.bvid);
-    if (known && Array.isArray(known.tags)) {
-      merged.push({ ...video, tags: known.tags });
-      stopped = true;
-      continue;
+  try {
+    for await (const video of iterateUploads(row.uid, wbi)) {
+      const iso = video.publishedAt;
+      const isNewer = upper !== null && iso > upper;
+      const isUnwalked = !all && (lower === null || iso <= lower);
+      if (upper === null) upper = iso; // the first, newest upload we ever saw
+      if (!isNewer && !isUnwalked) {
+        if (all) {
+          reachedEnd = false; // nothing new left, and the archive was walked already
+          break;
+        }
+        continue; // inside the range we walked before
+      }
+      const tags = await fetchVideoTags(video.bvid);
+      asked += 1;
+      if (highlightHits(tags, keywords).length > 0) kept.set(video.bvid, { ...video, tags });
+      if (isNewer) upper = iso;
+      else lower = iso;
+      await sleep(TAG_GAP_MS + Math.random() * 300);
     }
-    if (stopped) {
-      merged.push({ ...video, tags: Array.isArray(known?.tags) ? known.tags : null });
-      continue;
-    }
-    try {
-      merged.push({ ...video, tags: await fetchVideoTags(video.bvid) });
-      fresh += 1;
-    } catch (error) {
-      console.warn(`       tags for ${video.bvid} failed: ${error.message}`);
-      merged.push({ ...video, tags: null });
-    }
-    await sleep(TAG_GAP_MS + Math.random() * 800);
+    if (reachedEnd) all = true;
+  } catch (thrown) {
+    error = thrown;
   }
 
-  return { videos: merged.slice(0, VIDEO_LIMIT), fresh };
+  return {
+    videos: [...kept.values()].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)),
+    crawledUpTo: upper,
+    crawledBackTo: lower,
+    crawledAll: all,
+    asked,
+    error
+  };
 }
 
 const BEIJING_OFFSET_MS = 8 * 60 * 60 * 1000;
@@ -342,24 +464,118 @@ function updatedAtAttribute(iso) {
   return parts ? `${parts.date}T${parts.time}:${parts.seconds}+08:00` : '';
 }
 
-function renderNameCell(row) {
-  const attributes = `href="https://space.bilibili.com/${escapeHtml(row.uid)}" target="_blank" rel="noopener"`;
-  const name = escapeHtml(row.bilibili || '—');
-  const singleLine = `<a ${attributes}>${name}</a>`;
-  // Prettier moves the text of a long anchor onto its own line; do the same so that
-  // generated pages stay Prettier-clean whatever the nickname length is.
-  if (displayWidth(ANCHOR_INDENT + singleLine) <= PRINT_WIDTH) return `${ANCHOR_INDENT}${singleLine}`;
-  return [`${ANCHOR_INDENT}<a ${attributes}`, `${ANCHOR_INDENT}  >${name}</a`, `${ANCHOR_INDENT}>`].join('\n');
+/** A tag counts as highlighted when it contains one of the words from data/highlights.json. */
+function highlightHits(tags, keywords) {
+  return (tags ?? []).filter((tag) => {
+    const text = String(tag).toLowerCase();
+    return keywords.some((word) => text.includes(word));
+  });
 }
 
-function renderTable(rows, updatedAt) {
+async function loadHighlights() {
+  try {
+    const config = JSON.parse(await readFile(highlightsFile, 'utf8'));
+    return (config.keywords ?? []).map((word) => String(word).toLowerCase()).filter(Boolean);
+  } catch {
+    warn('bilibili/data/highlights.json is missing, so no upload gets a ★ badge.');
+    return [];
+  }
+}
+
+function renderAnchor(href, text, indent) {
+  const attributes = `href="${escapeHtml(href)}" target="_blank" rel="noopener"`;
+  const label = escapeHtml(text);
+  const singleLine = `<a ${attributes}>${label}</a>`;
+  // Prettier moves the text of a long anchor onto its own line; do the same so that
+  // generated pages stay Prettier-clean whatever the text length is.
+  if (displayWidth(indent + singleLine) <= PRINT_WIDTH) return `${indent}${singleLine}`;
+  return [`${indent}<a ${attributes}`, `${indent}  >${label}</a`, `${indent}>`].join('\n');
+}
+
+/** Cut text to a display width, for upload titles that would otherwise wrap. */
+function clipText(text, limit) {
+  if (displayWidth(text) <= limit) return text;
+  let out = '';
+  let width = 0;
+  for (const char of text) {
+    const charWidth = displayWidth(char);
+    if (width + charWidth > limit - 1) break;
+    out += char;
+    width += charWidth;
+  }
+  return `${out.trimEnd()}…`;
+}
+
+/** One line of the opened list: just the upload, linked to Bilibili. */
+function renderUploadLine(entry, indent) {
+  const href = `https://www.bilibili.com/video/${entry.video.bvid}`;
+  // HTML text nodes collapse runs of whitespace, and Prettier prints them collapsed.
+  // Long titles are clipped so that the line keeps a stable shape.
+  const title = clipText(
+    String(entry.video.title || entry.video.bvid)
+      .replace(/\s+/g, ' ')
+      .trim(),
+    UPLOAD_TITLE_LIMIT
+  );
+  const flat = `${indent}<li><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(
+    title
+  )}</a></li>`;
+  if (displayWidth(flat) <= PRINT_WIDTH) return flat;
+  return [`${indent}<li>`, renderAnchor(href, title, `${indent}  `), `${indent}</li>`].join('\n');
+}
+
+/** The ★N after a nickname: the uploads that carry a highlighted tag. */
+function renderBadge(videos, keywords) {
+  const hits = videos
+    .map((video) => ({ video, tags: highlightHits(video.tags, keywords) }))
+    .filter((entry) => entry.tags.length > 0);
+  if (hits.length === 0) return null;
+  const shown = hits.slice(0, BADGE_ITEM_LIMIT);
+
+  const indent = `${ANCHOR_INDENT}  `;
+  // A click hint rather than the tag words: the page swaps it per language and per
+  // open state, and the tags themselves show up in the opened list.
+  const openTag = `<summary title="${BADGE_HINT_CLOSED}">`;
+  const flat = `${indent}${openTag}★${hits.length}</summary>`;
+  // Prettier breaks the text first, and only the attributes when they alone are too wide.
+  const summary =
+    displayWidth(flat) <= PRINT_WIDTH
+      ? [flat]
+      : displayWidth(`${indent}${openTag}`) <= PRINT_WIDTH
+        ? [`${indent}${openTag}`, `${indent}  ★${hits.length}`, `${indent}</summary>`]
+        : [
+            `${indent}<summary`,
+            `${indent}  title="${BADGE_HINT_CLOSED}">`,
+            `${indent}  ★${hits.length}`,
+            `${indent}</summary>`
+          ];
+
+  return [
+    `${ANCHOR_INDENT}<details class="upload-badge">`,
+    ...summary,
+    `${indent}<ul>`,
+    ...shown.map((entry) => renderUploadLine(entry, `${indent}  `)),
+    ...(hits.length > shown.length ? [`${indent}  <li class="more">…</li>`] : []),
+    `${indent}</ul>`,
+    `${ANCHOR_INDENT}</details>`
+  ].join('\n');
+}
+
+function renderNameCell(row, keywords) {
+  const lines = [renderAnchor(`https://space.bilibili.com/${row.uid}`, row.bilibili || '—', ANCHOR_INDENT)];
+  const badge = renderBadge(row.videos ?? [], keywords);
+  if (badge) lines.push(badge);
+  return lines.join('\n');
+}
+
+function renderTable(rows, updatedAt, keywords) {
   const body = rows
     .map((row) => {
       const fans = typeof row.fans === 'number' ? row.fans.toLocaleString('en-US') : '—';
       return [
         '                  <tr>',
         '                    <td class="col-name">',
-        renderNameCell(row),
+        renderNameCell(row, keywords),
         '                    </td>',
         `                    <td class="col-uid">${escapeHtml(row.uid)}</td>`,
         `                    <td class="col-fans">${fans}</td>`,
@@ -415,6 +631,7 @@ try {
   console.warn('bilibili/data/bilibili.json is missing, every member will be fetched from scratch.');
 }
 const previous = new Map((cache.members ?? []).map((entry) => [String(entry.uid), entry]));
+const keywords = await loadHighlights();
 
 let wbi = null;
 if (!offline) {
@@ -422,9 +639,19 @@ if (!offline) {
   try {
     wbi = await getWbiKeys();
   } catch (error) {
-    warn(`Upload lists are skipped this run: ${error.message}`);
+    warn(`The web upload endpoint is unavailable this run: ${error.message}`);
   }
   await sleep(REQUEST_GAP_MS);
+}
+
+// The app endpoint needs no cookie and no wbi, so uploads are still reachable when the
+// web endpoint is being refused.
+const canFetchUploads = !webOnly || Boolean(wbi);
+if (!offline) {
+  console.log(
+    `upload list source: ${webOnly ? 'the web endpoint only' : 'the app endpoint'}` +
+      `${wbi && !webOnly ? ' (web endpoint as a fallback)' : ''}`
+  );
 }
 
 const rows = [];
@@ -437,8 +664,12 @@ for (const member of members) {
     qq: member.qq ?? '',
     bilibili: cached?.bilibili ?? '',
     fans: cached?.fans ?? null,
-    videos: cached?.videos ?? []
+    // Only uploads with a highlighted tag are kept, whatever the cache still holds.
+    videos: (cached?.videos ?? []).filter((video) => highlightHits(video.tags, keywords).length > 0)
   };
+  if (cached?.crawledUpTo) row.crawledUpTo = cached.crawledUpTo;
+  if (cached?.crawledBackTo) row.crawledBackTo = cached.crawledBackTo;
+  if (cached?.crawledAll) row.crawledAll = true;
   // Members whose upload list could not be refreshed last time carry a marker, so
   // that they are asked again first instead of waiting for their turn again.
   if (cached?.uploadRetryAt) row.uploadRetryAt = cached.uploadRetryAt;
@@ -469,7 +700,7 @@ let videoRefreshed = 0;
 let videoSkipped = 0;
 let blocked = 0;
 let uploadRuns = Number.isInteger(cache.uploadRuns) ? cache.uploadRuns : 0;
-if (!offline && wbi) {
+if (!offline && canFetchUploads) {
   const waiting = rows.filter((row) => row.uploadRetryAt);
   const rest = rows.filter((row) => !row.uploadRetryAt);
   if (waiting.length > 0) {
@@ -487,13 +718,21 @@ if (!offline && wbi) {
     }
     row.uploadTriedRun = uploadRuns;
     try {
-      const { videos, fresh } = await refreshVideos(row.uid, row.videos, wbi);
-      row.videos = videos;
+      const crawled = await crawlUploads(row, wbi, keywords);
+      row.videos = crawled.videos;
+      if (crawled.crawledUpTo) row.crawledUpTo = crawled.crawledUpTo;
+      row.crawledBackTo = crawled.crawledBackTo;
+      if (crawled.crawledAll) row.crawledAll = true;
+      else delete row.crawledAll;
+      if (crawled.error) throw crawled.error;
       delete row.uploadRetryAt;
       delete row.uploadTriedRun;
       blocked = 0;
       videoRefreshed += 1;
-      console.log(`     uploads ${String(row.uid).padEnd(18)} ${videos.length} kept, tags fetched for ${fresh}`);
+      console.log(
+        `     uploads ${String(row.uid).padEnd(18)} ${crawled.videos.length} kept, ${crawled.asked} tags asked,` +
+          ` archive ${crawled.crawledAll ? 'walked' : 'still being walked'}`
+      );
     } catch (error) {
       videoFailures += 1;
       row.uploadRetryAt = new Date().toISOString();
@@ -541,7 +780,8 @@ await writeFile(
       {
         updatedAt,
         source: CARD_API,
-        videoSource: SEARCH_API,
+        videoSource: APP_API,
+        videoFallbackSource: SEARCH_API,
         tagSource: TAGS_API,
         uploadRuns,
         members: rows
@@ -553,7 +793,7 @@ await writeFile(
   'utf8'
 );
 
-const table = renderTable(rows, updatedAt);
+const table = renderTable(rows, updatedAt, keywords);
 const page = templateRaw
   .replaceAll('\r\n', '\n')
   .replace(new RegExp(`[ \\t]*${PLACEHOLDER.source}`), () => table)
@@ -566,7 +806,7 @@ console.log(
     `${offline ? ' (offline mode)' : ''}.`
 );
 
-if (!offline && wbi) {
+if (!offline && canFetchUploads) {
   console.log(
     `uploads: ${videoRefreshed} refreshed, ${videoFailures} failed, ${videoSkipped} skipped ` +
       `(the rest keep their cached uploads).`
@@ -583,9 +823,9 @@ if (!offline && failures === rows.length) {
   );
 }
 
-if (!offline && videoRefreshed === 0 && rows.length > 0) {
+if (!offline && canFetchUploads && videoRefreshed === 0 && rows.length > 0) {
   warn(
-    'No upload list could be fetched. Bilibili throttles that endpoint hard for anonymous ' +
-      'callers; a BILI_COOKIE secret (your own SESSDATA) makes it far more reliable.'
+    'No upload list could be fetched. Both upload endpoints refused this run; ' +
+      'a BILI_COOKIE secret (your own SESSDATA) makes them far more reliable.'
   );
 }
