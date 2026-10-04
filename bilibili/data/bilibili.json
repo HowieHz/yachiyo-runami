@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-10-04T16:32:20.907Z",
+  "updatedAt": "2026-10-04T16:43:00.016Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://api.bilibili.com/x/space/wbi/arc/search",
   "tagSource": "https://api.bilibili.com/x/tag/archive/tags",
-  "uploadRuns": 11,
+  "uploadRuns": 12,
   "members": [
     {
       "uid": "3868042",
@@ -11,14 +11,14 @@
       "bilibili": "縁奈エナ",
       "fans": 11849,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:31:55.844Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 10
     },
     {
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9113,
+      "fans": 9114,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -154,7 +154,8 @@
             "丝之歌"
           ]
         }
-      ]
+      ],
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z"
     },
     {
       "uid": "583393248",
@@ -162,7 +163,7 @@
       "bilibili": "泠月Neka",
       "fans": 7339,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
@@ -330,7 +331,7 @@
           ]
         }
       ],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
@@ -339,7 +340,7 @@
       "bilibili": "风梦坤初梦缘",
       "fans": 4817,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 8
     },
     {
@@ -348,8 +349,8 @@
       "bilibili": "咆哮鼠-泡泡堂",
       "fans": 4679,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
-      "uploadTriedRun": 3
+      "uploadRetryAt": "2026-10-04T16:42:33.118Z",
+      "uploadTriedRun": 11
     },
     {
       "uid": "1064408008",
@@ -357,7 +358,7 @@
       "bilibili": "洹洹洹洹洹洹",
       "fans": 1708,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 6
     },
     {
@@ -366,16 +367,16 @@
       "bilibili": "夜夜Corvus",
       "fans": 1401,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1164,
+      "fans": 1165,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:30:25.428Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 10
     },
     {
@@ -513,7 +514,8 @@
             "别当欧尼酱了为什么是神"
           ]
         }
-      ]
+      ],
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z"
     },
     {
       "uid": "2119475683",
@@ -666,14 +668,14 @@
           ]
         }
       ],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 4
     },
     {
       "uid": "386273918",
       "qq": "腾腾 (†已升天†)",
       "bilibili": "N小哆啦吃悠哈",
-      "fans": 647,
+      "fans": 648,
       "videos": [
         {
           "bvid": "BV1ZxY262EyJ",
@@ -822,7 +824,8 @@
             "绝区零UP主激励计划1.7"
           ]
         }
-      ]
+      ],
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z"
     },
     {
       "uid": "17229686",
@@ -830,7 +833,7 @@
       "bilibili": "cjscmdiy",
       "fans": 620,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 6
     },
     {
@@ -839,7 +842,7 @@
       "bilibili": "日奈の最速传说",
       "fans": 433,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
@@ -848,7 +851,7 @@
       "bilibili": "爱玩蛛的少年",
       "fans": 322,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
@@ -857,7 +860,7 @@
       "bilibili": "米米今天吃什麼",
       "fans": 283,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 5
     },
     {
@@ -1015,7 +1018,7 @@
           ]
         }
       ],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
@@ -1162,7 +1165,7 @@
           ]
         }
       ],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
@@ -1226,7 +1229,7 @@
           ]
         }
       ],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 9
     },
     {
@@ -1235,7 +1238,7 @@
       "bilibili": "OUTnet小小搬运工",
       "fans": 181,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:31:39.842Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 10
     },
     {
@@ -1244,7 +1247,8 @@
       "bilibili": "土宫神乐_kagura",
       "fans": 171,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z"
+      "uploadRetryAt": "2026-10-04T16:42:17.933Z",
+      "uploadTriedRun": 11
     },
     {
       "uid": "5527780",
@@ -1405,7 +1409,7 @@
           ]
         }
       ],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
@@ -1414,7 +1418,7 @@
       "bilibili": "千歌刃心",
       "fans": 90,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
@@ -1423,7 +1427,7 @@
       "bilibili": "無盡の旅途",
       "fans": 85,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 4
     },
     {
@@ -1533,16 +1537,16 @@
           ]
         }
       ],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 3
     },
     {
       "uid": "3546883584690729",
       "qq": "无瑕之歌",
       "bilibili": "爱伊一生推",
-      "fans": 46,
+      "fans": 47,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:30:49.141Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 10
     },
     {
@@ -1551,7 +1555,7 @@
       "bilibili": "哈基扬真的借东风",
       "fans": 44,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 5
     },
     {
@@ -1560,7 +1564,7 @@
       "bilibili": "江濑九鸟",
       "fans": 38,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 4
     },
     {
@@ -1569,7 +1573,7 @@
       "bilibili": "是bai不是白",
       "fans": 26,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 7
     },
     {
@@ -1578,7 +1582,7 @@
       "bilibili": "灯火笙萧",
       "fans": 17,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 6
     },
     {
@@ -1587,7 +1591,7 @@
       "bilibili": "四间五线",
       "fans": 17,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 7
     },
     {
@@ -1662,7 +1666,7 @@
           ]
         }
       ],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 5
     },
     {
@@ -1689,7 +1693,7 @@
           ]
         }
       ],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 9
     },
     {
@@ -1698,7 +1702,7 @@
       "bilibili": "二物",
       "fans": 12,
       "videos": [],
-      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadRetryAt": "2026-10-04T16:43:00.015Z",
       "uploadTriedRun": 8
     }
   ]

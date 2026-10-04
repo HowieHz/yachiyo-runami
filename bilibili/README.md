@@ -78,6 +78,7 @@ It is built to stay small and to ask as little as possible:
 - If Bilibili's risk control turns the runner down, the log shows `API code -352` or `-412` (or `HTTP 412`), the run fails without committing, and the page keeps its previous data. Adding a `BILI_COOKIE` repository secret — the value of your own Bilibili `SESSDATA` — makes the requests much more reliable. Please keep in mind that this value is a login credential, so a spare account is safer.
 - The upload list is behind that same risk control, and it is the fussiest of the requests: it needs a wbi signature plus the `buvid` cookies the front page hands out. When it is turned down, that member simply keeps the uploads from the last successful run.
 - GitHub pauses scheduled workflows after 60 days without repository activity. Starting a run by hand wakes it up again.
+- The few lines worth a human look — risk control, accounts that could not be refreshed — are printed as GitHub annotations (`::warning::` / `::error::`), so they surface on the run itself instead of being buried in the log. Everything else stays ordinary text, and a local run prints all of it as plain warnings and errors.
 
 ## Where The Numbers Come From
 

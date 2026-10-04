@@ -75,6 +75,22 @@ const offline = process.argv.includes('--offline');
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+// On GitHub Actions a "::warning::" or "::error::" line becomes an annotation on the
+// run, which is where a human actually notices it. Anywhere else the same words are
+// printed as an ordinary warning or error, so a local run stays readable.
+const onGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+const commandText = (text) => String(text).replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A');
+
+function warn(message) {
+  if (onGitHubActions) console.log(`::warning::${commandText(message)}`);
+  else console.warn(message);
+}
+
+function fail(message) {
+  if (onGitHubActions) console.log(`::error::${commandText(message)}`);
+  else console.error(message);
+}
+
 /** Start a list at `offset` instead of at its first entry. */
 function rotate(list, offset) {
   if (list.length === 0) return list;
@@ -177,7 +193,7 @@ async function collectCookies() {
       if (separator > 0) jar.set(pair.slice(0, separator).trim(), pair.slice(separator + 1).trim());
     }
   } catch (error) {
-    console.warn(`Could not collect cookies from Bilibili: ${error.message}`);
+    warn(`Could not collect cookies from Bilibili: ${error.message}`);
   }
   if (process.env.BILI_COOKIE) jar.set('SESSDATA', process.env.BILI_COOKIE);
   return [...jar].map(([name, value]) => `${name}=${value}`).join('; ');
@@ -406,7 +422,7 @@ if (!offline) {
   try {
     wbi = await getWbiKeys();
   } catch (error) {
-    console.warn(`Upload lists are skipped this run: ${error.message}`);
+    warn(`Upload lists are skipped this run: ${error.message}`);
   }
   await sleep(REQUEST_GAP_MS);
 }
@@ -558,12 +574,17 @@ if (!offline && wbi) {
 }
 
 if (!offline && failures === rows.length) {
-  console.error('Every request failed. Bilibili risk control may be blocking this runner (try a BILI_COOKIE secret).');
+  fail('Every request failed. Bilibili risk control may be blocking this runner (try a BILI_COOKIE secret).');
   process.exitCode = 1;
+} else if (!offline && failures > 0) {
+  warn(
+    `${failures} of ${rows.length} member accounts could not be refreshed this run; ` +
+      'the cache keeps their previous values.'
+  );
 }
 
 if (!offline && videoRefreshed === 0 && rows.length > 0) {
-  console.warn(
+  warn(
     'No upload list could be fetched. Bilibili throttles that endpoint hard for anonymous ' +
       'callers; a BILI_COOKIE secret (your own SESSDATA) makes it far more reliable.'
   );
