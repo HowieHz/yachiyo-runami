@@ -5,10 +5,12 @@
   "description": "ヤチヨのリンクコーナー / 八千代的链接角落 / 야치요의 링크 코너 / A small multilingual Yachiyo link corner.",
   "license": "MIT",
   "scripts": {
-    "fmt": "prettier --write index.html README.md README.zh-hans.md CONTRIBUTING.md CONTRIBUTING.zh-hans.md package.json .prettierrc.json .htmlhintrc",
-    "fmt:check": "prettier --check index.html README.md README.zh-hans.md CONTRIBUTING.md CONTRIBUTING.zh-hans.md package.json .prettierrc.json .htmlhintrc",
-    "lint": "htmlhint index.html",
-    "check": "npm run fmt:check && npm run lint"
+    "fmt": "prettier --write index.html bilibili.html bilibili/build.mjs bilibili/template.html bilibili/README.md bilibili/README.zh-hans.md README.md README.zh-hans.md CONTRIBUTING.md CONTRIBUTING.zh-hans.md package.json .prettierrc.json .htmlhintrc",
+    "fmt:check": "prettier --check index.html bilibili.html bilibili/build.mjs bilibili/template.html bilibili/README.md bilibili/README.zh-hans.md README.md README.zh-hans.md CONTRIBUTING.md CONTRIBUTING.zh-hans.md package.json .prettierrc.json .htmlhintrc",
+    "lint": "htmlhint index.html bilibili.html bilibili/template.html",
+    "check": "npm run fmt:check && npm run lint",
+    "update:bilibili": "node bilibili/build.mjs",
+    "update:bilibili:offline": "node bilibili/build.mjs --offline"
   },
   "devDependencies": {
     "htmlhint": "^1.6.3",

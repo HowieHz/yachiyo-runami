@@ -1,0 +1,47 @@
+name: Update the Bilibili accounts page
+
+on:
+  schedule:
+    # Every day at 22:00 UTC, which is 06:00 in Asia/Shanghai the next morning.
+    # GitHub may delay a scheduled run by a few minutes at busy times.
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bilibili-page
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch nicknames and follower counts, then build the page
+        env:
+          # Optional: add a BILI_COOKIE repository secret holding your own Bilibili
+          # SESSDATA to make the requests much less likely to be turned down by
+          # Bilibili's risk control. Without it the script simply skips the cookie.
+          BILI_COOKIE: ${{ secrets.BILI_COOKIE }}
+        run: npm run update:bilibili
+
+      - name: Commit the update
+        run: |
+          git add bilibili.html bilibili/data/bilibili.json
+          if git diff --cached --quiet; then
+            echo "Nothing changed, so there is nothing to commit."
+            exit 0
+          fi
+          git config user.name "yachiyo-runami"
+          git config user.email "yachiyo-runami@yachiyo-runami.com"
+          git commit -m "chore: refresh the Bilibili accounts page☆"
+          git push
