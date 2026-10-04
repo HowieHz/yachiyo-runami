@@ -66,7 +66,10 @@ It is built to stay small and to ask as little as possible:
 - Tags are fetched only for videos that are not in the cache yet. The upload list comes back newest first, so **as soon as a known bvid shows up, the rest of that member is already cached and the requests stop right there** — usually after one request.
 - In the steady state a run costs one upload-list request per member, nothing more. A brand new video costs exactly one extra request.
 - A tag request that fails is stored as `"tags": null` and tried again on the next run, so nothing stays empty by accident.
-- Nobody logged in means the upload list and the tag pages are throttled hard, so those two are paced slowly (about five seconds per member), back off when they are refused, and are dropped for the rest of the run after two refusals in a row. The order starts at a different member every day, so whoever was skipped is at the front tomorrow.
+- Nobody logged in means the upload list and the tag pages are throttled hard, so those two are paced slowly (about five seconds per member), back off when they are refused, and are dropped for the rest of the run after two refusals in a row.
+- **Whoever was refused is remembered**: a member whose upload list could not be refreshed keeps an `"uploadRetryAt"` marker and joins the **front of the queue next run**; the marker disappears as soon as the upload list comes back.
+- Inside that queue the order comes from `"uploadTriedRun"`, the value of the run counter (`"uploadRuns"`) at the moment that member was last asked: never asked yet comes first, asked most recently comes last. Members that were skipped without being asked get no stamp, so even when Bilibili keeps saying no and only two members fit into a run, the queue still moves forward and everybody gets a turn.
+- Neither number just grows: a member that is up to date carries no `uploadRetryAt` and no `uploadTriedRun`, and once the whole queue is empty the counter starts over at 0.
 
 ## Daily Updates
 

@@ -75,6 +75,13 @@ const offline = process.argv.includes('--offline');
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+/** Start a list at `offset` instead of at its first entry. */
+function rotate(list, offset) {
+  if (list.length === 0) return list;
+  const start = ((offset % list.length) + list.length) % list.length;
+  return [...list.slice(start), ...list.slice(0, start)];
+}
+
 /** Cookies for this run: what the front page hands out, plus an optional SESSDATA. */
 let requestCookie = '';
 
@@ -416,6 +423,10 @@ for (const member of members) {
     fans: cached?.fans ?? null,
     videos: cached?.videos ?? []
   };
+  // Members whose upload list could not be refreshed last time carry a marker, so
+  // that they are asked again first instead of waiting for their turn again.
+  if (cached?.uploadRetryAt) row.uploadRetryAt = cached.uploadRetryAt;
+  if (Number.isInteger(cached?.uploadTriedRun)) row.uploadTriedRun = cached.uploadTriedRun;
 
   if (!offline) {
     try {
@@ -433,39 +444,63 @@ for (const member of members) {
   rows.push(row);
 }
 
-// Uploads and tags come second, in an order that starts somewhere else every day:
-// when Bilibili turns the run down after a few members, the ones that were skipped
-// are the ones at the front tomorrow, so nobody is starved for long.
+// Uploads and tags come second, and they go first in line next time when they fail:
+// whoever could not be refreshed (blocked, or skipped once the run gave up) carries an
+// uploadRetryAt marker, and those markers are served before everybody else. The front
+// of that waiting list moves on every run, so even a long block cannot starve anyone.
 let videoFailures = 0;
 let videoRefreshed = 0;
 let videoSkipped = 0;
 let blocked = 0;
+let uploadRuns = Number.isInteger(cache.uploadRuns) ? cache.uploadRuns : 0;
 if (!offline && wbi) {
-  const offset = rows.length > 0 ? Math.floor(Date.now() / 86400000) % rows.length : 0;
-  const order = [...rows.slice(offset), ...rows.slice(0, offset)];
+  const waiting = rows.filter((row) => row.uploadRetryAt);
+  const rest = rows.filter((row) => !row.uploadRetryAt);
+  if (waiting.length > 0) {
+    console.log(`uploads: ${waiting.length} member(s) still waiting, the least recently tried first.`);
+  }
+  // Never tried comes first, then whoever has been waiting the longest since the last
+  // attempt: a run that gets refused still moves the queue forward for the next one.
+  waiting.sort((a, b) => (a.uploadTriedRun ?? -1) - (b.uploadTriedRun ?? -1));
+  const order = [...waiting, ...rotate(rest, Math.floor(Date.now() / 86400000))];
   for (const row of order) {
     if (blocked >= BLOCK_LIMIT) {
       videoSkipped += 1;
+      row.uploadRetryAt = new Date().toISOString();
       continue;
     }
+    row.uploadTriedRun = uploadRuns;
     try {
       const { videos, fresh } = await refreshVideos(row.uid, row.videos, wbi);
       row.videos = videos;
+      delete row.uploadRetryAt;
+      delete row.uploadTriedRun;
       blocked = 0;
       videoRefreshed += 1;
       console.log(`     uploads ${String(row.uid).padEnd(18)} ${videos.length} kept, tags fetched for ${fresh}`);
     } catch (error) {
       videoFailures += 1;
+      row.uploadRetryAt = new Date().toISOString();
       if (isBlocked(error)) {
         blocked += 1;
-        console.warn(`     uploads ${String(row.uid).padEnd(18)} blocked (${error.message})`);
+        console.warn(
+          `     uploads ${String(row.uid).padEnd(18)} blocked (${error.message}), will retry first next run`
+        );
         await sleep(BLOCK_BACKOFF_MS * blocked);
       } else {
-        console.warn(`     uploads ${String(row.uid).padEnd(18)} failed: ${error.message}`);
+        console.warn(`     uploads ${String(row.uid).padEnd(18)} failed: ${error.message}, will retry first next run`);
       }
     }
     await sleep(UPLOAD_GAP_MS + Math.random() * UPLOAD_JITTER_MS);
   }
+  // Count up only while somebody still owes us an upload list; once everybody is up to
+  // date the numbering starts over, so the numbers never grow without meaning.
+  uploadRuns = rows.some((row) => row.uploadRetryAt) ? uploadRuns + 1 : 0;
+}
+
+// A stamp is only meaningful while the member still owes us an upload list.
+for (const row of rows) {
+  if (!row.uploadRetryAt) delete row.uploadTriedRun;
 }
 
 // Most followers first; equal counts keep the order of members.json (Array#sort is stable).
@@ -492,6 +527,7 @@ await writeFile(
         source: CARD_API,
         videoSource: SEARCH_API,
         tagSource: TAGS_API,
+        uploadRuns,
         members: rows
       },
       null,

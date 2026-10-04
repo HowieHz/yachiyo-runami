@@ -1,64 +1,382 @@
 {
-  "updatedAt": "2026-10-04T10:38:52.222Z",
+  "updatedAt": "2026-10-04T16:32:20.907Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://api.bilibili.com/x/space/wbi/arc/search",
   "tagSource": "https://api.bilibili.com/x/tag/archive/tags",
+  "uploadRuns": 11,
   "members": [
+    {
+      "uid": "3868042",
+      "qq": "可能性の光",
+      "bilibili": "縁奈エナ",
+      "fans": 11849,
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:31:55.844Z",
+      "uploadTriedRun": 10
+    },
     {
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9115,
-      "videos": []
+      "fans": 9113,
+      "videos": [
+        {
+          "bvid": "BV1Lkh467E6h",
+          "title": "【GPT6】极乐净土——3D骨骼转2D动画演示",
+          "publishedAt": "2026-09-23T12:00:00.000Z",
+          "tags": [
+            "2D",
+            "极乐净土",
+            "MMD",
+            "3D",
+            "樱花千代王",
+            "GPT6",
+            "超时空辉夜姬",
+            "PCR",
+            "spine",
+            "八千代"
+          ]
+        },
+        {
+          "bvid": "BV1TMtV6pE9q",
+          "title": "【游戏】2027空洞骑士丝之歌新春会招募PV——JOJO黄金之风ED",
+          "publishedAt": "2026-09-01T15:14:58.000Z",
+          "tags": [
+            "JOJO的奇妙冒险",
+            "新春会",
+            "2027空洞骑士丝之歌新春会",
+            "空洞骑士",
+            "黄金之风",
+            "丝之歌"
+          ]
+        },
+        {
+          "bvid": "BV19j8463Emk",
+          "title": "【海尔兄弟】鸟儿为什么能在天空飞翔",
+          "publishedAt": "2026-08-23T08:29:11.000Z",
+          "tags": [
+            "主题曲",
+            "搞笑",
+            "梦限大",
+            "又看一集",
+            "OurNotes",
+            "海尔兄弟",
+            "OurNotesBonly创作接力"
+          ]
+        },
+        {
+          "bvid": "BV1S33A6QEc6",
+          "title": "尼古喵喵BLACK：走れ！",
+          "publishedAt": "2026-07-27T20:18:43.000Z",
+          "tags": [
+            "OP",
+            "尼古喵喵",
+            "走れ!",
+            "工作细胞black"
+          ]
+        },
+        {
+          "bvid": "BV1sZLU6QEjU",
+          "title": "【喵梦】你已急哭",
+          "publishedAt": "2026-06-01T10:00:00.000Z",
+          "tags": [
+            "音mad",
+            "mygo",
+            "祐天寺若麦",
+            "你已急哭",
+            "喵梦亲生日会",
+            "喵梦",
+            "mujica"
+          ]
+        },
+        {
+          "bvid": "BV1y5DtB5EoW",
+          "title": "【饥荒】饥荒2简评：2年内玩到测试版",
+          "publishedAt": "2026-04-09T18:14:55.000Z",
+          "tags": [
+            "饥荒联机",
+            "饥荒",
+            "饥荒异域",
+            "游戏测评",
+            "老司饥"
+          ]
+        },
+        {
+          "bvid": "BV1ZPZBBjEia",
+          "title": "【公主连结】少女乐队茶会",
+          "publishedAt": "2026-02-20T12:00:00.000Z",
+          "tags": [
+            "原创",
+            "新春会",
+            "颂乐箱庭",
+            "小剧场",
+            "gbc",
+            "公主连结",
+            "少女乐队呐喊"
+          ]
+        },
+        {
+          "bvid": "BV1bwZqBfEKs",
+          "title": "2026公主连结新春会",
+          "publishedAt": "2026-02-20T11:30:00.000Z",
+          "tags": [
+            "动画",
+            "MAD",
+            "二创",
+            "pcr",
+            "公主连结",
+            "公主连结新春会"
+          ]
+        },
+        {
+          "bvid": "BV1PLZtBFE6v",
+          "title": "【丝之歌】Bad apple",
+          "publishedAt": "2026-02-15T23:00:00.000Z",
+          "tags": [
+            "东方",
+            "新春会",
+            "空洞骑士",
+            "大黄蜂",
+            "bad apple",
+            "丝之歌"
+          ]
+        },
+        {
+          "bvid": "BV1EbZEBbEAr",
+          "title": "2026丝之歌新春会",
+          "publishedAt": "2026-02-15T13:00:00.000Z",
+          "tags": [
+            "同人",
+            "新春会",
+            "蕾丝",
+            "大黄蜂",
+            "空洞骑士",
+            "丝之歌"
+          ]
+        }
+      ]
     },
     {
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
       "fans": 7339,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5666,
-      "videos": []
+      "fans": 5664,
+      "videos": [
+        {
+          "bvid": "BV1PrhU6bEtm",
+          "title": "第九章 穹顶孤舟 未完待续",
+          "publishedAt": "2026-09-25T14:44:37.000Z",
+          "tags": [
+            "魔王",
+            "解密",
+            "第九章",
+            "魔王曲",
+            "phigros"
+          ]
+        },
+        {
+          "bvid": "BV1Ec8i6VEp2",
+          "title": "前有绝景",
+          "publishedAt": "2026-08-24T04:17:13.000Z",
+          "tags": [
+            "生活记录",
+            "旅游",
+            "风景",
+            "记录"
+          ]
+        },
+        {
+          "bvid": "BV1ADge6YExm",
+          "title": "当一个只看过轻百的人看了辉夜姬，这是他房间发生的变化：",
+          "publishedAt": "2026-07-24T13:57:37.000Z",
+          "tags": [
+            "百合",
+            "二次元",
+            "彩叶",
+            "哦不对",
+            "请输入文本",
+            "辉夜姬",
+            "辉夜",
+            "好结局",
+            "八千代",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1U67V6PE5E",
+          "title": "读！评！论！",
+          "publishedAt": "2026-06-26T12:00:00.000Z",
+          "tags": [
+            "搞笑",
+            "二次元",
+            "娱乐",
+            "彩叶",
+            "三角洲行动",
+            "请输入文本",
+            "评论",
+            "辉夜",
+            "he结局",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1MM7Q66ESs",
+          "title": "（自用）广州辉夜姬only舞台全过程（狐猫组）",
+          "publishedAt": "2026-06-06T08:12:43.000Z",
+          "tags": [
+            "宅舞",
+            "过程",
+            "百合",
+            "漫展",
+            "狐猫组",
+            "舞蹈翻跳",
+            "辉夜姬",
+            "舞台",
+            "Cosplay",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1vnDyB5ELX",
+          "title": "辉夜姬二十四集后日谈 第二集 那一通电话",
+          "publishedAt": "2026-04-12T00:00:00.000Z",
+          "tags": [
+            "剧情向",
+            "剧情",
+            "百合",
+            "GAL",
+            "彩叶",
+            "好结局",
+            "辉夜",
+            "辉夜姬",
+            "日常番",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1SZXNBYEQm",
+          "title": "辉夜姬二十四集后日谈 第一集 he结局后的第一天",
+          "publishedAt": "2026-03-27T11:16:29.000Z",
+          "tags": [
+            "女同",
+            "百合",
+            "结局",
+            "GAL",
+            "剧情",
+            "彩叶",
+            "好结局",
+            "辉夜",
+            "辉夜姬",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1ehwnzzEae",
+          "title": "辉夜姬二十四集后日谈 引子（下）",
+          "publishedAt": "2026-03-14T04:00:00.000Z",
+          "tags": [
+            "百合",
+            "动画短片",
+            "彩叶",
+            "续作",
+            "辉夜",
+            "辉夜姬",
+            "后续",
+            "第二季",
+            "he结局",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1W9AfzAE7v",
+          "title": "辉夜姬二十四集后日谈  引子（上）",
+          "publishedAt": "2026-03-03T12:14:17.000Z",
+          "tags": [
+            "同人",
+            "百合",
+            "彩叶",
+            "辉夜姬",
+            "第二季",
+            "续作",
+            "辉夜",
+            "好结局",
+            "he结局",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1zj411v7mm",
+          "title": "当你在拉格朗日公屏说了句2.0航母找盟……",
+          "publishedAt": "2023-10-21T15:14:03.000Z",
+          "tags": [
+            "FPS",
+            "搞笑",
+            "航母",
+            "无尽的拉格朗日",
+            "拉格朗日",
+            "当你",
+            "公屏",
+            "暗区突围金狮联盟岁未激励计划",
+            "金狮联盟岁未冲刺"
+          ]
+        }
+      ],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4815,
-      "videos": []
+      "fans": 4817,
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 8
     },
     {
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4680,
-      "videos": []
+      "fans": 4679,
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
       "fans": 1708,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 6
     },
     {
       "uid": "2191476",
       "qq": "夜夜",
       "bilibili": "夜夜Corvus",
       "fans": 1401,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1163,
-      "videos": []
+      "fans": 1164,
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:30:25.428Z",
+      "uploadTriedRun": 10
     },
     {
       "uid": "357613233",
@@ -202,91 +520,911 @@
       "qq": "Minecraft蠢民族",
       "bilibili": "蠢民族de小安",
       "fans": 946,
-      "videos": []
+      "videos": [
+        {
+          "bvid": "BV1qktg6aEUD",
+          "title": "我的世界地下城：在树梢缠结卡关",
+          "publishedAt": "2026-09-01T03:59:53.000Z",
+          "tags": [
+            "闯关",
+            "我的世界",
+            "Minecraft",
+            "地下城",
+            "卡关",
+            "我的世界：地下城"
+          ]
+        },
+        {
+          "bvid": "BV1Aw8b68Epp",
+          "title": "我的世界地下城：燃烧箭袋，探索地下神殿",
+          "publishedAt": "2026-08-23T12:47:18.000Z",
+          "tags": [
+            "我的世界",
+            "沙盒游戏",
+            "Minecraft",
+            "像素风",
+            "我的世界地下城"
+          ]
+        },
+        {
+          "bvid": "BV1ZR8M6aE8E",
+          "title": "穹瀚生存记2：夷平穹阴山",
+          "publishedAt": "2026-08-21T08:00:00.000Z",
+          "tags": [
+            "文言文",
+            "微电影",
+            "服务器",
+            "生存",
+            "沙盒游戏",
+            "我的世界",
+            "Minecraft",
+            "牛来",
+            "像素风",
+            "方块制片局"
+          ]
+        },
+        {
+          "bvid": "BV1FJuz6KEyL",
+          "title": "【BE数电】利用*铜灯*特性制作的「加法器」体积小速度快",
+          "publishedAt": "2026-08-12T02:00:00.000Z",
+          "tags": [
+            "我的世界",
+            "沙盒游戏",
+            "红石",
+            "计算机",
+            "Minecraft",
+            "铜灯",
+            "二进制",
+            "红石科技",
+            "数电"
+          ]
+        },
+        {
+          "bvid": "BV15L3F6pEsv",
+          "title": "我的世界地下城：挑战沙漠神殿获得装备",
+          "publishedAt": "2026-07-27T09:40:51.000Z",
+          "tags": [
+            "我的世界",
+            "沙盒游戏",
+            "Minecraft",
+            "地下城",
+            "像素风",
+            "我的世界地下城"
+          ]
+        },
+        {
+          "bvid": "BV11wKt6TERU",
+          "title": "我的世界地下城：拯救仙人掌峡谷的商人",
+          "publishedAt": "2026-07-21T03:59:52.000Z",
+          "tags": [
+            "实况解说",
+            "沙盒游戏",
+            "我的世界",
+            "地下城",
+            "像素风",
+            "我的世界地下城"
+          ]
+        },
+        {
+          "bvid": "BV1VVjQ6VEXd",
+          "title": "穹瀚生存记1：重走当年路，乾天州新的开始",
+          "publishedAt": "2026-06-24T07:00:00.000Z",
+          "tags": [
+            "生存",
+            "我的世界",
+            "沙盒游戏",
+            "建筑",
+            "多人生存",
+            "红石",
+            "Minecraft",
+            "像素风",
+            "文言",
+            "方块制片局"
+          ]
+        },
+        {
+          "bvid": "BV1cjiGBoELE",
+          "title": "【2026新年视频】小安&小小李的2026年新年视频",
+          "publishedAt": "2025-12-31T16:17:25.000Z",
+          "tags": [
+            "生活记录",
+            "沙盒游戏",
+            "我的世界",
+            "学习",
+            "2026",
+            "记录"
+          ]
+        },
+        {
+          "bvid": "BV1emhkzuEXv",
+          "title": "广东仲元中学摄影社参赛作品《猫的视频》",
+          "publishedAt": "2025-08-31T07:11:04.000Z",
+          "tags": [
+            "校园",
+            "喜剧",
+            "猫",
+            "喵星人",
+            "短片",
+            "影视剪辑"
+          ]
+        },
+        {
+          "bvid": "BV1sPg3z1Ewc",
+          "title": "《超坑大闯关》第3期：地图互动环节增加，*神秘嘉宾*来战！",
+          "publishedAt": "2025-07-18T10:00:00.000Z",
+          "tags": [
+            "沙盒游戏",
+            "搞笑",
+            "游戏",
+            "Minecraft",
+            "黑神话悟空",
+            "Ave Mujica",
+            "逻辑门",
+            "像素风",
+            "推荐宝藏游戏",
+            "丰川祥子"
+          ]
+        }
+      ],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 4
     },
     {
       "uid": "386273918",
       "qq": "腾腾 (†已升天†)",
       "bilibili": "N小哆啦吃悠哈",
       "fans": 647,
-      "videos": []
+      "videos": [
+        {
+          "bvid": "BV1ZxY262EyJ",
+          "title": "Reply (かぐや＆彩葉 ver.) MV-无损音质",
+          "publishedAt": "2026-09-11T16:27:39.000Z",
+          "tags": [
+            "MV",
+            "日语MV",
+            "超时空辉夜姬",
+            "超かぐや姫",
+            "无损音质"
+          ]
+        },
+        {
+          "bvid": "BV1nTEB6oEDg",
+          "title": "【杜比视界4K60】Vivid 悉尼 2026 达令港激光秀 现场录制",
+          "publishedAt": "2026-06-11T18:14:58.000Z",
+          "tags": [
+            "留学生",
+            "生活记录",
+            "现场",
+            "VIVID",
+            "烟花",
+            "海外",
+            "悉尼",
+            "记录",
+            "杜比视界",
+            "随手记录我的生活碎片"
+          ]
+        },
+        {
+          "bvid": "BV1JgEB6RErr",
+          "title": "【杜比视界4K60】Vivid 悉尼 2026 烟花激光秀-现场效果好棒！",
+          "publishedAt": "2026-06-11T17:47:13.000Z",
+          "tags": [
+            "生活记录",
+            "留学生",
+            "现场",
+            "悉尼",
+            "记录",
+            "烟花",
+            "VIVID",
+            "杜比视界",
+            "随手记录我的生活碎片"
+          ]
+        },
+        {
+          "bvid": "BV1eGWGzKE4F",
+          "title": "iPhone17 Pro 系列凸起模组边缘很容易划伤！请一定注意！",
+          "publishedAt": "2025-09-19T08:56:37.000Z",
+          "tags": [
+            "留学生",
+            "17 Pro",
+            "悉尼",
+            "手机保护",
+            "iPhone",
+            "Apple",
+            "Apple Store",
+            "B站超高清视频计划"
+          ]
+        },
+        {
+          "bvid": "BV1KfMuzVEhQ",
+          "title": "BML2025演出座位位置信息及嘉宾（附带680/380档位实拍图）",
+          "publishedAt": "2025-06-13T07:23:34.000Z",
+          "tags": [
+            "二次元",
+            "Lovelive",
+            "BML2025",
+            "live",
+            "AveMujica",
+            "有刺无刺"
+          ]
+        },
+        {
+          "bvid": "BV1nsEUzKEt3",
+          "title": "UF音乐节-崩坏星穹铁道专场-S区第一排全程录制",
+          "publishedAt": "2025-05-18T17:07:48.000Z",
+          "tags": [
+            "音乐节",
+            "音乐现场",
+            "崩坏：星穹铁道",
+            "二次元活点地图",
+            "米哈游",
+            "知更鸟",
+            "Chevy",
+            "崩坏星穹",
+            "二次元探店日记"
+          ]
+        },
+        {
+          "bvid": "BV1AJEUzzEN5",
+          "title": "UF音乐节-崩坏三专场全程录制",
+          "publishedAt": "2025-05-18T16:55:02.000Z",
+          "tags": [
+            "音乐节",
+            "音乐现场",
+            "小林未郁",
+            "崩坏3",
+            "爱莉希雅",
+            "二次元活点地图",
+            "浮华",
+            "崩坏世界的歌姬",
+            "米哈游",
+            "二次元探店日记"
+          ]
+        },
+        {
+          "bvid": "BV1HRJTztEfF",
+          "title": "最奇迹的一集——UF音乐节蔚蓝档案专场录制",
+          "publishedAt": "2025-05-18T00:36:40.000Z",
+          "tags": [
+            "音乐现场",
+            "音乐节",
+            "LIVE",
+            "二次元副本挑战者"
+          ]
+        },
+        {
+          "bvid": "BV1ziJKzDEQ7",
+          "title": "UF音乐节P5X夜幕魅影专场录像——一起进入女神异闻录系列的音乐中来吧！",
+          "publishedAt": "2025-05-17T19:24:43.000Z",
+          "tags": [
+            "女神异闻录5",
+            "UF音乐节",
+            "Lyn",
+            "P5X",
+            "P5X一周年",
+            "P5X一周年激励计划"
+          ]
+        },
+        {
+          "bvid": "BV1aSJPzPE9b",
+          "title": "就这个电音爽！——UF绝区零L区VIP席第一排全程录制~",
+          "publishedAt": "2025-05-17T17:14:32.000Z",
+          "tags": [
+            "DJ",
+            "音乐节",
+            "电子音乐",
+            "电音",
+            "绝区零UP主激励计划",
+            "UF音乐节",
+            "打碟",
+            "米哈游",
+            "绝区零",
+            "绝区零UP主激励计划1.7"
+          ]
+        }
+      ]
     },
     {
       "uid": "17229686",
       "qq": "cmdiy",
       "bilibili": "cjscmdiy",
       "fans": 620,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 6
     },
     {
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 434,
-      "videos": []
+      "fans": 433,
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "564770445",
       "qq": "Hachiman",
       "bilibili": "爱玩蛛的少年",
       "fans": 322,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "27512401",
       "qq": "米米~喵",
       "bilibili": "米米今天吃什麼",
       "fans": 283,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 5
     },
     {
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
       "fans": 270,
-      "videos": []
+      "videos": [
+        {
+          "bvid": "BV1cgaV6dEUV",
+          "title": "颜",
+          "publishedAt": "2026-09-29T10:00:00.000Z",
+          "tags": [
+            "cover",
+            "中科大acg",
+            "颜",
+            "bangdream",
+            "翻唱总动员",
+            "mujica"
+          ]
+        },
+        {
+          "bvid": "BV1QBY26BEYo",
+          "title": "【全乐器Cover】永别了人类！我要把你们全都炸飞！！！｜爆弾魔 - ヨルシカ｜「夏日将终」Cover Project",
+          "publishedAt": "2026-09-11T14:40:59.000Z",
+          "tags": [
+            "COVER",
+            "翻弹",
+            "ヨルシカ",
+            "乐队",
+            "盗作",
+            "n-buna",
+            "suis",
+            "yorushika",
+            "爆弾魔",
+            "翻唱的N种打开方式"
+          ]
+        },
+        {
+          "bvid": "BV1rwbR6hEUG",
+          "title": "【线上乐队合奏】アイラ   HB to n-buna",
+          "publishedAt": "2026-08-16T16:11:21.000Z",
+          "tags": [
+            "アイラ",
+            "拿不拿生日快乐",
+            "乐队合奏",
+            "n-buna",
+            "2026虚拟歌手创作赛"
+          ]
+        },
+        {
+          "bvid": "BV1rZbQ6xErj",
+          "title": "【星尘，永夜翻唱】 背景、夏に溺れる   「HB to n-buna」",
+          "publishedAt": "2026-08-16T16:00:00.000Z",
+          "tags": [
+            "背景、夏に溺れる",
+            "永夜minu",
+            "n-buna",
+            "星尘infinity",
+            "2026虚拟歌手创作赛"
+          ]
+        },
+        {
+          "bvid": "BV13Xgk6PEt9",
+          "title": "【合肥7.10音番only/Refrain乐队】邂逅",
+          "publishedAt": "2026-07-22T10:55:32.000Z",
+          "tags": [
+            "演奏",
+            "摇滚",
+            "LIVE",
+            "现场",
+            "神椿",
+            "Kaf",
+            "新世代音乐人计划手搓赛道",
+            "花谱",
+            "乐队",
+            "VIRTUAL SINGER"
+          ]
+        },
+        {
+          "bvid": "BV1wDKN6KEJp",
+          "title": "【合肥7.10音番only/Refrain乐队】天真烂漫机能",
+          "publishedAt": "2026-07-18T16:34:44.000Z",
+          "tags": [
+            "重音テト",
+            "天真烂漫机能",
+            "音乐现场",
+            "LIVE",
+            "摇滚",
+            "现场",
+            "新世代音乐人计划手搓赛道",
+            "乐队",
+            "teto",
+            "术力口"
+          ]
+        },
+        {
+          "bvid": "BV1gaKN6EEpZ",
+          "title": "【合肥7.10音番对邦/Refrain乐队】全场回放视频",
+          "publishedAt": "2026-07-18T16:23:33.000Z",
+          "tags": [
+            "摇滚",
+            "重音テト",
+            "现场",
+            "Poppin'Party",
+            "新世代音乐人计划手搓赛道",
+            "花谱",
+            "乐队",
+            "live",
+            "BanG Dream!",
+            "Girls Band Cry"
+          ]
+        },
+        {
+          "bvid": "BV1WY756ZEEN",
+          "title": "【乐队总谱Evespark演出版】超时空辉夜姬 Reply",
+          "publishedAt": "2026-06-26T09:29:14.000Z",
+          "tags": [
+            "全能音乐挑战赛",
+            "超时空辉夜姬",
+            "乐队总谱",
+            "reply"
+          ]
+        },
+        {
+          "bvid": "BV1aEVZ6pEyJ",
+          "title": "「僕は...」（我心里危险的东西op）——あたらよ 中科大ACG音乐会evespark夜火cover（沥尽心血剪辑版）",
+          "publishedAt": "2026-06-01T10:32:00.000Z",
+          "tags": [
+            "剪辑",
+            "LIVE",
+            "我心里危险的东西",
+            "可惜夜",
+            "我心危",
+            "「僕は...」",
+            "乐队",
+            "あたらよ",
+            "Vsinger创作激励计划"
+          ]
+        },
+        {
+          "bvid": "BV1aHVZ6nEuo",
+          "title": "reply超时空辉夜姬 中科大ACG音乐会evespark夜火cover（沥血剪辑版）",
+          "publishedAt": "2026-06-01T10:19:26.000Z",
+          "tags": [
+            "动漫音乐",
+            "ACG",
+            "LIVE",
+            "现场",
+            "超时空辉夜姬",
+            "乐队",
+            "reply",
+            "术力口",
+            "Vsinger创作激励计划"
+          ]
+        }
+      ],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "103568",
       "qq": "千羽☆星夜",
       "bilibili": "千羽☆星夜",
-      "fans": 226,
-      "videos": []
+      "fans": 229,
+      "videos": [
+        {
+          "bvid": "BV13k5J6jEXH",
+          "title": "一段路程的结束 是新的路程开始",
+          "publishedAt": "2026-05-10T14:14:12.000Z",
+          "tags": [
+            "游戏",
+            "八方旅人0"
+          ]
+        },
+        {
+          "bvid": "BV1Cicwz8EKn",
+          "title": "星之所在（剧透深入）",
+          "publishedAt": "2026-02-08T13:22:46.000Z",
+          "tags": [
+            "空之轨迹",
+            "星之所在",
+            "泪目",
+            "ns"
+          ]
+        },
+        {
+          "bvid": "BV1wURiYEExB",
+          "title": "ヾ(￣▽￣)Bye~Bye~",
+          "publishedAt": "2025-04-06T06:15:44.000Z",
+          "tags": [
+            "塞尔达传说",
+            "任天堂",
+            "原创",
+            "影视剪辑",
+            "游戏集锦",
+            "短片",
+            "智慧的再现",
+            "NS",
+            "switch",
+            "推荐宝藏游戏"
+          ]
+        },
+        {
+          "bvid": "BV1kU411U7VK",
+          "title": "MDPro3  尤贝尔无限loop（第一次打出来(p≧w≦q)）",
+          "publishedAt": "2024-07-18T16:12:27.000Z",
+          "tags": [
+            "游戏王",
+            "娱乐",
+            "桌游棋牌",
+            "MDPro3",
+            "卡牌游戏",
+            "新手",
+            "布锅锅的挑战赛",
+            "英雄联盟暑期激励计划"
+          ]
+        },
+        {
+          "bvid": "BV14u4y1A7bU",
+          "title": "八方旅人2真结局  让我们下部再见(含剧透)",
+          "publishedAt": "2023-11-15T14:20:36.000Z",
+          "tags": [
+            "RPG",
+            "结局",
+            "彩蛋",
+            "剧情",
+            "任天堂",
+            "八方旅人2",
+            "switch",
+            "推荐宝藏游戏"
+          ]
+        },
+        {
+          "bvid": "BV1uK4y1F7KV",
+          "title": "终相见（王泪结局）",
+          "publishedAt": "2023-09-21T03:00:30.000Z",
+          "tags": [
+            "任天堂",
+            "塞尔达传说",
+            "塞尔达传说：王国之泪",
+            "NS",
+            "switch",
+            "推荐宝藏游戏"
+          ]
+        },
+        {
+          "bvid": "BV1rM4y1Y7U6",
+          "title": "迎接崭新的未来",
+          "publishedAt": "2023-06-11T13:33:27.000Z",
+          "tags": [
+            "游戏杂谈",
+            "任天堂",
+            "崭新的未来",
+            "NS",
+            "异度之刃3",
+            "推荐宝藏游戏"
+          ]
+        },
+        {
+          "bvid": "BV1ss4y197tP",
+          "title": "猎天使魔女3无伤无脑紫月罗丹",
+          "publishedAt": "2023-04-26T14:53:11.000Z",
+          "tags": [
+            "任天堂",
+            "无伤",
+            "紫月",
+            "动作游戏",
+            "ns",
+            "猎天使魔女3",
+            "推荐宝藏游戏"
+          ]
+        },
+        {
+          "bvid": "BV1Wd4y137T3",
+          "title": "总有一天会再度相见  （剧透慎入）",
+          "publishedAt": "2022-09-12T15:05:02.000Z",
+          "tags": [
+            "任天堂",
+            "ゼノブレイド3",
+            "Xenoblade3",
+            "NS",
+            "Switch",
+            "游戏搞笑时刻",
+            "异度神剑3",
+            "异度之刃3",
+            "在游戏里当摄影师"
+          ]
+        },
+        {
+          "bvid": "BV1EV4y1g7ox",
+          "title": "ミオ（Mio）",
+          "publishedAt": "2022-09-12T14:38:10.000Z",
+          "tags": [
+            "任天堂",
+            "ゼノブレイド3",
+            "Xenoblade3",
+            "NS",
+            "Switch",
+            "异度神剑3",
+            "异度之刃3"
+          ]
+        }
+      ],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "3546574244284714",
       "qq": "酒寄青葉[ Sakayori Iroha-sama]",
       "bilibili": "Iroha-NihoheYCY",
       "fans": 183,
-      "videos": []
+      "videos": [
+        {
+          "bvid": "BV1uFMd6FELR",
+          "title": "「跨越时空的纯白誓约」你们终于结婚了[预告]",
+          "publishedAt": "2026-08-03T11:55:58.000Z",
+          "tags": [
+            "预告",
+            "超时空辉夜姬同人",
+            "超时空辉夜姬VrChat",
+            "超时空辉夜姬婚礼",
+            "辉夜姬",
+            "VrChat",
+            "酒寄彩叶",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV1gzf3BaEbX",
+          "title": "月色如同你一样美",
+          "publishedAt": "2026-02-20T12:35:40.000Z",
+          "tags": [
+            "情感",
+            "可爱",
+            "超时空辉夜姬"
+          ]
+        },
+        {
+          "bvid": "BV1N6ZYB7Ezb",
+          "title": "超时空虚构史",
+          "publishedAt": "2026-02-19T04:09:11.000Z",
+          "tags": [
+            "鬼畜",
+            "搞笑",
+            "超时空辉夜姬"
+          ]
+        },
+        {
+          "bvid": "BV1AyZYByEvk",
+          "title": "哈……？",
+          "publishedAt": "2026-02-19T03:56:34.000Z",
+          "tags": [
+            "剪辑",
+            "超时空辉夜姬"
+          ]
+        },
+        {
+          "bvid": "BV1TdZ3BoEMD",
+          "title": "当一个故事快要结束的时候，我总是会回忆起他的开始",
+          "publishedAt": "2026-02-17T00:51:49.000Z",
+          "tags": [
+            "可爱",
+            "情感",
+            "超时空辉夜姬！"
+          ]
+        }
+      ],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 9
     },
     {
       "uid": "3546377361557691",
       "qq": "[に]",
       "bilibili": "OUTnet小小搬运工",
       "fans": 181,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:31:39.842Z",
+      "uploadTriedRun": 10
+    },
+    {
+      "uid": "283368950",
+      "qq": "kagura",
+      "bilibili": "土宫神乐_kagura",
+      "fans": 171,
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z"
     },
     {
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
       "fans": 121,
-      "videos": []
+      "videos": [
+        {
+          "bvid": "BV1L3aD6SEQj",
+          "title": "30秒带你云游超时空辉夜姬杭州快闪",
+          "publishedAt": "2026-10-02T16:48:37.000Z",
+          "tags": [
+            "快闪",
+            "彩叶",
+            "超时空辉夜姬",
+            "超辉夜姬",
+            "辉夜姬",
+            "辉夜",
+            "八千代",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1mQa66rEu4",
+          "title": "超辉夜姬！万画云游万画赏开箱（40cm大娃*3）",
+          "publishedAt": "2026-10-01T13:17:13.000Z",
+          "tags": [
+            "开箱",
+            "彩叶",
+            "超辉夜姬",
+            "辉夜",
+            "周边",
+            "手办开箱",
+            "八千代",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1hxar6EEVu",
+          "title": "八千代抱枕&Fushi站肩玩偶及赠品(握手卷/抽奖小卡片)开箱展示 RustyXross",
+          "publishedAt": "2026-10-01T11:59:24.000Z",
+          "tags": [
+            "生活记录",
+            "开箱",
+            "抱枕",
+            "可爱",
+            "彩叶",
+            "辉夜",
+            "玩偶",
+            "记录",
+            "八千代",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1ACaX6iEKJ",
+          "title": "【生肉抢跑】超辉夜姬！制作幕后故事副音轨（具体看置顶评论）",
+          "publishedAt": "2026-09-29T20:05:30.000Z",
+          "tags": [
+            "生肉",
+            "彩叶",
+            "超时空辉夜姬",
+            "超辉夜姬",
+            "幕后故事",
+            "辉夜",
+            "辉夜姬",
+            "八千代",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1arab6SE6q",
+          "title": "90秒带你云游北投超时空辉夜姬only",
+          "publishedAt": "2026-09-27T03:01:50.000Z",
+          "tags": [
+            "动漫",
+            "漫展",
+            "生活记录",
+            "彩叶",
+            "超时空辉夜姬",
+            "辉夜",
+            "Cosplay",
+            "八千代",
+            "超时空辉夜姬Bonly同人征集"
+          ]
+        },
+        {
+          "bvid": "BV1P6h26nERQ",
+          "title": "40秒带你云游超时空辉夜姬北京快闪",
+          "publishedAt": "2026-09-25T11:32:29.000Z",
+          "tags": [
+            "动漫",
+            "快闪",
+            "生活记录",
+            "手办",
+            "彩叶",
+            "超时空辉夜姬",
+            "辉夜",
+            "周边",
+            "八千代",
+            "超时空辉夜姬Bonly同人征集"
+          ]
+        },
+        {
+          "bvid": "BV12QaK6CEgJ",
+          "title": "超时空辉夜姬官方小游戏「帮八千代造鸟居！」多人实况",
+          "publishedAt": "2026-09-24T18:14:45.000Z",
+          "tags": [
+            "游戏实况",
+            "超时空辉夜姬",
+            "多人实况",
+            "辉夜",
+            "新手",
+            "VRChat",
+            "月见八千代",
+            "超时空辉夜姬Bonly同人征集"
+          ]
+        },
+        {
+          "bvid": "BV197aT6dEhg",
+          "title": "超时空辉夜姬官方月读世界「新手引导区域」全流程【渣机自录留念】【月读感谢祭】【VRChat】",
+          "publishedAt": "2026-09-24T17:22:59.000Z",
+          "tags": [
+            "游戏实况",
+            "录屏",
+            "超时空辉夜姬",
+            "超かぐや姫 !",
+            "辉夜",
+            "VRChat",
+            "超时空辉夜姬！",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV1eUem6yE3x",
+          "title": "超时空辉夜姬官方闹钟APP全功能演示（全语音演示见P2）",
+          "publishedAt": "2026-09-18T09:55:41.000Z",
+          "tags": [
+            "彩叶",
+            "超时空辉夜姬",
+            "辉夜",
+            "月见八千代",
+            "超时空辉夜姬Bonly同人征集"
+          ]
+        },
+        {
+          "bvid": "BV1CbeP6BExv",
+          "title": "超时空辉夜姬特装版 BD 菜单模拟器（Disc1+Disc2）",
+          "publishedAt": "2026-09-16T12:46:46.000Z",
+          "tags": [
+            "演示",
+            "彩叶",
+            "超时空辉夜姬",
+            "超かぐや姫",
+            "辉夜",
+            "BD",
+            "月见八千代"
+          ]
+        }
+      ],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
       "fans": 90,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "406926895",
       "qq": "Myself",
       "bilibili": "無盡の旅途",
       "fans": 85,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 4
     },
     {
       "uid": "2066802391",
@@ -394,70 +1532,174 @@
             "怀旧"
           ]
         }
-      ]
+      ],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 3
     },
     {
       "uid": "3546883584690729",
       "qq": "无瑕之歌",
       "bilibili": "爱伊一生推",
       "fans": 46,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:30:49.141Z",
+      "uploadTriedRun": 10
     },
     {
       "uid": "3546568567294825",
       "qq": "哈基扬",
       "bilibili": "哈基扬真的借东风",
       "fans": 44,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 5
     },
     {
       "uid": "1646112448",
       "qq": "江濑九鸟!哈",
       "bilibili": "江濑九鸟",
       "fans": 38,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 4
     },
     {
       "uid": "506908412",
       "qq": "birdbai",
       "bilibili": "是bai不是白",
       "fans": 26,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 7
     },
     {
       "uid": "496726675",
       "qq": "Shytarget",
       "bilibili": "灯火笙萧",
       "fans": 17,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 6
     },
     {
       "uid": "3537114444598162",
       "qq": "慕容灵瑶",
       "bilibili": "四间五线",
       "fans": 17,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 7
     },
     {
       "uid": "3690996856523148",
       "qq": "等",
       "bilibili": "枫无惧",
       "fans": 16,
-      "videos": []
+      "videos": [
+        {
+          "bvid": "BV1o8h16MEUG",
+          "title": "【长笛动态谱】Ex-Otogibanashi (Anime ver.) 超时空辉夜姬主题曲 中秋快乐！",
+          "publishedAt": "2026-09-25T13:20:53.000Z",
+          "tags": [
+            "长笛",
+            "彩叶",
+            "超时空辉夜姬",
+            "超辉夜姬",
+            "Ex-Otogibanashi",
+            "中秋快乐",
+            "五线谱",
+            "辉夜",
+            "八千代",
+            "bilibilionly同人扶持计划"
+          ]
+        },
+        {
+          "bvid": "BV126Ng6WEWe",
+          "title": "[长笛简谱] 星降る海 《超时空辉夜姬》插曲 祝八千代和辉夜生日快乐！",
+          "publishedAt": "2026-07-12T08:08:25.000Z",
+          "tags": [
+            "生贺",
+            "长笛",
+            "插曲",
+            "扒谱",
+            "星降る海",
+            "辉夜",
+            "简谱",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV1NXT76jEt3",
+          "title": "【长笛简谱】非人少女OP 贄-nie- （TV size ver.） 比名子生日快乐！",
+          "publishedAt": "2026-07-02T13:31:03.000Z",
+          "tags": [
+            "长笛",
+            "生贺",
+            "非人少女",
+            "对我垂涎欲滴的非人少女",
+            "比名子",
+            "贄-nie-",
+            "简谱",
+            "想吃掉我的非人少女",
+            "动漫二创激励计划"
+          ]
+        },
+        {
+          "bvid": "BV1Y3jb6jELT",
+          "title": "【超时空辉夜姬 x 小王子（cv. 早见沙织）】声优朗读算MAD吗？",
+          "publishedAt": "2026-06-21T08:28:50.000Z",
+          "tags": [
+            "早见沙织",
+            "声优",
+            "小王子",
+            "MAD",
+            "狐狸",
+            "彩叶",
+            "超时空辉夜姬",
+            "辉夜",
+            "八千代",
+            "动漫二创激励计划"
+          ]
+        }
+      ],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 5
     },
     {
       "uid": "3493125033036033",
       "qq": "是丘铭儿呀～",
       "bilibili": "是丘铭儿呀",
       "fans": 13,
-      "videos": []
+      "videos": [
+        {
+          "bvid": "BV1pJhNeWE5m",
+          "title": "《余生的第一天》",
+          "publishedAt": "2024-07-02T05:18:37.000Z",
+          "tags": [
+            "崩坏·星穹铁道"
+          ]
+        },
+        {
+          "bvid": "BV1624y147Xw",
+          "title": "57级萌新尝试核爆（诶嘿",
+          "publishedAt": "2023-03-10T16:55:45.000Z",
+          "tags": [
+            "核爆",
+            "原神"
+          ]
+        }
+      ],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 9
     },
     {
       "uid": "3493274130058005",
       "qq": "小星星",
       "bilibili": "二物",
       "fans": 12,
-      "videos": []
+      "videos": [],
+      "uploadRetryAt": "2026-10-04T16:32:20.907Z",
+      "uploadTriedRun": 8
     }
   ]
 }
