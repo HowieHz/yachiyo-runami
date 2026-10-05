@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T18:00:38.812Z",
+  "updatedAt": "2026-10-05T13:31:35.276Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "縁奈エナ",
-      "fans": 11849,
+      "fans": 11851,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -20,7 +20,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9114,
+      "fans": 9115,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -48,7 +48,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7339,
+      "fans": 7338,
       "videos": [],
       "crawledUpTo": "2026-09-30T01:53:01.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -58,7 +58,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5664,
+      "fans": 5663,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -188,7 +188,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4817,
+      "fans": 4822,
       "videos": [
         {
           "bvid": "BV1at4269EAR",
@@ -421,7 +421,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4679,
+      "fans": 4680,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -761,10 +761,161 @@
       "crawledAll": true
     },
     {
+      "uid": "1428565635",
+      "qq": "Yachi 8000区 [千夏Tesni]",
+      "bilibili": "月见八千代sama",
+      "fans": 1681,
+      "videos": [
+        {
+          "bvid": "BV1zeHx6hEiv",
+          "title": "一股味 bushe",
+          "publishedAt": "2026-10-05T13:17:49.000Z",
+          "tags": [
+            "生活记录",
+            "超时空辉夜姬",
+            "记录"
+          ]
+        },
+        {
+          "bvid": "BV1uFMd6FELR",
+          "title": "「跨越时空的纯白誓约」你们终于结婚了[预告]",
+          "publishedAt": "2026-08-03T11:55:58.000Z",
+          "tags": [
+            "预告",
+            "超时空辉夜姬同人",
+            "超时空辉夜姬VrChat",
+            "超时空辉夜姬婚礼",
+            "辉夜姬",
+            "VrChat",
+            "酒寄彩叶",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV1pNwqzaE46",
+          "title": "【全网首发】耗时1680小时，我们做出了全网最还原八千代小屋！以及带你走进早期互联网时代背后的故事！",
+          "publishedAt": "2026-03-18T11:19:41.000Z",
+          "tags": [
+            "超时空辉夜姬",
+            "八千代的网站",
+            "八千代的部屋",
+            "带你走进早期互联网时代背后的故事！",
+            "首发",
+            "辉夜姬",
+            "全网首发",
+            "八千代",
+            "超时空辉夜姬！",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV1bzPkzhEBN",
+          "title": "【超时空辉夜姬 官方MV】Reply – kz(livetune) / 辉夜(cv.夏吉优子) from 超辉夜姬！",
+          "publishedAt": "2026-03-05T12:13:13.000Z",
+          "tags": [
+            "完整版",
+            "MV",
+            "超时空辉夜姬",
+            "官方MV",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV1DRAZzrEtS",
+          "title": "群主看完以后说要找人弄死我[不对不对 我弄我自己?]",
+          "publishedAt": "2026-03-03T07:14:44.000Z",
+          "tags": [
+            "i芦tv",
+            "超时空辉夜姬",
+            "超时空辉夜姬音乐",
+            "辉夜姬",
+            "网站",
+            "八千代",
+            "整活",
+            "超时空辉夜姬！",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV1uiPMzvEJH",
+          "title": "[首发]《超时空辉夜姬》所有音乐收录站：听见月影下的旋律",
+          "publishedAt": "2026-03-01T10:08:23.000Z",
+          "tags": [
+            "音乐",
+            "BGM",
+            "超时空辉夜姬",
+            "星降る海",
+            "超时空辉夜姬音乐",
+            "月读Tsukuyomi",
+            "超时空辉夜姬！",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV1s3fVBbE68",
+          "title": "当你看完超时空辉夜姬之后_你刷到的推荐",
+          "publishedAt": "2026-02-20T18:36:17.000Z",
+          "tags": [
+            "超时空辉夜姬",
+            "Yachiyo",
+            "超时空辉夜姬！",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV12RZXBBEFC",
+          "title": "超时空辉夜姬【整活】-168M版",
+          "publishedAt": "2026-02-18T11:15:08.000Z",
+          "tags": [
+            "彩叶",
+            "超时空辉夜姬",
+            "168",
+            "整活",
+            "超时空辉夜姬！",
+            "酒寄彩叶"
+          ]
+        },
+        {
+          "bvid": "BV1b46hBqE3d",
+          "title": "【全网首发】跨越时空的重逢：复刻《超时空辉夜姬》八千代的网站",
+          "publishedAt": "2026-02-01T16:37:32.000Z",
+          "tags": [
+            "yachiyo",
+            "超时空辉夜姬",
+            "八千代的网站",
+            "八千代的部屋",
+            "全网首发",
+            "八千代",
+            "辉夜姫",
+            "超时空辉夜姬！",
+            "酒寄彩叶",
+            "月见八千代"
+          ]
+        },
+        {
+          "bvid": "BV1EQ6yBoEYz",
+          "title": "[官方MV]超时空辉夜姬！【Official MV】ray 超かぐや姫！",
+          "publishedAt": "2026-01-31T12:24:56.000Z",
+          "tags": [
+            "官方",
+            "MV",
+            "声优",
+            "日语MV",
+            "超时空辉夜姬",
+            "官方MV",
+            "超时空辉夜姬！"
+          ]
+        }
+      ],
+      "crawledUpTo": "2026-10-05T13:17:49.000Z",
+      "crawledBackTo": "2024-08-22T18:40:05.000Z",
+      "crawledAll": true
+    },
+    {
       "uid": "2191476",
       "qq": "夜夜",
       "bilibili": "夜夜Corvus",
-      "fans": 1401,
+      "fans": 1404,
       "videos": [
         {
           "bvid": "BV1qChb6sEYi",
@@ -863,7 +1014,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1165,
+      "fans": 1169,
       "videos": [
         {
           "bvid": "BV153YF6rEyp",
@@ -907,7 +1058,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 990,
+      "fans": 991,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -972,7 +1123,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 433,
+      "fans": 434,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1047,7 +1198,7 @@
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 270,
+      "fans": 272,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -1099,7 +1250,7 @@
       "uid": "103568",
       "qq": "千羽☆星夜",
       "bilibili": "千羽☆星夜",
-      "fans": 229,
+      "fans": 231,
       "videos": [],
       "crawledUpTo": "2026-05-10T14:14:12.000Z",
       "crawledBackTo": "2019-03-10T14:08:03.000Z",
@@ -1227,7 +1378,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-01T00:05:13.000Z",
+      "crawledUpTo": "2026-10-05T04:09:03.000Z",
       "crawledBackTo": "2023-08-27T14:03:51.000Z",
       "crawledAll": true
     },
@@ -1280,7 +1431,7 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 121,
+      "fans": 125,
       "videos": [
         {
           "bvid": "BV1L3aD6SEQj",
@@ -1538,13 +1689,14 @@
       "bilibili": "爱伊一生推",
       "fans": 47,
       "videos": [],
-      "crawledAll": true
+      "crawledAll": true,
+      "crawledBackTo": null
     },
     {
       "uid": "3546568567294825",
       "qq": "哈基扬",
       "bilibili": "哈基扬真的借东风",
-      "fans": 44,
+      "fans": 45,
       "videos": [
         {
           "bvid": "BV12qht6zECt",
@@ -1603,17 +1755,19 @@
       "uid": "506908412",
       "qq": "birdbai",
       "bilibili": "是bai不是白",
-      "fans": 26,
+      "fans": 25,
       "videos": [],
-      "crawledAll": true
+      "crawledAll": true,
+      "crawledBackTo": null
     },
     {
       "uid": "496726675",
       "qq": "Shytarget",
       "bilibili": "灯火笙萧",
-      "fans": 17,
+      "fans": 18,
       "videos": [],
-      "crawledAll": true
+      "crawledAll": true,
+      "crawledBackTo": null
     },
     {
       "uid": "3537114444598162",
@@ -1621,7 +1775,8 @@
       "bilibili": "四间五线",
       "fans": 17,
       "videos": [],
-      "crawledAll": true
+      "crawledAll": true,
+      "crawledBackTo": null
     },
     {
       "uid": "3690996856523148",
