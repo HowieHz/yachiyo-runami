@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T13:31:35.276Z",
+  "updatedAt": "2026-10-06T02:01:28.408Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "縁奈エナ",
-      "fans": 11851,
+      "fans": 11850,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -20,7 +20,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9115,
+      "fans": 9117,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -48,7 +48,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7338,
+      "fans": 7342,
       "videos": [],
       "crawledUpTo": "2026-09-30T01:53:01.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -764,7 +764,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1681,
+      "fans": 1679,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1014,7 +1014,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1169,
+      "fans": 1170,
       "videos": [
         {
           "bvid": "BV153YF6rEyp",
@@ -1058,7 +1058,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 991,
+      "fans": 992,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -1250,7 +1250,7 @@
       "uid": "103568",
       "qq": "千羽☆星夜",
       "bilibili": "千羽☆星夜",
-      "fans": 231,
+      "fans": 232,
       "videos": [],
       "crawledUpTo": "2026-05-10T14:14:12.000Z",
       "crawledBackTo": "2019-03-10T14:08:03.000Z",
@@ -1696,7 +1696,7 @@
       "uid": "3546568567294825",
       "qq": "哈基扬",
       "bilibili": "哈基扬真的借东风",
-      "fans": 45,
+      "fans": 46,
       "videos": [
         {
           "bvid": "BV12qht6zECt",
