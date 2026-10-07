@@ -93,6 +93,7 @@ npm run update:bilibili:offline  # 只用缓存重新生成，不联网
 - 如果哔哩哔哩的风控拒绝了 GitHub 的机器，日志里会出现 `API code -352` 或 `-412`（或 `HTTP 412`），这次运行会失败且不会提交，页面保持上一次的数据。这时可以在仓库 Secrets 里加一个 `BILI_COOKIE`（值是你自己哔哩哔哩的 `SESSDATA`）来提高成功率。这个值是登录凭证，用小号会更安心。
 - 投稿列表是所有请求里最挑的一个，所以要问两次：先问 App 接口，App 接口不行再问需要 wbi 签名（还要首页发下来的 `buvid` cookie）的网页接口。两个都被拒时，这位群友就继续沿用上一次成功抓到的投稿。
 - GitHub 在仓库连续 60 天没有活动后会暂停定时任务，手动跑一次就能恢复。
+- 这次运行会提交页面和缓存，然后**主动叫一次 Pages workflow 来部署**：用内置 `GITHUB_TOKEN` 推送的提交不会自动触发别的 workflow，所以最后一步用 `gh workflow run pages.yml --ref main` 推一下部署。这也是这个 workflow 需要 `actions: write` 权限的原因。
 - 值得人看一眼的几行 —— 风控、没刷新到的账号 —— 会输出成 GitHub 的 `::warning::` / `::error::` 标注，直接在 Actions 页面上带图标显示，不用去翻日志；其余明细仍是普通文本，本地运行时全部按普通的 warning / error 打印。
 
 ## 数据来源

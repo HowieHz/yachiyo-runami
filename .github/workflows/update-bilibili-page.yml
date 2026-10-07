@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: write
+  # So that this run may ask the Pages workflow to deploy (see the last step).
+  actions: write
 
 concurrency:
   group: bilibili-page
@@ -35,6 +37,8 @@ jobs:
         run: npm run update:bilibili
 
       - name: Commit the update
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git add bilibili.html bilibili/data/bilibili.json
           if git diff --cached --quiet; then
@@ -45,3 +49,8 @@ jobs:
           git config user.email "yachiyo-runami@yachiyo-runami.com"
           git commit -m "chore: refresh the Bilibili accounts page☆"
           git push
+          # A push made with the built-in token does not start other workflows, so the
+          # Pages deployment has to be asked for by hand. A workflow_dispatch is the one
+          # event the built-in token is allowed to start.
+          gh workflow run pages.yml --ref main
+          echo "Asked the Pages workflow to deploy $(git rev-parse --short HEAD)."
