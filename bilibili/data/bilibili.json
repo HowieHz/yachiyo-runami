@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T02:01:28.408Z",
+  "updatedAt": "2026-10-07T01:08:44.492Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "縁奈エナ",
-      "fans": 11850,
+      "fans": 11849,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -48,7 +48,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7342,
+      "fans": 7341,
       "videos": [],
       "crawledUpTo": "2026-09-30T01:53:01.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -58,7 +58,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5663,
+      "fans": 5662,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -413,7 +413,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-04T10:23:45.000Z",
+      "crawledUpTo": "2026-10-06T02:51:27.000Z",
       "crawledBackTo": "2022-03-06T12:23:32.000Z",
       "crawledAll": true
     },
@@ -421,7 +421,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4680,
+      "fans": 4681,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -764,7 +764,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1679,
+      "fans": 1681,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1014,8 +1014,23 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1170,
+      "fans": 1173,
       "videos": [
+        {
+          "bvid": "BV1s2Hf6aEdm",
+          "title": "【自留】记录专辑开箱＋三首开头试听",
+          "publishedAt": "2026-10-06T08:53:46.000Z",
+          "tags": [
+            "专辑",
+            "生活记录",
+            "学习",
+            "开箱",
+            "超时空辉夜姬",
+            "EX-otogibanashi",
+            "超辉夜姬!",
+            "记录"
+          ]
+        },
         {
           "bvid": "BV153YF6rEyp",
           "title": "[OM7K] Reply 9⭐ Rank S",
@@ -1050,7 +1065,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-09-30T12:31:44.000Z",
+      "crawledUpTo": "2026-10-06T08:53:46.000Z",
       "crawledBackTo": "2019-07-25T07:53:58.000Z",
       "crawledAll": true
     },
@@ -1080,9 +1095,9 @@
       "uid": "2119475683",
       "qq": "Minecraft蠢民族",
       "bilibili": "蠢民族de小安",
-      "fans": 946,
+      "fans": 945,
       "videos": [],
-      "crawledUpTo": "2026-09-01T03:59:53.000Z",
+      "crawledUpTo": "2026-10-06T15:00:00.000Z",
       "crawledBackTo": "2021-03-20T05:08:07.000Z",
       "crawledAll": true
     },
@@ -1123,7 +1138,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 434,
+      "fans": 435,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1143,7 +1158,7 @@
       "uid": "564770445",
       "qq": "Hachiman",
       "bilibili": "爱玩蛛的少年",
-      "fans": 322,
+      "fans": 323,
       "videos": [
         {
           "bvid": "BV1s4bE6BEQD",
@@ -1198,7 +1213,7 @@
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 272,
+      "fans": 273,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -1260,7 +1275,7 @@
       "uid": "3546574244284714",
       "qq": "酒寄青葉[ Sakayori Iroha-sama]",
       "bilibili": "Iroha-NihoheYCY",
-      "fans": 183,
+      "fans": 184,
       "videos": [
         {
           "bvid": "BV1uFMd6FELR",
@@ -1386,7 +1401,7 @@
       "uid": "283368950",
       "qq": "kagura",
       "bilibili": "土宫神乐_kagura",
-      "fans": 171,
+      "fans": 172,
       "videos": [
         {
           "bvid": "BV1E6VJ69EzZ",
