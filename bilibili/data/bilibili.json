@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T13:56:04.296Z",
+  "updatedAt": "2026-10-08T16:25:47.290Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -30,7 +30,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9115,
+      "fans": 9116,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -58,7 +58,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7337,
+      "fans": 7336,
       "videos": [],
       "crawledUpTo": "2026-09-30T01:53:01.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -68,7 +68,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5659,
+      "fans": 5660,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -1285,7 +1285,7 @@
       "uid": "3546574244284714",
       "qq": "酒寄青葉[ Sakayori Iroha-sama]",
       "bilibili": "Iroha-NihoheYCY",
-      "fans": 184,
+      "fans": 185,
       "videos": [
         {
           "bvid": "BV1uFMd6FELR",
@@ -1706,6 +1706,16 @@
       "videos": [],
       "crawledUpTo": "2026-08-30T04:34:58.000Z",
       "crawledBackTo": "2024-11-23T15:36:46.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "1506905604",
+      "qq": "氷川打火机",
+      "bilibili": "冰川_友希那",
+      "fans": 50,
+      "videos": [],
+      "crawledUpTo": "2026-05-01T14:51:44.000Z",
+      "crawledBackTo": "2023-06-10T16:50:09.000Z",
       "crawledAll": true
     },
     {
