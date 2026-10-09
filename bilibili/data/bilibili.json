@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T16:25:47.290Z",
+  "updatedAt": "2026-10-09T01:35:29.624Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -20,7 +20,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "縁奈エナ",
-      "fans": 11853,
+      "fans": 11852,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -1456,7 +1456,7 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 125,
+      "fans": 126,
       "videos": [
         {
           "bvid": "BV1L3aD6SEQj",
