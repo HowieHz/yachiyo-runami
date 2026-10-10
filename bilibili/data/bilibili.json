@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T01:35:29.624Z",
+  "updatedAt": "2026-10-10T01:26:21.523Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,9 +10,9 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14108,
+      "fans": 14137,
       "videos": [],
-      "crawledUpTo": "2026-10-07T15:57:47.000Z",
+      "crawledUpTo": "2026-10-09T14:45:34.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
       "crawledAll": true
     },
@@ -20,7 +20,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "縁奈エナ",
-      "fans": 11852,
+      "fans": 11853,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -58,9 +58,9 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7336,
+      "fans": 7334,
       "videos": [],
-      "crawledUpTo": "2026-09-30T01:53:01.000Z",
+      "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
       "crawledAll": true
     },
@@ -68,7 +68,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5660,
+      "fans": 5657,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -423,7 +423,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-08T10:20:00.000Z",
+      "crawledUpTo": "2026-10-09T11:56:10.000Z",
       "crawledBackTo": "2022-03-06T12:23:32.000Z",
       "crawledAll": true
     },
@@ -431,7 +431,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4681,
+      "fans": 4682,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -637,7 +637,7 @@
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
-      "fans": 1710,
+      "fans": 1712,
       "videos": [
         {
           "bvid": "BV1ioeG6HEyf",
@@ -774,7 +774,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1684,
+      "fans": 1683,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1138,7 +1138,7 @@
       "uid": "17229686",
       "qq": "cmdiy",
       "bilibili": "cjscmdiy",
-      "fans": 620,
+      "fans": 621,
       "videos": [],
       "crawledUpTo": "2026-06-29T16:08:31.000Z",
       "crawledBackTo": "2016-08-03T16:04:51.000Z",
@@ -1285,7 +1285,7 @@
       "uid": "3546574244284714",
       "qq": "酒寄青葉[ Sakayori Iroha-sama]",
       "bilibili": "Iroha-NihoheYCY",
-      "fans": 185,
+      "fans": 186,
       "videos": [
         {
           "bvid": "BV1uFMd6FELR",
@@ -1664,7 +1664,7 @@
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
-      "fans": 90,
+      "fans": 91,
       "videos": [
         {
           "bvid": "BV1heLy6QEer",
@@ -1780,7 +1780,7 @@
       "uid": "1646112448",
       "qq": "江濑九鸟!哈",
       "bilibili": "江濑九鸟",
-      "fans": 38,
+      "fans": 39,
       "videos": [],
       "crawledUpTo": "2026-10-07T06:47:24.000Z",
       "crawledBackTo": "2022-05-17T10:03:22.000Z",
