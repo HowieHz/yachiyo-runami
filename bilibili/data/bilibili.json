@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T00:51:35.791Z",
+  "updatedAt": "2026-10-13T02:48:50.298Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14313,
+      "fans": 14321,
       "videos": [],
       "crawledUpTo": "2026-10-11T06:46:40.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -20,7 +20,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "縁奈エナ",
-      "fans": 11851,
+      "fans": 11849,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -30,7 +30,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9116,
+      "fans": 9115,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -58,7 +58,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7338,
+      "fans": 7337,
       "videos": [],
       "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -68,7 +68,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5656,
+      "fans": 5654,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -198,7 +198,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4834,
+      "fans": 4836,
       "videos": [
         {
           "bvid": "BV1at4269EAR",
@@ -423,7 +423,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-09T11:56:10.000Z",
+      "crawledUpTo": "2026-10-12T10:19:00.000Z",
       "crawledBackTo": "2022-03-06T12:23:32.000Z",
       "crawledAll": true
     },
@@ -431,7 +431,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4685,
+      "fans": 4684,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -629,7 +629,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-09-22T10:48:52.000Z",
+      "crawledUpTo": "2026-10-12T15:28:14.000Z",
       "crawledBackTo": "2016-02-22T06:28:14.000Z",
       "crawledAll": true
     },
@@ -774,7 +774,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1685,
+      "fans": 1688,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -925,7 +925,7 @@
       "uid": "2191476",
       "qq": "夜夜",
       "bilibili": "夜夜Corvus",
-      "fans": 1405,
+      "fans": 1406,
       "videos": [
         {
           "bvid": "BV1qChb6sEYi",
@@ -1024,7 +1024,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1188,
+      "fans": 1192,
       "videos": [
         {
           "bvid": "BV1E8pj6TEz6",
@@ -1122,7 +1122,7 @@
       "uid": "2119475683",
       "qq": "Minecraft蠢民族",
       "bilibili": "蠢民族de小安",
-      "fans": 946,
+      "fans": 945,
       "videos": [],
       "crawledUpTo": "2026-10-06T15:00:00.000Z",
       "crawledBackTo": "2021-03-20T05:08:07.000Z",
@@ -1155,7 +1155,7 @@
       "uid": "17229686",
       "qq": "cmdiy",
       "bilibili": "cjscmdiy",
-      "fans": 621,
+      "fans": 620,
       "videos": [],
       "crawledUpTo": "2026-06-29T16:08:31.000Z",
       "crawledBackTo": "2016-08-03T16:04:51.000Z",
@@ -1165,7 +1165,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 434,
+      "fans": 433,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1292,7 +1292,7 @@
       "uid": "103568",
       "qq": "千羽☆星夜",
       "bilibili": "千羽☆星夜",
-      "fans": 233,
+      "fans": 234,
       "videos": [],
       "crawledUpTo": "2026-05-10T14:14:12.000Z",
       "crawledBackTo": "2019-03-10T14:08:03.000Z",
@@ -1473,8 +1473,23 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 127,
+      "fans": 134,
       "videos": [
+        {
+          "bvid": "BV1fnpd61Epg",
+          "title": "彩叶的私房钱【百粉纪念抽奖】",
+          "publishedAt": "2026-10-12T14:18:57.000Z",
+          "tags": [
+            "抽奖",
+            "fuju",
+            "彩叶",
+            "月读",
+            "辉夜",
+            "八千代",
+            "福币",
+            "超时空辉夜姬！"
+          ]
+        },
         {
           "bvid": "BV1ofp76KEAB",
           "title": "超辉夜姬！盗版BD开箱/试映",
@@ -1687,7 +1702,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-11T12:22:28.000Z",
+      "crawledUpTo": "2026-10-12T14:18:57.000Z",
       "crawledBackTo": "2026-06-23T11:03:17.000Z",
       "crawledAll": true
     },
@@ -1753,7 +1768,7 @@
       "uid": "3546568567294825",
       "qq": "哈基扬",
       "bilibili": "哈基扬真的借东风",
-      "fans": 47,
+      "fans": 48,
       "videos": [
         {
           "bvid": "BV12qht6zECt",
@@ -1839,7 +1854,7 @@
       "uid": "3690996856523148",
       "qq": "等",
       "bilibili": "枫无惧",
-      "fans": 17,
+      "fans": 19,
       "videos": [
         {
           "bvid": "BV1xnpn6fEK7",
