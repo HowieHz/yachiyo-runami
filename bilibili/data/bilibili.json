@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T02:48:50.298Z",
+  "updatedAt": "2026-10-14T00:46:45.071Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14321,
+      "fans": 14329,
       "videos": [],
       "crawledUpTo": "2026-10-11T06:46:40.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -19,8 +19,8 @@
     {
       "uid": "3868042",
       "qq": "可能性の光",
-      "bilibili": "縁奈エナ",
-      "fans": 11849,
+      "bilibili": "縁奈エナ_小猪队",
+      "fans": 11847,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -30,7 +30,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9115,
+      "fans": 9116,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -68,7 +68,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5654,
+      "fans": 5653,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -198,7 +198,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4836,
+      "fans": 4837,
       "videos": [
         {
           "bvid": "BV1at4269EAR",
@@ -431,7 +431,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4684,
+      "fans": 4682,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -629,7 +629,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-12T15:28:14.000Z",
+      "crawledUpTo": "2026-10-13T13:45:30.000Z",
       "crawledBackTo": "2016-02-22T06:28:14.000Z",
       "crawledAll": true
     },
@@ -637,7 +637,7 @@
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
-      "fans": 1712,
+      "fans": 1715,
       "videos": [
         {
           "bvid": "BV1ioeG6HEyf",
@@ -766,7 +766,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-09-14T17:34:07.000Z",
+      "crawledUpTo": "2026-10-13T14:52:56.000Z",
       "crawledBackTo": "2022-10-02T15:06:47.000Z",
       "crawledAll": true
     },
@@ -774,7 +774,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1688,
+      "fans": 1689,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -925,7 +925,7 @@
       "uid": "2191476",
       "qq": "夜夜",
       "bilibili": "夜夜Corvus",
-      "fans": 1406,
+      "fans": 1407,
       "videos": [
         {
           "bvid": "BV1qChb6sEYi",
@@ -1024,7 +1024,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1192,
+      "fans": 1195,
       "videos": [
         {
           "bvid": "BV1E8pj6TEz6",
@@ -1157,7 +1157,7 @@
       "bilibili": "cjscmdiy",
       "fans": 620,
       "videos": [],
-      "crawledUpTo": "2026-06-29T16:08:31.000Z",
+      "crawledUpTo": "2026-10-13T19:38:30.000Z",
       "crawledBackTo": "2016-08-03T16:04:51.000Z",
       "crawledAll": true
     },
@@ -1240,7 +1240,7 @@
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 273,
+      "fans": 274,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -1284,7 +1284,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-09-29T10:00:00.000Z",
+      "crawledUpTo": "2026-10-13T15:54:54.000Z",
       "crawledBackTo": "2025-03-27T05:40:00.000Z",
       "crawledAll": true
     },
@@ -1473,7 +1473,7 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 134,
+      "fans": 138,
       "videos": [
         {
           "bvid": "BV1fnpd61Epg",
@@ -1710,7 +1710,7 @@
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
-      "fans": 92,
+      "fans": 96,
       "videos": [
         {
           "bvid": "BV1heLy6QEer",
@@ -1730,7 +1730,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-09-27T04:59:38.000Z",
+      "crawledUpTo": "2026-10-13T18:14:26.000Z",
       "crawledBackTo": "2024-12-14T12:15:00.000Z",
       "crawledAll": true
     },
@@ -1842,19 +1842,10 @@
       "crawledBackTo": null
     },
     {
-      "uid": "496726675",
-      "qq": "Shytarget",
-      "bilibili": "灯火笙萧",
-      "fans": 20,
-      "videos": [],
-      "crawledAll": true,
-      "crawledBackTo": null
-    },
-    {
       "uid": "3690996856523148",
       "qq": "等",
       "bilibili": "枫无惧",
-      "fans": 19,
+      "fans": 20,
       "videos": [
         {
           "bvid": "BV1xnpn6fEK7",
@@ -1926,6 +1917,15 @@
       "crawledUpTo": "2026-10-11T13:42:42.000Z",
       "crawledBackTo": "2026-06-21T08:28:50.000Z",
       "crawledAll": true
+    },
+    {
+      "uid": "496726675",
+      "qq": "Shytarget",
+      "bilibili": "灯火笙萧",
+      "fans": 20,
+      "videos": [],
+      "crawledAll": true,
+      "crawledBackTo": null
     },
     {
       "uid": "3537114444598162",
