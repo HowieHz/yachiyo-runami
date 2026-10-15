@@ -1,31 +1,11 @@
 {
-  "updatedAt": "2026-10-14T00:46:45.071Z",
+  "updatedAt": "2026-10-15T05:36:51.497Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
   "tagSource": "https://api.bilibili.com/x/tag/archive/tags",
   "uploadRuns": 0,
   "members": [
-    {
-      "uid": "1285171452",
-      "qq": "回归初人太少",
-      "bilibili": "太少tias",
-      "fans": 14329,
-      "videos": [],
-      "crawledUpTo": "2026-10-11T06:46:40.000Z",
-      "crawledBackTo": "2026-03-07T09:52:10.000Z",
-      "crawledAll": true
-    },
-    {
-      "uid": "3868042",
-      "qq": "可能性の光",
-      "bilibili": "縁奈エナ_小猪队",
-      "fans": 11847,
-      "videos": [],
-      "crawledUpTo": "2025-12-21T09:43:44.000Z",
-      "crawledBackTo": "2018-12-24T04:41:42.000Z",
-      "crawledAll": true
-    },
     {
       "uid": "8254065",
       "qq": "美神自由梦",
@@ -52,16 +32,6 @@
       ],
       "crawledUpTo": "2026-09-23T12:00:00.000Z",
       "crawledBackTo": "2016-02-15T15:53:02.000Z",
-      "crawledAll": true
-    },
-    {
-      "uid": "583393248",
-      "qq": "泠月Neka♡",
-      "bilibili": "泠月Neka",
-      "fans": 7337,
-      "videos": [],
-      "crawledUpTo": "2026-10-09T02:53:00.000Z",
-      "crawledBackTo": "2022-02-21T20:47:34.000Z",
       "crawledAll": true
     },
     {
@@ -198,7 +168,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4837,
+      "fans": 4839,
       "videos": [
         {
           "bvid": "BV1at4269EAR",
@@ -431,7 +401,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4682,
+      "fans": 4683,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -637,7 +607,7 @@
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
-      "fans": 1715,
+      "fans": 1718,
       "videos": [
         {
           "bvid": "BV1ioeG6HEyf",
@@ -774,7 +744,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1689,
+      "fans": 1690,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -925,7 +895,7 @@
       "uid": "2191476",
       "qq": "夜夜",
       "bilibili": "夜夜Corvus",
-      "fans": 1407,
+      "fans": 1408,
       "videos": [
         {
           "bvid": "BV1qChb6sEYi",
@@ -1024,7 +994,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1195,
+      "fans": 1197,
       "videos": [
         {
           "bvid": "BV1E8pj6TEz6",
@@ -1119,20 +1089,10 @@
       "crawledAll": true
     },
     {
-      "uid": "2119475683",
-      "qq": "Minecraft蠢民族",
-      "bilibili": "蠢民族de小安",
-      "fans": 945,
-      "videos": [],
-      "crawledUpTo": "2026-10-06T15:00:00.000Z",
-      "crawledBackTo": "2021-03-20T05:08:07.000Z",
-      "crawledAll": true
-    },
-    {
       "uid": "386273918",
       "qq": "腾腾 (†已升天†)",
       "bilibili": "N小哆啦吃悠哈",
-      "fans": 649,
+      "fans": 650,
       "videos": [
         {
           "bvid": "BV1ZxY262EyJ",
@@ -1152,20 +1112,10 @@
       "crawledAll": true
     },
     {
-      "uid": "17229686",
-      "qq": "cmdiy",
-      "bilibili": "cjscmdiy",
-      "fans": 620,
-      "videos": [],
-      "crawledUpTo": "2026-10-13T19:38:30.000Z",
-      "crawledBackTo": "2016-08-03T16:04:51.000Z",
-      "crawledAll": true
-    },
-    {
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 433,
+      "fans": 434,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1227,20 +1177,10 @@
       "crawledAll": true
     },
     {
-      "uid": "27512401",
-      "qq": "米米~喵",
-      "bilibili": "米米今天吃什麼",
-      "fans": 283,
-      "videos": [],
-      "crawledUpTo": "2026-09-04T06:08:11.000Z",
-      "crawledBackTo": "2023-03-21T00:54:49.000Z",
-      "crawledAll": true
-    },
-    {
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 274,
+      "fans": 273,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -1286,16 +1226,6 @@
       ],
       "crawledUpTo": "2026-10-13T15:54:54.000Z",
       "crawledBackTo": "2025-03-27T05:40:00.000Z",
-      "crawledAll": true
-    },
-    {
-      "uid": "103568",
-      "qq": "千羽☆星夜",
-      "bilibili": "千羽☆星夜",
-      "fans": 234,
-      "videos": [],
-      "crawledUpTo": "2026-05-10T14:14:12.000Z",
-      "crawledBackTo": "2019-03-10T14:08:03.000Z",
       "crawledAll": true
     },
     {
@@ -1420,7 +1350,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-10T02:53:20.000Z",
+      "crawledUpTo": "2026-10-15T02:46:03.000Z",
       "crawledBackTo": "2023-08-27T14:03:51.000Z",
       "crawledAll": true
     },
@@ -1473,8 +1403,36 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 138,
+      "fans": 146,
       "videos": [
+        {
+          "bvid": "BV1rfp26ZEkf",
+          "title": "和彩叶一起合奏吧！辉夜角色动机演奏 | 初学者的尝试",
+          "publishedAt": "2026-10-14T16:01:32.000Z",
+          "tags": [
+            "ACG",
+            "钢琴",
+            "演奏",
+            "动漫音乐",
+            "翻弹",
+            "彩叶",
+            "辉夜",
+            "八千代",
+            "超时空辉夜姬！"
+          ]
+        },
+        {
+          "bvid": "BV1nkpm6bEk1",
+          "title": "和辉夜一起学钢琴吧！《辉夜与钢琴①》相关内容分享 | 超时空辉夜姬！相关书籍",
+          "publishedAt": "2026-10-14T15:17:21.000Z",
+          "tags": [
+            "钢琴",
+            "彩叶",
+            "辉夜",
+            "八千代",
+            "超时空辉夜姬！"
+          ]
+        },
         {
           "bvid": "BV1fnpd61Epg",
           "title": "彩叶的私房钱【百粉纪念抽奖】",
@@ -1498,8 +1456,8 @@
             "开箱",
             "彩叶",
             "超辉夜姬",
-            "辉夜姬",
             "辉夜",
+            "辉夜姬",
             "八千代",
             "超时空辉夜姬！"
           ]
@@ -1527,8 +1485,8 @@
             "开箱",
             "彩叶",
             "超辉夜姬",
-            "周边",
             "辉夜",
+            "周边",
             "手办开箱",
             "八千代",
             "超时空辉夜姬！"
@@ -1536,24 +1494,24 @@
         },
         {
           "bvid": "BV1hxar6EEVu",
-          "title": "八千代抱枕&Fushi站肩玩偶及赠品(握手卷/抽奖小卡片)开箱展示 RustyXross",
+          "title": "八千代抱枕&Fushi站肩玩偶及赠品(握手卷/抽奖小卡片)开箱展示 RustyXross 超辉夜姬",
           "publishedAt": "2026-10-01T11:59:24.000Z",
           "tags": [
-            "开箱",
-            "可爱",
             "抱枕",
+            "开箱",
             "生活记录",
+            "可爱",
             "彩叶",
-            "辉夜",
             "玩偶",
             "记录",
+            "辉夜",
             "八千代",
             "超时空辉夜姬！"
           ]
         },
         {
           "bvid": "BV1ACaX6iEKJ",
-          "title": "【生肉抢跑】超辉夜姬！制作幕后故事副音轨（具体看置顶评论）",
+          "title": "【中字】超辉夜姬！制作幕后故事副音轨（具体看置顶评论）",
           "publishedAt": "2026-09-29T20:05:30.000Z",
           "tags": [
             "生肉",
@@ -1588,9 +1546,9 @@
           "title": "40秒带你云游超时空辉夜姬北京快闪",
           "publishedAt": "2026-09-25T11:32:29.000Z",
           "tags": [
-            "快闪",
-            "生活记录",
             "动漫",
+            "生活记录",
+            "快闪",
             "手办",
             "彩叶",
             "超时空辉夜姬",
@@ -1608,8 +1566,8 @@
             "游戏实况",
             "超时空辉夜姬",
             "多人实况",
-            "辉夜",
             "新手",
+            "辉夜",
             "VRChat",
             "月见八千代",
             "超时空辉夜姬Bonly同人征集"
@@ -1620,8 +1578,8 @@
           "title": "超时空辉夜姬官方月读世界「新手引导区域」全流程【渣机自录留念】【月读感谢祭】【VRChat】",
           "publishedAt": "2026-09-24T17:22:59.000Z",
           "tags": [
-            "游戏实况",
             "录屏",
+            "游戏实况",
             "超时空辉夜姬",
             "超かぐや姫 !",
             "辉夜",
@@ -1651,8 +1609,8 @@
             "彩叶",
             "超时空辉夜姬",
             "超かぐや姫",
-            "辉夜",
             "BD",
+            "辉夜",
             "月见八千代"
           ]
         },
@@ -1670,17 +1628,17 @@
         },
         {
           "bvid": "BV1B9bp6iEbQ",
-          "title": "【自购分享 | 官方钢琴独奏谱】世界第一的公主殿下 CPK! Remix (かぐや & 月見ヤチヨ ver.)（ワールドイズマイン）（超时空辉夜姬插入歌）",
+          "title": "【自购分享 | 官方钢琴独奏谱】世界第一的公主殿下 CPK! Remix (かぐや & 月見ヤチヨ ver.)（ワールドイズマイン）（超时空辉夜姬插入曲）",
           "publishedAt": "2026-09-06T06:47:23.000Z",
           "tags": [
+            "钢琴谱",
             "世界第一的公主殿下",
             "钢琴独奏",
+            "钢琴曲",
             "VOCALOID",
             "初音ミク",
-            "钢琴谱",
-            "钢琴曲",
-            "乐谱",
             "辉夜姬",
+            "乐谱",
             "ryo",
             "月见八千代"
           ]
@@ -1690,10 +1648,10 @@
           "title": "【自购分享 | 官方钢琴独奏谱】Ex-Otogibanashi（超时空辉夜姬主题曲）",
           "publishedAt": "2026-09-05T06:39:46.000Z",
           "tags": [
-            "钢琴",
             "钢琴谱",
-            "钢琴曲",
             "钢琴独奏",
+            "钢琴曲",
+            "钢琴",
             "超时空辉夜姬",
             "Ex-Otogibanashi",
             "乐谱",
@@ -1702,7 +1660,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-12T14:18:57.000Z",
+      "crawledUpTo": "2026-10-14T16:01:32.000Z",
       "crawledBackTo": "2026-06-23T11:03:17.000Z",
       "crawledAll": true
     },
@@ -1710,7 +1668,7 @@
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
-      "fans": 96,
+      "fans": 98,
       "videos": [
         {
           "bvid": "BV1heLy6QEer",
@@ -1732,36 +1690,6 @@
       ],
       "crawledUpTo": "2026-10-13T18:14:26.000Z",
       "crawledBackTo": "2024-12-14T12:15:00.000Z",
-      "crawledAll": true
-    },
-    {
-      "uid": "406926895",
-      "qq": "Myself",
-      "bilibili": "無盡の旅途",
-      "fans": 85,
-      "videos": [],
-      "crawledUpTo": "2026-10-03T08:16:47.000Z",
-      "crawledBackTo": "2021-03-24T10:12:33.000Z",
-      "crawledAll": true
-    },
-    {
-      "uid": "2066802391",
-      "qq": "cows and horses flowers",
-      "bilibili": "SandB-SorB",
-      "fans": 67,
-      "videos": [],
-      "crawledUpTo": "2026-08-30T04:34:58.000Z",
-      "crawledBackTo": "2024-11-23T15:36:46.000Z",
-      "crawledAll": true
-    },
-    {
-      "uid": "1506905604",
-      "qq": "氷川打火机",
-      "bilibili": "冰川_友希那",
-      "fans": 50,
-      "videos": [],
-      "crawledUpTo": "2026-05-01T14:51:44.000Z",
-      "crawledBackTo": "2023-06-10T16:50:09.000Z",
       "crawledAll": true
     },
     {
@@ -1812,34 +1740,6 @@
       "crawledUpTo": "2026-09-24T16:00:00.000Z",
       "crawledBackTo": "2026-08-05T16:59:25.000Z",
       "crawledAll": true
-    },
-    {
-      "uid": "3546883584690729",
-      "qq": "无瑕之歌",
-      "bilibili": "一个小21",
-      "fans": 47,
-      "videos": [],
-      "crawledAll": true,
-      "crawledBackTo": null
-    },
-    {
-      "uid": "1646112448",
-      "qq": "江濑九鸟!哈",
-      "bilibili": "江濑九鸟",
-      "fans": 39,
-      "videos": [],
-      "crawledUpTo": "2026-10-07T06:47:24.000Z",
-      "crawledBackTo": "2022-05-17T10:03:22.000Z",
-      "crawledAll": true
-    },
-    {
-      "uid": "506908412",
-      "qq": "birdbai",
-      "bilibili": "是bai不是白",
-      "fans": 25,
-      "videos": [],
-      "crawledAll": true,
-      "crawledBackTo": null
     },
     {
       "uid": "3690996856523148",
@@ -1919,13 +1819,138 @@
       "crawledAll": true
     },
     {
+      "uid": "1285171452",
+      "qq": "回归初人太少",
+      "bilibili": "太少tias",
+      "fans": 14337,
+      "videos": [],
+      "crawledUpTo": "2026-10-14T15:19:14.000Z",
+      "crawledBackTo": "2026-03-07T09:52:10.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "3868042",
+      "qq": "可能性の光",
+      "bilibili": "縁奈エナ_小猪队",
+      "fans": 11847,
+      "videos": [],
+      "crawledUpTo": "2025-12-21T09:43:44.000Z",
+      "crawledBackTo": "2018-12-24T04:41:42.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "583393248",
+      "qq": "泠月Neka♡",
+      "bilibili": "泠月Neka",
+      "fans": 7336,
+      "videos": [],
+      "crawledUpTo": "2026-10-09T02:53:00.000Z",
+      "crawledBackTo": "2022-02-21T20:47:34.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "2119475683",
+      "qq": "Minecraft蠢民族",
+      "bilibili": "蠢民族de小安",
+      "fans": 945,
+      "videos": [],
+      "crawledUpTo": "2026-10-06T15:00:00.000Z",
+      "crawledBackTo": "2021-03-20T05:08:07.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "17229686",
+      "qq": "cmdiy",
+      "bilibili": "cjscmdiy",
+      "fans": 621,
+      "videos": [],
+      "crawledUpTo": "2026-10-13T19:38:30.000Z",
+      "crawledBackTo": "2016-08-03T16:04:51.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "27512401",
+      "qq": "米米~喵",
+      "bilibili": "米米今天吃什麼",
+      "fans": 284,
+      "videos": [],
+      "crawledUpTo": "2026-09-04T06:08:11.000Z",
+      "crawledBackTo": "2023-03-21T00:54:49.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "103568",
+      "qq": "千羽☆星夜",
+      "bilibili": "千羽☆星夜",
+      "fans": 234,
+      "videos": [],
+      "crawledUpTo": "2026-05-10T14:14:12.000Z",
+      "crawledBackTo": "2019-03-10T14:08:03.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "406926895",
+      "qq": "Myself",
+      "bilibili": "無盡の旅途",
+      "fans": 85,
+      "videos": [],
+      "crawledUpTo": "2026-10-03T08:16:47.000Z",
+      "crawledBackTo": "2021-03-24T10:12:33.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "2066802391",
+      "qq": "cows and horses flowers",
+      "bilibili": "SandB-SorB",
+      "fans": 67,
+      "videos": [],
+      "crawledUpTo": "2026-08-30T04:34:58.000Z",
+      "crawledBackTo": "2024-11-23T15:36:46.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "1506905604",
+      "qq": "氷川打火机",
+      "bilibili": "冰川_友希那",
+      "fans": 50,
+      "videos": [],
+      "crawledUpTo": "2026-05-01T14:51:44.000Z",
+      "crawledBackTo": "2023-06-10T16:50:09.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "3546883584690729",
+      "qq": "无瑕之歌",
+      "bilibili": "一个小21",
+      "fans": 47,
+      "videos": [],
+      "crawledAll": true
+    },
+    {
+      "uid": "1646112448",
+      "qq": "江濑九鸟!哈",
+      "bilibili": "江濑九鸟",
+      "fans": 40,
+      "videos": [],
+      "crawledUpTo": "2026-10-14T13:04:56.000Z",
+      "crawledBackTo": "2022-05-17T10:03:22.000Z",
+      "crawledAll": true
+    },
+    {
+      "uid": "506908412",
+      "qq": "birdbai",
+      "bilibili": "是bai不是白",
+      "fans": 25,
+      "videos": [],
+      "crawledAll": true
+    },
+    {
       "uid": "496726675",
       "qq": "Shytarget",
       "bilibili": "灯火笙萧",
       "fans": 20,
       "videos": [],
-      "crawledAll": true,
-      "crawledBackTo": null
+      "crawledAll": true
     },
     {
       "uid": "3537114444598162",
@@ -1933,8 +1958,7 @@
       "bilibili": "四间五线",
       "fans": 17,
       "videos": [],
-      "crawledAll": true,
-      "crawledBackTo": null
+      "crawledAll": true
     },
     {
       "uid": "3493125033036033",

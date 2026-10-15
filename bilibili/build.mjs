@@ -407,7 +407,7 @@ async function crawlUploads(row, wbi, keywords) {
       const iso = video.publishedAt;
       const isNewer = upper !== null && iso > upper;
       const isUnwalked = !all && (lower === null || iso <= lower);
-      if (upper === null) upper = iso; // the first, newest upload we ever saw
+      const isFirstUpload = upper === null;
       if (!isNewer && !isUnwalked) {
         if (all) {
           reachedEnd = false; // nothing new left, and the archive was walked already
@@ -418,7 +418,7 @@ async function crawlUploads(row, wbi, keywords) {
       const tags = await fetchVideoTags(video.bvid);
       asked += 1;
       if (highlightHits(tags, keywords).length > 0) kept.set(video.bvid, { ...video, tags });
-      if (isNewer) upper = iso;
+      if (isNewer || isFirstUpload) upper = iso;
       else lower = iso;
       await sleep(TAG_GAP_MS + Math.random() * 300);
     }
@@ -759,7 +759,11 @@ for (const row of rows) {
 }
 
 // Most followers first; equal counts keep the order of members.json (Array#sort is stable).
-rows.sort((a, b) => (b.fans ?? -1) - (a.fans ?? -1));
+rows.sort((a, b) => {
+  const aHighlighted = (a.videos ?? []).some((video) => highlightHits(video.tags, keywords).length > 0);
+  const bHighlighted = (b.videos ?? []).some((video) => highlightHits(video.tags, keywords).length > 0);
+  return Number(bHighlighted) - Number(aHighlighted) || (b.fans ?? -1) - (a.fans ?? -1);
+});
 
 const fresh = !offline && failures < rows.length;
 const updatedAt = fresh ? new Date().toISOString() : (cache.updatedAt ?? null);
