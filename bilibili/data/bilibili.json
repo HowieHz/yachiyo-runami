@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T05:36:51.497Z",
+  "updatedAt": "2026-10-16T00:00:55.691Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9116,
+      "fans": 9117,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -168,7 +168,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4839,
+      "fans": 4841,
       "videos": [
         {
           "bvid": "BV1at4269EAR",
@@ -393,7 +393,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-12T10:19:00.000Z",
+      "crawledUpTo": "2026-10-15T12:29:15.000Z",
       "crawledBackTo": "2022-03-06T12:23:32.000Z",
       "crawledAll": true
     },
@@ -401,7 +401,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4683,
+      "fans": 4687,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -994,8 +994,25 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1197,
+      "fans": 1198,
       "videos": [
+        {
+          "bvid": "BV17WJU6SEfu",
+          "title": "【超时空辉夜姬】同人图10分钟原速摸鱼绘制演示",
+          "publishedAt": "2026-10-15T17:05:22.000Z",
+          "tags": [
+            "板绘",
+            "百合",
+            "绘画过程",
+            "绘画",
+            "超时空辉夜姬",
+            "超辉夜姬!",
+            "二创",
+            "辉夜",
+            "酒寄彩叶",
+            "月见八千代"
+          ]
+        },
         {
           "bvid": "BV1E8pj6TEz6",
           "title": "【超时空辉夜姬】最近画的一些摸鱼同人图~",
@@ -1062,7 +1079,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-11T06:00:32.000Z",
+      "crawledUpTo": "2026-10-15T17:05:22.000Z",
       "crawledBackTo": "2019-07-25T07:53:58.000Z",
       "crawledAll": true
     },
@@ -1070,7 +1087,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 993,
+      "fans": 994,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -1180,7 +1197,7 @@
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 273,
+      "fans": 274,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -1403,8 +1420,25 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 146,
+      "fans": 150,
       "videos": [
+        {
+          "bvid": "BV1sKJ26WEFi",
+          "title": "【自购分享 | 钢琴谱】辉夜角色动机 Kaguya's Character Motif",
+          "publishedAt": "2026-10-15T15:11:23.000Z",
+          "tags": [
+            "动漫音乐",
+            "钢琴",
+            "翻弹",
+            "ACG",
+            "演奏",
+            "彩叶",
+            "辉夜",
+            "乐谱",
+            "八千代",
+            "超时空辉夜姬！"
+          ]
+        },
         {
           "bvid": "BV1rfp26ZEkf",
           "title": "和彩叶一起合奏吧！辉夜角色动机演奏 | 初学者的尝试",
@@ -1660,7 +1694,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-14T16:01:32.000Z",
+      "crawledUpTo": "2026-10-15T15:11:23.000Z",
       "crawledBackTo": "2026-06-23T11:03:17.000Z",
       "crawledAll": true
     },
@@ -1822,7 +1856,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14337,
+      "fans": 14340,
       "videos": [],
       "crawledUpTo": "2026-10-14T15:19:14.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -1832,7 +1866,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "縁奈エナ_小猪队",
-      "fans": 11847,
+      "fans": 11846,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -1862,7 +1896,7 @@
       "uid": "17229686",
       "qq": "cmdiy",
       "bilibili": "cjscmdiy",
-      "fans": 621,
+      "fans": 622,
       "videos": [],
       "crawledUpTo": "2026-10-13T19:38:30.000Z",
       "crawledBackTo": "2016-08-03T16:04:51.000Z",
@@ -1922,9 +1956,10 @@
       "uid": "3546883584690729",
       "qq": "无瑕之歌",
       "bilibili": "一个小21",
-      "fans": 47,
+      "fans": 49,
       "videos": [],
-      "crawledAll": true
+      "crawledAll": true,
+      "crawledBackTo": null
     },
     {
       "uid": "1646112448",
@@ -1942,7 +1977,8 @@
       "bilibili": "是bai不是白",
       "fans": 25,
       "videos": [],
-      "crawledAll": true
+      "crawledAll": true,
+      "crawledBackTo": null
     },
     {
       "uid": "496726675",
@@ -1950,7 +1986,8 @@
       "bilibili": "灯火笙萧",
       "fans": 20,
       "videos": [],
-      "crawledAll": true
+      "crawledAll": true,
+      "crawledBackTo": null
     },
     {
       "uid": "3537114444598162",
@@ -1958,7 +1995,8 @@
       "bilibili": "四间五线",
       "fans": 17,
       "videos": [],
-      "crawledAll": true
+      "crawledAll": true,
+      "crawledBackTo": null
     },
     {
       "uid": "3493125033036033",
