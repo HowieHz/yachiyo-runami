@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T00:04:46.696Z",
+  "updatedAt": "2026-10-17T23:39:26.737Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9116,
+      "fans": 9118,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -38,7 +38,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5652,
+      "fans": 5655,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -168,7 +168,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4842,
+      "fans": 4844,
       "videos": [
         {
           "bvid": "BV1at4269EAR",
@@ -401,7 +401,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4687,
+      "fans": 4688,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -607,7 +607,7 @@
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
-      "fans": 1718,
+      "fans": 1719,
       "videos": [
         {
           "bvid": "BV1ioeG6HEyf",
@@ -744,7 +744,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1692,
+      "fans": 1694,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1087,7 +1087,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 995,
+      "fans": 997,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -1132,7 +1132,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 434,
+      "fans": 435,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1197,7 +1197,7 @@
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 274,
+      "fans": 278,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -1314,7 +1314,7 @@
       "uid": "3546377361557691",
       "qq": "[に]",
       "bilibili": "OUTnet小小搬运工",
-      "fans": 182,
+      "fans": 184,
       "videos": [
         {
           "bvid": "BV1kmgX67EyA",
@@ -1375,7 +1375,7 @@
       "uid": "283368950",
       "qq": "kagura",
       "bilibili": "土宫神乐_kagura",
-      "fans": 174,
+      "fans": 175,
       "videos": [
         {
           "bvid": "BV1E6VJ69EzZ",
@@ -1716,7 +1716,7 @@
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
-      "fans": 100,
+      "fans": 101,
       "videos": [
         {
           "bvid": "BV1heLy6QEer",
@@ -1736,7 +1736,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-13T18:14:26.000Z",
+      "crawledUpTo": "2026-10-17T11:34:43.000Z",
       "crawledBackTo": "2024-12-14T12:15:00.000Z",
       "crawledAll": true
     },
@@ -1744,7 +1744,7 @@
       "uid": "3546568567294825",
       "qq": "哈基扬",
       "bilibili": "哈基扬真的借东风",
-      "fans": 48,
+      "fans": 49,
       "videos": [
         {
           "bvid": "BV12qht6zECt",
@@ -1793,7 +1793,7 @@
       "uid": "3690996856523148",
       "qq": "等",
       "bilibili": "枫无惧",
-      "fans": 20,
+      "fans": 21,
       "videos": [
         {
           "bvid": "BV1xnpn6fEK7",
@@ -1870,7 +1870,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14358,
+      "fans": 14463,
       "videos": [],
       "crawledUpTo": "2026-10-16T15:46:11.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -1879,7 +1879,7 @@
     {
       "uid": "3868042",
       "qq": "可能性の光",
-      "bilibili": "縁奈エナ_小猪队",
+      "bilibili": "小猪docio",
       "fans": 11845,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
@@ -1890,7 +1890,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7337,
+      "fans": 7338,
       "videos": [],
       "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -1950,9 +1950,9 @@
       "uid": "2066802391",
       "qq": "cows and horses flowers",
       "bilibili": "SandB-SorB",
-      "fans": 66,
+      "fans": 67,
       "videos": [],
-      "crawledUpTo": "2026-08-30T04:34:58.000Z",
+      "crawledUpTo": "2026-10-17T18:00:43.000Z",
       "crawledBackTo": "2024-11-23T15:36:46.000Z",
       "crawledAll": true
     },
@@ -1998,7 +1998,7 @@
       "uid": "496726675",
       "qq": "Shytarget",
       "bilibili": "灯火笙萧",
-      "fans": 20,
+      "fans": 22,
       "videos": [],
       "crawledAll": true,
       "crawledBackTo": null
