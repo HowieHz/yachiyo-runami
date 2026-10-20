@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T23:49:41.457Z",
+  "updatedAt": "2026-10-20T00:49:55.316Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -38,7 +38,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5655,
+      "fans": 5656,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -624,7 +624,7 @@
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
-      "fans": 1722,
+      "fans": 1723,
       "videos": [
         {
           "bvid": "BV1ioeG6HEyf",
@@ -761,7 +761,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1695,
+      "fans": 1697,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -912,7 +912,7 @@
       "uid": "2191476",
       "qq": "夜夜",
       "bilibili": "夜夜Corvus",
-      "fans": 1408,
+      "fans": 1409,
       "videos": [
         {
           "bvid": "BV1qChb6sEYi",
@@ -1011,8 +1011,21 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1202,
+      "fans": 1203,
       "videos": [
+        {
+          "bvid": "BV1v2nJ6NE9G",
+          "title": "【熟肉】超辉夜姬！声优及制作团队幕后故事副音轨 Part 8",
+          "publishedAt": "2026-10-19T09:31:16.000Z",
+          "tags": [
+            "声优",
+            "幕后",
+            "超辉夜姬！",
+            "超时空辉夜姬",
+            "熟肉",
+            "动漫二创激励计划"
+          ]
+        },
         {
           "bvid": "BV17WJU6SEfu",
           "title": "【超时空辉夜姬】同人图10分钟原速摸鱼绘制演示",
@@ -1096,7 +1109,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-15T17:05:22.000Z",
+      "crawledUpTo": "2026-10-19T09:31:16.000Z",
       "crawledBackTo": "2019-07-25T07:53:58.000Z",
       "crawledAll": true
     },
@@ -1149,7 +1162,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 435,
+      "fans": 434,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1214,7 +1227,7 @@
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 279,
+      "fans": 280,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -1437,7 +1450,7 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 155,
+      "fans": 157,
       "videos": [
         {
           "bvid": "BV1bmnV6gEbX",
@@ -1899,7 +1912,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14617,
+      "fans": 14623,
       "videos": [],
       "crawledUpTo": "2026-10-18T12:58:51.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -1908,7 +1921,7 @@
     {
       "uid": "3868042",
       "qq": "可能性の光",
-      "bilibili": "小猪docio",
+      "bilibili": "青清氢倾卿",
       "fans": 11846,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
@@ -1919,7 +1932,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7339,
+      "fans": 7338,
       "videos": [],
       "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -1939,7 +1952,7 @@
       "uid": "17229686",
       "qq": "cmdiy",
       "bilibili": "cjscmdiy",
-      "fans": 622,
+      "fans": 623,
       "videos": [],
       "crawledUpTo": "2026-10-13T19:38:30.000Z",
       "crawledBackTo": "2016-08-03T16:04:51.000Z",
@@ -1979,7 +1992,7 @@
       "uid": "2066802391",
       "qq": "cows and horses flowers",
       "bilibili": "SandB-SorB",
-      "fans": 67,
+      "fans": 68,
       "videos": [],
       "crawledUpTo": "2026-10-17T18:00:43.000Z",
       "crawledBackTo": "2024-11-23T15:36:46.000Z",
