@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T00:49:55.316Z",
+  "updatedAt": "2026-10-21T00:16:35.697Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -410,7 +410,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-18T10:10:00.000Z",
+      "crawledUpTo": "2026-10-20T11:29:00.000Z",
       "crawledBackTo": "2022-03-06T12:23:32.000Z",
       "crawledAll": true
     },
@@ -418,7 +418,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4690,
+      "fans": 4691,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -761,7 +761,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1697,
+      "fans": 1698,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1011,7 +1011,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1203,
+      "fans": 1204,
       "videos": [
         {
           "bvid": "BV1v2nJ6NE9G",
@@ -1117,7 +1117,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 997,
+      "fans": 998,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -1344,7 +1344,7 @@
       "uid": "3546377361557691",
       "qq": "[に]",
       "bilibili": "OUTnet小小搬运工",
-      "fans": 184,
+      "fans": 186,
       "videos": [
         {
           "bvid": "BV1kmgX67EyA",
@@ -1450,8 +1450,20 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 157,
+      "fans": 163,
       "videos": [
+        {
+          "bvid": "BV1xjnP66EuT",
+          "title": "观测到超辉夜姬！作画失误①&一点吐槽",
+          "publishedAt": "2026-10-20T11:16:35.000Z",
+          "tags": [
+            "彩叶",
+            "超辉夜姬",
+            "辉夜",
+            "八千代",
+            "超时空辉夜姬！"
+          ]
+        },
         {
           "bvid": "BV1bmnV6gEbX",
           "title": "导演山下清悟、动画制作人桃原一真访谈 | 日经娱乐！2026年4月号 | 超时空辉夜姬！相关书籍【自购分享】| 日経エンタテインメント！2026年4月号",
@@ -1750,7 +1762,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-18T14:37:01.000Z",
+      "crawledUpTo": "2026-10-20T11:16:35.000Z",
       "crawledBackTo": "2026-06-23T11:03:17.000Z",
       "crawledAll": true
     },
@@ -1758,7 +1770,7 @@
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
-      "fans": 101,
+      "fans": 104,
       "videos": [
         {
           "bvid": "BV1heLy6QEer",
@@ -1786,7 +1798,7 @@
       "uid": "3546568567294825",
       "qq": "哈基扬",
       "bilibili": "哈基扬真的借东风",
-      "fans": 50,
+      "fans": 51,
       "videos": [
         {
           "bvid": "BV12qht6zECt",
@@ -1912,7 +1924,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14623,
+      "fans": 14644,
       "videos": [],
       "crawledUpTo": "2026-10-18T12:58:51.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
