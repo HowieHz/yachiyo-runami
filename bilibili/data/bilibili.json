@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T00:20:59.089Z",
+  "updatedAt": "2026-10-23T00:17:48.230Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9119,
+      "fans": 9118,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -38,7 +38,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5655,
+      "fans": 5654,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -168,7 +168,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4850,
+      "fans": 4852,
       "videos": [
         {
           "bvid": "BV1xynu6dEw2",
@@ -418,7 +418,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4688,
+      "fans": 4687,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -761,7 +761,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1701,
+      "fans": 1705,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1162,7 +1162,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 435,
+      "fans": 436,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1405,7 +1405,7 @@
       "uid": "283368950",
       "qq": "kagura",
       "bilibili": "土宫神乐_kagura",
-      "fans": 174,
+      "fans": 175,
       "videos": [
         {
           "bvid": "BV1E6VJ69EzZ",
@@ -1450,7 +1450,7 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 167,
+      "fans": 168,
       "videos": [
         {
           "bvid": "BV1xjnP66EuT",
@@ -1916,7 +1916,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-11T13:42:42.000Z",
+      "crawledUpTo": "2026-10-22T13:18:45.000Z",
       "crawledBackTo": "2026-06-21T08:28:50.000Z",
       "crawledAll": true
     },
@@ -1924,7 +1924,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14651,
+      "fans": 14664,
       "videos": [],
       "crawledUpTo": "2026-10-21T14:05:07.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -1934,7 +1934,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "青清氢倾卿",
-      "fans": 11846,
+      "fans": 11847,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -1984,7 +1984,7 @@
       "uid": "103568",
       "qq": "千羽☆星夜",
       "bilibili": "千羽☆星夜",
-      "fans": 236,
+      "fans": 237,
       "videos": [],
       "crawledUpTo": "2026-05-10T14:14:12.000Z",
       "crawledBackTo": "2019-03-10T14:08:03.000Z",
@@ -2035,7 +2035,7 @@
       "bilibili": "江濑九鸟",
       "fans": 40,
       "videos": [],
-      "crawledUpTo": "2026-10-14T13:04:56.000Z",
+      "crawledUpTo": "2026-10-22T07:51:39.000Z",
       "crawledBackTo": "2022-05-17T10:03:22.000Z",
       "crawledAll": true
     },
