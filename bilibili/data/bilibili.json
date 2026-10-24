@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T00:10:49.477Z",
+  "updatedAt": "2026-10-24T23:54:04.684Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9117,
+      "fans": 9118,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -38,7 +38,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5654,
+      "fans": 5655,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -168,7 +168,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4852,
+      "fans": 4855,
       "videos": [
         {
           "bvid": "BV1xynu6dEw2",
@@ -418,7 +418,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4687,
+      "fans": 4688,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -1011,7 +1011,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1207,
+      "fans": 1210,
       "videos": [
         {
           "bvid": "BV1v2nJ6NE9G",
@@ -1117,7 +1117,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 999,
+      "fans": 1000,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -1227,7 +1227,7 @@
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 281,
+      "fans": 282,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -1279,7 +1279,7 @@
       "uid": "3546574244284714",
       "qq": "酒寄青葉[ Sakayori Iroha-sama]",
       "bilibili": "Iroha-NihoheYCY",
-      "fans": 187,
+      "fans": 189,
       "videos": [
         {
           "bvid": "BV1uFMd6FELR",
@@ -1344,7 +1344,7 @@
       "uid": "3546377361557691",
       "qq": "[に]",
       "bilibili": "OUTnet小小搬运工",
-      "fans": 186,
+      "fans": 187,
       "videos": [
         {
           "bvid": "BV1kmgX67EyA",
@@ -1450,7 +1450,7 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 169,
+      "fans": 173,
       "videos": [
         {
           "bvid": "BV1xjnP66EuT",
@@ -1924,9 +1924,9 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14684,
+      "fans": 14730,
       "videos": [],
-      "crawledUpTo": "2026-10-21T14:05:07.000Z",
+      "crawledUpTo": "2026-10-24T02:40:38.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
       "crawledAll": true
     },
@@ -1944,7 +1944,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7338,
+      "fans": 7339,
       "videos": [],
       "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -1954,7 +1954,7 @@
       "uid": "2119475683",
       "qq": "Minecraft蠢民族",
       "bilibili": "蠢民族de小安",
-      "fans": 942,
+      "fans": 943,
       "videos": [],
       "crawledUpTo": "2026-10-06T15:00:00.000Z",
       "crawledBackTo": "2021-03-20T05:08:07.000Z",
@@ -1976,7 +1976,7 @@
       "bilibili": "米米今天吃什麼",
       "fans": 284,
       "videos": [],
-      "crawledUpTo": "2026-09-04T06:08:11.000Z",
+      "crawledUpTo": "2026-10-24T04:17:47.000Z",
       "crawledBackTo": "2023-03-21T00:54:49.000Z",
       "crawledAll": true
     },
@@ -2033,7 +2033,7 @@
       "uid": "1646112448",
       "qq": "江濑九鸟!哈",
       "bilibili": "江濑九鸟",
-      "fans": 39,
+      "fans": 40,
       "videos": [],
       "crawledUpTo": "2026-10-22T07:51:39.000Z",
       "crawledBackTo": "2022-05-17T10:03:22.000Z",
