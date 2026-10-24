@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T00:17:48.230Z",
+  "updatedAt": "2026-10-24T00:10:49.477Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9118,
+      "fans": 9117,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -624,7 +624,7 @@
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
-      "fans": 1724,
+      "fans": 1725,
       "videos": [
         {
           "bvid": "BV1ioeG6HEyf",
@@ -753,7 +753,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-13T14:52:56.000Z",
+      "crawledUpTo": "2026-10-23T13:35:01.000Z",
       "crawledBackTo": "2022-10-02T15:06:47.000Z",
       "crawledAll": true
     },
@@ -761,7 +761,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1705,
+      "fans": 1706,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1117,7 +1117,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 998,
+      "fans": 999,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -1139,7 +1139,7 @@
       "uid": "386273918",
       "qq": "腾腾 (†已升天†)",
       "bilibili": "N小哆啦吃悠哈",
-      "fans": 650,
+      "fans": 651,
       "videos": [
         {
           "bvid": "BV1ZxY262EyJ",
@@ -1174,7 +1174,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-10T05:13:13.000Z",
+      "crawledUpTo": "2026-10-23T09:44:33.000Z",
       "crawledBackTo": "2024-11-08T13:18:07.000Z",
       "crawledAll": true
     },
@@ -1397,7 +1397,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-18T22:42:52.000Z",
+      "crawledUpTo": "2026-10-23T06:15:27.000Z",
       "crawledBackTo": "2023-08-27T14:03:51.000Z",
       "crawledAll": true
     },
@@ -1450,7 +1450,7 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 168,
+      "fans": 169,
       "videos": [
         {
           "bvid": "BV1xjnP66EuT",
@@ -1770,7 +1770,7 @@
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
-      "fans": 105,
+      "fans": 107,
       "videos": [
         {
           "bvid": "BV1heLy6QEer",
@@ -1847,7 +1847,7 @@
       "uid": "3690996856523148",
       "qq": "等",
       "bilibili": "枫无惧",
-      "fans": 21,
+      "fans": 23,
       "videos": [
         {
           "bvid": "BV1xnpn6fEK7",
@@ -1924,7 +1924,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14664,
+      "fans": 14684,
       "videos": [],
       "crawledUpTo": "2026-10-21T14:05:07.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -1954,7 +1954,7 @@
       "uid": "2119475683",
       "qq": "Minecraft蠢民族",
       "bilibili": "蠢民族de小安",
-      "fans": 944,
+      "fans": 942,
       "videos": [],
       "crawledUpTo": "2026-10-06T15:00:00.000Z",
       "crawledBackTo": "2021-03-20T05:08:07.000Z",
@@ -2004,9 +2004,9 @@
       "uid": "2066802391",
       "qq": "cows and horses flowers",
       "bilibili": "SandB-SorB",
-      "fans": 68,
+      "fans": 69,
       "videos": [],
-      "crawledUpTo": "2026-10-17T18:00:43.000Z",
+      "crawledUpTo": "2026-10-23T11:23:34.000Z",
       "crawledBackTo": "2024-11-23T15:36:46.000Z",
       "crawledAll": true
     },
@@ -2033,7 +2033,7 @@
       "uid": "1646112448",
       "qq": "江濑九鸟!哈",
       "bilibili": "江濑九鸟",
-      "fans": 40,
+      "fans": 39,
       "videos": [],
       "crawledUpTo": "2026-10-22T07:51:39.000Z",
       "crawledBackTo": "2022-05-17T10:03:22.000Z",
@@ -2052,7 +2052,7 @@
       "uid": "496726675",
       "qq": "Shytarget",
       "bilibili": "灯火笙萧",
-      "fans": 22,
+      "fans": 23,
       "videos": [],
       "crawledAll": true,
       "crawledBackTo": null
