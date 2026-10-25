@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T23:54:04.684Z",
+  "updatedAt": "2026-10-25T23:43:10.722Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -168,7 +168,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4855,
+      "fans": 4856,
       "videos": [
         {
           "bvid": "BV1xynu6dEw2",
@@ -410,7 +410,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-20T11:29:00.000Z",
+      "crawledUpTo": "2026-10-25T10:19:00.000Z",
       "crawledBackTo": "2022-03-06T12:23:32.000Z",
       "crawledAll": true
     },
@@ -418,7 +418,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4688,
+      "fans": 4690,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -761,7 +761,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1706,
+      "fans": 1704,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1011,7 +1011,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1210,
+      "fans": 1212,
       "videos": [
         {
           "bvid": "BV1v2nJ6NE9G",
@@ -1117,7 +1117,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 1000,
+      "fans": 1001,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -1182,7 +1182,7 @@
       "uid": "564770445",
       "qq": "Hachiman",
       "bilibili": "爱玩蛛的少年",
-      "fans": 306,
+      "fans": 307,
       "videos": [
         {
           "bvid": "BV1s4bE6BEQD",
@@ -1450,7 +1450,7 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 173,
+      "fans": 174,
       "videos": [
         {
           "bvid": "BV1xjnP66EuT",
@@ -1924,7 +1924,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14730,
+      "fans": 14755,
       "videos": [],
       "crawledUpTo": "2026-10-24T02:40:38.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -1934,7 +1934,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "青清氢倾卿",
-      "fans": 11847,
+      "fans": 11846,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -1954,7 +1954,7 @@
       "uid": "2119475683",
       "qq": "Minecraft蠢民族",
       "bilibili": "蠢民族de小安",
-      "fans": 943,
+      "fans": 945,
       "videos": [],
       "crawledUpTo": "2026-10-06T15:00:00.000Z",
       "crawledBackTo": "2021-03-20T05:08:07.000Z",
