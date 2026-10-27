@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T23:43:10.722Z",
+  "updatedAt": "2026-10-27T01:01:58.505Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9118,
+      "fans": 9117,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -38,7 +38,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5655,
+      "fans": 5654,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -168,7 +168,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4856,
+      "fans": 4858,
       "videos": [
         {
           "bvid": "BV1xynu6dEw2",
@@ -418,7 +418,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4690,
+      "fans": 4691,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -624,7 +624,7 @@
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
-      "fans": 1725,
+      "fans": 1726,
       "videos": [
         {
           "bvid": "BV1ioeG6HEyf",
@@ -912,7 +912,7 @@
       "uid": "2191476",
       "qq": "夜夜",
       "bilibili": "夜夜Corvus",
-      "fans": 1409,
+      "fans": 1408,
       "videos": [
         {
           "bvid": "BV1qChb6sEYi",
@@ -1014,6 +1014,21 @@
       "fans": 1212,
       "videos": [
         {
+          "bvid": "BV1WFHF6fEhk",
+          "title": "【授权转载】【TYPICAL JIN】超かぐや姫! // 40mP - Torinoko City / Covered by 月見ヤチヨ(CV.早見沙織)",
+          "publishedAt": "2026-10-26T18:25:45.000Z",
+          "tags": [
+            "钢琴",
+            "超时空辉夜姬",
+            "月見ヤチヨ",
+            "超かぐや姫!",
+            "钢琴演奏",
+            "トリノコシティ",
+            "早見沙織",
+            "40mP"
+          ]
+        },
+        {
           "bvid": "BV1v2nJ6NE9G",
           "title": "【熟肉】超辉夜姬！声优及制作团队幕后故事副音轨 Part 8",
           "publishedAt": "2026-10-19T09:31:16.000Z",
@@ -1109,7 +1124,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-19T09:31:16.000Z",
+      "crawledUpTo": "2026-10-26T18:25:45.000Z",
       "crawledBackTo": "2019-07-25T07:53:58.000Z",
       "crawledAll": true
     },
@@ -1117,7 +1132,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 1001,
+      "fans": 1000,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -1227,7 +1242,7 @@
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 282,
+      "fans": 281,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -1924,7 +1939,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14755,
+      "fans": 14765,
       "videos": [],
       "crawledUpTo": "2026-10-24T02:40:38.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -1934,7 +1949,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "青清氢倾卿",
-      "fans": 11846,
+      "fans": 11844,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -1994,7 +2009,7 @@
       "uid": "406926895",
       "qq": "Myself",
       "bilibili": "無盡の旅途",
-      "fans": 86,
+      "fans": 87,
       "videos": [],
       "crawledUpTo": "2026-10-03T08:16:47.000Z",
       "crawledBackTo": "2021-03-24T10:12:33.000Z",
