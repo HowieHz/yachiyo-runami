@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T01:01:58.505Z",
+  "updatedAt": "2026-10-28T00:51:58.561Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9117,
+      "fans": 9119,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -168,7 +168,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4858,
+      "fans": 4860,
       "videos": [
         {
           "bvid": "BV1xynu6dEw2",
@@ -624,7 +624,7 @@
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
-      "fans": 1726,
+      "fans": 1727,
       "videos": [
         {
           "bvid": "BV1ioeG6HEyf",
@@ -761,7 +761,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1704,
+      "fans": 1705,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1011,7 +1011,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1212,
+      "fans": 1216,
       "videos": [
         {
           "bvid": "BV1WFHF6fEhk",
@@ -1417,55 +1417,10 @@
       "crawledAll": true
     },
     {
-      "uid": "283368950",
-      "qq": "kagura",
-      "bilibili": "土宫神乐_kagura",
-      "fans": 175,
-      "videos": [
-        {
-          "bvid": "BV1E6VJ69EzZ",
-          "title": "【辉o】彩叶教辉夜弹琴",
-          "publishedAt": "2026-05-31T08:33:39.000Z",
-          "tags": [
-            "cos",
-            "彩叶",
-            "辉夜姬cos",
-            "超时空辉夜姬",
-            "超时空辉夜姬only",
-            "天才彩叶的即兴",
-            "辉夜",
-            "辉夜姬",
-            "Cosplay",
-            "动漫二创激励计划"
-          ]
-        },
-        {
-          "bvid": "BV1oiZRBbEQS",
-          "title": "世界第一的奈叶殿下",
-          "publishedAt": "2026-02-18T15:24:58.000Z",
-          "tags": [
-            "八神疾风",
-            "世界第一公主殿下",
-            "高町奈叶",
-            "魔法少女",
-            "百合",
-            "动画种草激励计划",
-            "超时空辉夜姬",
-            "奈叶",
-            "魔炮",
-            "菲特"
-          ]
-        }
-      ],
-      "crawledUpTo": "2026-09-25T16:47:45.000Z",
-      "crawledBackTo": "2021-02-14T13:51:05.000Z",
-      "crawledAll": true
-    },
-    {
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 174,
+      "fans": 184,
       "videos": [
         {
           "bvid": "BV1xjnP66EuT",
@@ -1782,6 +1737,51 @@
       "crawledAll": true
     },
     {
+      "uid": "283368950",
+      "qq": "kagura",
+      "bilibili": "土宫神乐_kagura",
+      "fans": 175,
+      "videos": [
+        {
+          "bvid": "BV1E6VJ69EzZ",
+          "title": "【辉o】彩叶教辉夜弹琴",
+          "publishedAt": "2026-05-31T08:33:39.000Z",
+          "tags": [
+            "cos",
+            "彩叶",
+            "辉夜姬cos",
+            "超时空辉夜姬",
+            "超时空辉夜姬only",
+            "天才彩叶的即兴",
+            "辉夜",
+            "辉夜姬",
+            "Cosplay",
+            "动漫二创激励计划"
+          ]
+        },
+        {
+          "bvid": "BV1oiZRBbEQS",
+          "title": "世界第一的奈叶殿下",
+          "publishedAt": "2026-02-18T15:24:58.000Z",
+          "tags": [
+            "八神疾风",
+            "世界第一公主殿下",
+            "高町奈叶",
+            "魔法少女",
+            "百合",
+            "动画种草激励计划",
+            "超时空辉夜姬",
+            "奈叶",
+            "魔炮",
+            "菲特"
+          ]
+        }
+      ],
+      "crawledUpTo": "2026-09-25T16:47:45.000Z",
+      "crawledBackTo": "2021-02-14T13:51:05.000Z",
+      "crawledAll": true
+    },
+    {
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
@@ -1939,7 +1939,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14765,
+      "fans": 14776,
       "videos": [],
       "crawledUpTo": "2026-10-24T02:40:38.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -1949,7 +1949,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "青清氢倾卿",
-      "fans": 11844,
+      "fans": 11843,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -1959,7 +1959,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7339,
+      "fans": 7337,
       "videos": [],
       "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -2009,7 +2009,7 @@
       "uid": "406926895",
       "qq": "Myself",
       "bilibili": "無盡の旅途",
-      "fans": 87,
+      "fans": 86,
       "videos": [],
       "crawledUpTo": "2026-10-03T08:16:47.000Z",
       "crawledBackTo": "2021-03-24T10:12:33.000Z",
@@ -2019,7 +2019,7 @@
       "uid": "2066802391",
       "qq": "cows and horses flowers",
       "bilibili": "SandB-SorB",
-      "fans": 69,
+      "fans": 70,
       "videos": [],
       "crawledUpTo": "2026-10-23T11:23:34.000Z",
       "crawledBackTo": "2024-11-23T15:36:46.000Z",
