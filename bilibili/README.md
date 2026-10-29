@@ -87,40 +87,48 @@ A forced member's watermarks, kept uploads and collection sizes are dropped, the
 
 ### What A Run Costs
 
-A daily run with the 37 members in `members.json` is about 112 requests:
+A daily run with the 37 members in `members.json` is about 150 requests:
 
-| Request                     | When                                                                                                                    | Per run              |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------- |
-| The front page              | once, for the `buvid` cookies                                                                                           | 1                    |
-| `card`                      | nickname and follower count                                                                                             | 1 per member         |
-| The upload list, first page | everything newer than the watermark                                                                                     | 1 per member         |
-| The collection list         | every member, every run — the day somebody starts a 合集 is exactly the day uploads can start vanishing from their list | 1 per member         |
-| `seasons_archives_list`     | only when a collection changed size                                                                                     | rare                 |
-| A video's tags              | once per upload, ever                                                                                                   | only for new uploads |
+| Request                      | When                                                                                                                    | Per run              |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| The front page               | once, for the `buvid` cookies                                                                                           | 1                    |
+| `nav` (wbi keys)             | once, for the article and fallback lists                                                                                | 1                    |
+| `card`                       | nickname and follower count                                                                                             | 1 per member         |
+| The upload list, first page  | everything newer than the watermark                                                                                     | 1 per member         |
+| The collection list          | every member, every run — the day somebody starts a 合集 is exactly the day uploads can start vanishing from their list | 1 per member         |
+| `seasons_archives_list`      | only when a collection changed size                                                                                     | rare                 |
+| The article list, first page | the total says whether anything changed                                                                                 | 1 per member         |
+| A video's tags               | once per upload, ever                                                                                                   | only for new uploads |
 
-The end of the log prints the exact number (`requests: 112 in total.`), and `BILI_DEBUG_REQUESTS=1` adds the cost of each member to its line. One thing is deliberately not free: a collection that changed size is walked again in full, because Bilibili does not say which video was added. A member whose cache entry is missing is walked from scratch again.
+The end of the log prints the exact number (`requests: 150 in total.`), and `BILI_DEBUG_REQUESTS=1` adds the cost of each member to its line. Two things are deliberately not free: a collection that changed size is walked again in full, because Bilibili does not say which video was added; and a member whose cache entry is missing is walked from scratch again.
 
 ## Highlighted Tags
 
-`data/highlights.json` lists the exact tags that make an upload worth pointing at:
+`data/highlights.json` holds three separate lists, one per matching rule:
 
 ```json
-{ "tags": ["超时空辉夜姬", "超时空辉夜姬！", "八千代", "月见八千代", "彩叶", "酒寄彩叶", "yachiyo"] }
+{
+  "videoTags": ["超时空辉夜姬", "超时空辉夜姬！", "八千代", "月见八千代", "彩叶", "酒寄彩叶", "yachiyo"],
+  "articleTitleKeywords": ["超时空辉夜姬", "八千代", "彩叶", "酒寄彩叶", "yachiyo"],
+  "articleSummaryTags": ["八千代", "月见八千代", "彩叶", "酒寄彩叶", "驹泽乃依", "帝明", "谏山真实"]
+}
 ```
 
-- A tag counts only when the upload's tag **is** one of these, not when it merely contains one: `八千代` counts, `月见八千代` counts because it is listed too, but `八千代と私` does not. Both sides are normalised before comparing (NFKC + lower case), so a full-width `！` and a plain `!` are the same thing and `Yachiyo` matches `yachiyo`.
+- `videoTags` — an upload counts when its tag **is** one of these, not when it merely contains one: `八千代` counts, `月见八千代` counts because it is listed too, but `八千代と私` does not. Both sides are normalised before comparing (NFKC + lower case), so a full-width `！` and a plain `!` are the same thing and `Yachiyo` matches `yachiyo`.
+- `articleTitleKeywords` — an article counts when its **title** contains one of these (substring, since a title is a sentence). One-character words are skipped here.
+- `articleSummaryTags` — an article also counts when its **summary** contains one of these; only character names belong here, because a summary often names other works too.
 - A member whose uploads carry such a tag gets a `★N` after their nickname: N is how many of **all** their cached matching uploads that is. Opening the badge lists them newest first, `BADGE_PAGE_SIZE` (20) at a time: every row is in the HTML, and the ones past the first page wait behind a 「展开更多」 row that reveals the next page. With JavaScript off nothing is hidden, so the whole list shows.
 - Everyone else simply gets no badge, and nothing on the page moves because of this.
-- Matching used to be by substring, and the field was called `keywords` back then; that spelling still works.
+- The old single-list spelling still works: `tags` or `keywords` are read as `videoTags`, and `articleTitleKeywords` falls back to the same list.
 
-### 专栏 (Articles)
+### Articles (专栏)
 
-A member's 专栏 are crawled too, and they count towards the same `★N`:
+A member's articles (专栏) are crawled too, and they count towards the same `★N`:
 
 - `GET https://api.bilibili.com/x/space/wbi/article?mid=<uid>&pn=<page>&ps=10&order=pubdate` (wbi-signed, `data.articles[]` plus `data.count`). The list already carries the title and the id, so an article costs no second request; the link is `https://www.bilibili.com/read/cv<id>`.
-- 专栏 carry **no tags**, so the same word list is matched against the **title and the summary** as a substring — a looser rule than the exact tag match. One-character words are skipped there: `雷` would fire on every 饥荒 article that mentions thunder.
-- The opened list mixes uploads and 专栏 by date, and a 专栏 line starts with `📄`.
-- While a member's article total is unchanged, a run spends exactly one request on it; the list is walked again when the total or the word list changes.
+- Articles carry **no tags**, so they are matched as a substring: the **title** against `articleTitleKeywords`, and the **summary** only against the character names in `articleSummaryTags`. Summaries often name other works too, so the work name is not allowed to match there; character names are a tighter signal.
+- The opened list mixes uploads and articles by date, and an article line starts with `📄`.
+- While a member's article total is unchanged, a run spends exactly one request on it; the list is walked again when the total or any of the three word lists changes.
 
 ## Daily Updates
 

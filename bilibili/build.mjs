@@ -517,7 +517,7 @@ async function fetchVideoTags(bvid) {
  * - A tag request that fails stops the walk right there: the watermarks are not moved
  *   past it, so the next run picks it up again.
  */
-async function crawlUploads(row, wbi, keywords) {
+async function crawlUploads(row, wbi, highlights) {
   const kept = new Map((row.videos ?? []).map((video) => [video.bvid, video]));
   let upper = row.crawledUpTo ?? null; // newest upload we have answered for
   let lower = row.crawledBackTo ?? null; // oldest upload of the range we walked
@@ -547,7 +547,7 @@ async function crawlUploads(row, wbi, keywords) {
       const tags = await fetchVideoTags(video.bvid);
       asked += 1;
       askedBvids.add(video.bvid);
-      if (highlightHits(tags, keywords).length > 0) kept.set(video.bvid, { ...video, tags });
+      if (highlightHits(tags, highlights.videoTags).length > 0) kept.set(video.bvid, { ...video, tags });
       if (isNewer || isFirstUpload) upper = iso;
       else lower = iso;
       await sleep(TAG_GAP_MS + Math.random() * 300);
@@ -581,7 +581,7 @@ async function crawlUploads(row, wbi, keywords) {
           const tags = await fetchVideoTags(video.bvid);
           asked += 1;
           askedBvids.add(video.bvid);
-          if (highlightHits(tags, keywords).length > 0) kept.set(video.bvid, { ...video, tags });
+          if (highlightHits(tags, highlights.videoTags).length > 0) kept.set(video.bvid, { ...video, tags });
         }
         collections[collection.id] = collection.total;
       }
@@ -602,7 +602,11 @@ async function crawlUploads(row, wbi, keywords) {
   // title and the summary. The total is what says whether anything changed, and the
   // digest catches an edit to the word list itself; either way, a run that finds nothing
   // new spends exactly one request on the member's 专栏.
-  const digest = keywordsDigest(keywords);
+  const digest = keywordsDigest([
+    ...highlights.videoTags,
+    ...highlights.articleTitleKeywords,
+    ...highlights.articleSummaryTags
+  ]);
   let articles = row.articles ?? [];
   let articlesCount = row.articlesCount ?? null;
   let articlesDigest = row.articlesDigest ?? null;
@@ -621,7 +625,9 @@ async function crawlUploads(row, wbi, keywords) {
         // The summary is only needed to decide; the page shows the title, so it is
         // dropped here and the cache stays small.
         articles = all
-          .filter((article) => articleHits(article, keywords).length > 0)
+          .filter(
+            (article) => articleHits(article, highlights.articleTitleKeywords, highlights.articleSummaryTags).length > 0
+          )
           .map((article) => ({ id: article.id, title: article.title, publishedAt: article.publishedAt }));
         articlesCount = first.count;
         articlesDigest = digest;
@@ -697,30 +703,40 @@ function highlightHits(tags, exactTags) {
 }
 
 /**
- * A 专栏 has no tags, only a title and a summary, so the same word list is matched
- * against the **title** as a substring. The summary is deliberately left out: it is
- * written by the author and often names other works too, which pulled in articles that
- * merely mentioned the theme.
+ * A 专栏 has no tags, so it is matched as a substring: the **title** against
+ * `articleTitleKeywords`, and the **summary** only against the character names in
+ * `articleSummaryTags`. Summaries are written by the author and often name other works too, so
+ * letting the work name match there pulled in unrelated articles; character names are a
+ * much tighter signal.
  */
-function articleHits(article, keywords) {
-  const text = normaliseTag(article?.title ?? '');
+function articleHits(article, articleTitleKeywords, articleSummaryTags) {
+  const title = normaliseTag(article?.title ?? '');
+  const summary = normaliseTag(article?.summary ?? '');
   // A one-character word is a fine tag but meaningless inside a title, so it is skipped.
-  return keywords.filter((word) => word.length > 1 && text.includes(word));
+  const fromTitle = articleTitleKeywords.filter((word) => word.length > 1 && title.includes(word));
+  const fromSummary = articleSummaryTags.filter((word) => summary.includes(word));
+  return [...new Set([...fromTitle, ...fromSummary])];
 }
 
-/** A short fingerprint of the word list, so a change to it re-walks the articles. */
-function keywordsDigest(keywords) {
-  return createHash('sha1').update(keywords.join('\u0000')).digest('hex').slice(0, 12);
+/** A short fingerprint of the word lists, so a change to any of them re-walks the articles. */
+function keywordsDigest(words) {
+  return createHash('sha1').update(words.join('\u0000')).digest('hex').slice(0, 12);
 }
 
 async function loadHighlights() {
   try {
     const config = JSON.parse(await readFile(highlightsFile, 'utf8'));
-    // `keywords` is the old name of the field, kept working for older files.
-    return (config.tags ?? config.keywords ?? []).map(normaliseTag).filter(Boolean);
+    // `tags` and `keywords` are the old names of `videoTags`, kept working for old files.
+    const list = (value) => (value ?? []).map(normaliseTag).filter(Boolean);
+    const videoTags = config.videoTags ?? config.tags ?? config.keywords ?? [];
+    return {
+      videoTags: list(videoTags),
+      articleTitleKeywords: list(config.articleTitleKeywords ?? videoTags),
+      articleSummaryTags: list(config.articleSummaryTags)
+    };
   } catch {
     warn('bilibili/data/highlights.json is missing, so no upload gets a ★ badge.');
-    return [];
+    return { videoTags: [], articleTitleKeywords: [], articleSummaryTags: [] };
   }
 }
 
@@ -887,7 +903,8 @@ try {
   console.warn('bilibili/data/bilibili.json is missing, every member will be fetched from scratch.');
 }
 const previous = new Map((cache.members ?? []).map((entry) => [String(entry.uid), entry]));
-const keywords = await loadHighlights();
+const highlights = await loadHighlights();
+const keywords = highlights.videoTags;
 
 let wbi = null;
 let wbiFailure = null;
@@ -1012,7 +1029,7 @@ if (!offline && canFetchUploads) {
     row.uploadTriedRun = uploadRuns;
     const debugBefore = requests;
     try {
-      const crawled = await crawlUploads(row, wbi, keywords);
+      const crawled = await crawlUploads(row, wbi, highlights);
       row.videos = crawled.videos;
       if (crawled.crawledUpTo) row.crawledUpTo = crawled.crawledUpTo;
       row.crawledBackTo = crawled.crawledBackTo;
