@@ -475,13 +475,20 @@
       .upload-badge li + li {
         margin-top: 4px;
       }
-      .upload-badge .more {
-        color: #888;
-      }
       .upload-badge a {
         color: #007bff;
         font-weight: 700;
         text-decoration: none;
+      }
+      .upload-badge .badge-more button {
+        padding: 0;
+        border: 0;
+        background: none;
+        color: var(--accent);
+        font: inherit;
+        font-size: 0.9em;
+        text-decoration: underline;
+        cursor: pointer;
       }
       .upload-badge a:hover,
       .upload-badge a:focus-visible {
@@ -571,7 +578,9 @@
           <section class="link-category">
             <h2 data-i18n="tableHeading">☆ 群友们的哔哩哔哩账号，也一起去看看吧 ☆</h2>
             {{BILI_TABLE}}
-            <p class="table-note" data-i18n="note">表格按粉丝数从多到少排列，昵称和粉丝数每天都会自动同步哦～</p>
+            <p class="table-note" data-i18n="note">
+              有 ★ 的群友排在前面，其余按粉丝数从多到少排列，昵称和粉丝数每天都会自动同步哦～
+            </p>
             {{BILI_TOTAL}}
           </section>
 
@@ -606,7 +615,8 @@
           timezoneLabel: '北京时间',
           badgeHintClosed: '点击展开带上指定标签的投稿☆',
           badgeHintOpen: '点击收回☆',
-          note: '表格按粉丝数从多到少排列，昵称和粉丝数每天都会自动同步哦～',
+          badgeMore: '展开更多',
+          note: '有 ★ 的群友排在前面，其余按粉丝数从多到少排列，昵称和粉丝数每天都会自动同步哦～',
           backHome: '← 回到链接角落首页',
           footer:
             '这里是八千代整理的群友哔哩哔哩账号一览。昵称和粉丝数都取自哔哩哔哩，如有变动请以哔哩哔哩的显示为准～<br>交流群：1055802853，欢迎进来一起聊天哦☆'
@@ -630,7 +640,8 @@
           timezoneLabel: '베이징 시간',
           badgeHintClosed: '클릭하면 지정 태그가 붙은 업로드를 펼쳐요☆',
           badgeHintOpen: '클릭하면 접어요☆',
-          note: '표는 팔로워 수가 많은 순서로 정리돼 있고, 닉네임과 팔로워 수는 매일 哔哩哔哩에서 자동으로 가져와요～',
+          badgeMore: '더 보기',
+          note: '★가 붙은 사람이 앞에 오고, 나머지는 팔로워 수가 많은 순서로 정리돼 있어요～ 닉네임과 팔로워 수는 매일 哔哩哔哩에서 자동으로 가져와요～',
           backHome: '← 링크 코너 첫 페이지로',
           footer:
             '야치요가 정리한 그룹 멤버들의 哔哩哔哩 계정 목록이에요. 닉네임과 팔로워 수는 哔哩哔哩에서 가져오니까, 바뀌면 哔哩哔哩 표시를 기준으로 봐 주세요～<br>그룹 채팅방：1055802853, 놀러 오세요☆'
@@ -655,7 +666,8 @@
           timezoneLabel: '北京時間',
           badgeHintClosed: 'クリックで指定タグ付きの投稿を開くよ☆',
           badgeHintOpen: 'クリックで閉じるよ☆',
-          note: '表はフォロワー数が多い順に並んでいて、ニックネームとフォロワー数は毎日哔哩哔哩から自動で取り込んでるよ～',
+          badgeMore: 'もっと見る',
+          note: '★が付いてる子が先頭で、あとはフォロワー数が多い順に並んでるよ～ ニックネームとフォロワー数は毎日哔哩哔哩から自動で取り込んでるよ～',
           backHome: '← リンクコーナーのトップへ',
           footer:
             'ヤチヨがまとめたグループのみんなの哔哩哔哩アカウント一覧だよ。ニックネームとフォロワー数は哔哩哔哩から取ってるから、変わってたら哔哩哔哩の表示が優先だよ～<br>交流グループ：1055802853、よかったら遊びに来てね☆'
@@ -680,7 +692,8 @@
           timezoneLabel: 'Beijing time',
           badgeHintClosed: 'Click to open the uploads with a highlighted tag☆',
           badgeHintOpen: 'Click to close☆',
-          note: 'The table is sorted by follower count, and nicknames and follower counts are pulled from Bilibili every day～',
+          badgeMore: 'Show more',
+          note: 'Members with a ★ come first, then everybody else by follower count, and nicknames and follower counts are pulled from Bilibili every day～',
           backHome: '← Back to the Link Corner',
           footer:
             "Yachiyo's little collection of the group's Bilibili accounts. Nicknames and follower counts come from Bilibili, so please check Bilibili for the latest～<br>Chat group: 1055802853, please come and say hi☆"
@@ -731,11 +744,39 @@
         }
       }
 
+      /**
+       * Every ★ row is in the HTML; the ones past the first page wait behind a "show
+       * more" row, which reveals them a page at a time. Without JavaScript nothing is
+       * hidden, so the fallback is the whole list.
+       */
+      function foldBadgeLists() {
+        const pageSize = 20;
+        document.querySelectorAll('details.upload-badge').forEach((badge) => {
+          const extras = [...badge.querySelectorAll('li.badge-extra')];
+          const moreRow = badge.querySelector('li.badge-more');
+          const button = moreRow?.querySelector('button');
+          if (!moreRow || !button || extras.length === 0) return;
+          let shown = 0;
+          const paint = () => {
+            extras.forEach((row, index) => {
+              row.hidden = index >= shown;
+            });
+            moreRow.hidden = shown >= extras.length;
+          };
+          button.addEventListener('click', () => {
+            shown = Math.min(shown + pageSize, extras.length);
+            paint();
+          });
+          paint();
+        });
+      }
+
       const queryLanguage = new URLSearchParams(window.location.search).get('lang');
       setLanguage(languageMeta[queryLanguage] ? queryLanguage : 'zh', false);
       document.querySelectorAll('details.upload-badge').forEach((badge) => {
         badge.addEventListener('toggle', () => setBadgeHints(currentLanguage));
       });
+      foldBadgeLists();
       document.getElementById('id-count').textContent = String(
         document.querySelectorAll('#bili-id-table tbody tr').length
       );

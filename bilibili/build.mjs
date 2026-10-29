@@ -49,6 +49,15 @@ const TAGS_API = 'https://api.bilibili.com/x/tag/archive/tags';
 // The Android app endpoint answers far more readily than the web one, which is behind
 // hard risk control. It is signed with the app key the app itself uses.
 const APP_API = 'https://app.bilibili.com/x/v2/space/archive/cursor';
+// The space list hides the uploads that went into a 合集 (a collection) or got folded by
+// the "do not flood" rule, so the collections are walked separately.
+const SEASONS_API = 'https://api.bilibili.com/x/polymer/web-space/seasons_series_list';
+const SEASON_ARCHIVES_API = 'https://api.bilibili.com/x/polymer/web-space/seasons_archives_list';
+// 专栏 (articles) are listed by a wbi-signed endpoint that also hands out the total.
+const ARTICLE_API = 'https://api.bilibili.com/x/space/wbi/article';
+const ARTICLE_PAGE_SIZE = 10;
+const SEASON_PAGE_SIZE = 20; // the most seasons_series_list accepts; 30 is a -400
+const SEASON_ARCHIVES_PAGE_SIZE = 30;
 const APP_APPKEY = '1d8b6e7d45233436';
 const APP_APPSECRET = '560c52ccd288fed045859ed18bffd973';
 const APP_BUILD = 7710300;
@@ -68,8 +77,9 @@ const BLOCK_BACKOFF_MS = 10000;
 const BLOCK_LIMIT = 2;
 const UPLOAD_PAGE_SIZE = 20; // the most either endpoint hands out in one page
 const UPLOAD_PAGE_LIMIT = 200; // safety net: never walk more than 4000 uploads per member
-const BADGE_ITEM_LIMIT = 20; // how many matching uploads the page lists
 const TAG_LIMIT = 12;
+// How many rows the opened ★ list shows before the "show more" row takes over.
+const BADGE_PAGE_SIZE = 20;
 const TITLE_LIMIT = 120;
 const UPLOAD_TITLE_LIMIT = 40;
 
@@ -90,6 +100,32 @@ const offline = process.argv.includes('--offline');
 
 /** BILI_WEB_ONLY=1 skips the Android app endpoint and only uses the web one. */
 const webOnly = Boolean(process.env.BILI_WEB_ONLY);
+
+// Every request the run makes is counted, so the log can say what a refresh costs. The
+// wrapper keeps the count honest for the one-off calls too (the front page visit, the
+// wbi keys), which do not go through getJson.
+let requests = 0;
+const plainFetch = globalThis.fetch;
+globalThis.fetch = (...args) => {
+  requests += 1;
+  return plainFetch(...args);
+};
+
+/**
+ * Members to walk from scratch: `--force 196698970,123`, `--force all`, or
+ * `BILI_FORCE_UIDS=…`. Their watermarks, kept uploads and collection sizes are dropped,
+ * so the whole archive is asked about again and the kept list is rebuilt from what
+ * answers today. `all` (or `*`) does that for everybody.
+ */
+const forceArg = process.argv.indexOf('--force');
+const forceValue = String(forceArg >= 0 ? (process.argv[forceArg + 1] ?? '') : (process.env.BILI_FORCE_UIDS ?? ''));
+const forceUids = new Set(
+  forceValue
+    .split(/[\s,]+/)
+    .map((uid) => uid.trim())
+    .filter(Boolean)
+);
+const forceEveryone = forceUids.has('all') || forceUids.has('*');
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -334,7 +370,9 @@ async function fetchUploadPageFromApp(uid, aid) {
       title: plainTitle(item.title),
       publishedAt: new Date(Number(item.ctime ?? 0) * 1000).toISOString()
     })),
-    lastAid: items.at(-1)?.param ?? null
+    lastAid: items.at(-1)?.param ?? null,
+    // What Bilibili says the whole archive holds; the walk is checked against it.
+    total: typeof body.data?.count === 'number' ? body.data.count : null
   };
 }
 
@@ -344,16 +382,24 @@ async function fetchUploadPageFromApp(uid, aid) {
  * The app endpoint is asked first: it needs no cookie and answers while the web one is
  * being refused. The web endpoint is the fallback for the whole walk rather than per
  * page, because the two page in different ways.
+ *
+ * `report.total` is filled with the archive size the first page announces, so the walk
+ * can be checked against it: a 合集 or the "do not flood" grouping is a display thing and
+ * should not hide uploads, but it is worth knowing when it does.
  */
-async function* iterateUploads(uid, wbi) {
+async function* iterateUploads(uid, wbi, report = {}) {
   const errors = [];
   if (!webOnly) {
     try {
       let aid = null;
       for (let page = 0; page < UPLOAD_PAGE_LIMIT; page += 1) {
-        const { videos, lastAid } = await fetchUploadPageFromApp(uid, aid);
+        const { videos, lastAid, total } = await fetchUploadPageFromApp(uid, aid);
+        if (report.total === undefined || report.total === null) report.total = total;
         for (const video of videos) yield video;
-        if (videos.length === 0 || !lastAid) return;
+        if (videos.length === 0 || !lastAid) {
+          report.complete = true;
+          return;
+        }
         aid = lastAid;
       }
       return;
@@ -361,15 +407,93 @@ async function* iterateUploads(uid, wbi) {
       errors.push(`app: ${error.message}`);
     }
   }
-  if (wbi) {
-    for (let page = 1; page <= UPLOAD_PAGE_LIMIT; page += 1) {
-      const videos = await fetchUploadPageFromWeb(uid, page, wbi);
-      for (const video of videos) yield video;
-      if (videos.length === 0) return;
-    }
-    return;
+  // The web endpoint is the fallback: its keys are fetched now if they are not there yet.
+  try {
+    await ensureWbi();
+  } catch (error) {
+    errors.push(`web: ${error.message}`);
+    throw new Error(errors.join('; '));
   }
-  throw new Error(errors.join('; ') || 'no upload source is available');
+  for (let page = 1; page <= UPLOAD_PAGE_LIMIT; page += 1) {
+    const videos = await fetchUploadPageFromWeb(uid, page, wbi);
+    for (const video of videos) yield video;
+    if (videos.length === 0) {
+      report.complete = true;
+      return;
+    }
+  }
+}
+
+/**
+ * The member's 合集 (collections), with the size Bilibili reports for each.
+ *
+ * The space list leaves out the uploads that went into a collection (or got folded by
+ * the "do not flood" rule), so they have to be asked about separately.
+ */
+async function fetchCollections(uid) {
+  const collections = [];
+  for (let page = 1; page <= 20; page += 1) {
+    const data = await getJson(
+      `${SEASONS_API}?mid=${encodeURIComponent(uid)}&page_num=${page}&page_size=${SEASON_PAGE_SIZE}`,
+      `https://space.bilibili.com/${uid}/channels/series`
+    );
+    const cards = data?.items_lists?.seasons_list ?? [];
+    for (const card of cards) {
+      if (!card?.meta?.season_id) continue;
+      collections.push({
+        id: String(card.meta.season_id),
+        name: String(card.meta.name ?? ''),
+        total: Number(card.meta.total ?? 0)
+      });
+    }
+    if (cards.length < SEASON_PAGE_SIZE) break;
+  }
+  return collections;
+}
+
+/** Every upload inside one 合集, in the order the collection lists them. */
+async function fetchCollectionVideos(uid, seasonId) {
+  const videos = [];
+  for (let page = 1; page <= 40; page += 1) {
+    const data = await getJson(
+      `${SEASON_ARCHIVES_API}?mid=${encodeURIComponent(uid)}&season_id=${encodeURIComponent(seasonId)}` +
+        `&page_num=${page}&page_size=${SEASON_ARCHIVES_PAGE_SIZE}`,
+      `https://space.bilibili.com/${uid}/channels/collection/detail?sid=${seasonId}`
+    );
+    const archives = data?.archives ?? [];
+    for (const archive of archives) {
+      if (!archive?.bvid) continue;
+      videos.push({
+        bvid: String(archive.bvid),
+        title: plainTitle(archive.title),
+        publishedAt: new Date(Number(archive.pubdate ?? archive.ctime ?? 0) * 1000).toISOString()
+      });
+    }
+    const total = Number(data?.page?.total ?? 0);
+    if (archives.length === 0 || videos.length >= total) break;
+  }
+  return videos;
+}
+
+/**
+ * One page of a member's 专栏, with the total Bilibili reports for the whole list. The
+ * endpoint wants the wbi signature, and the list already carries the title, so an
+ * article costs no second request.
+ */
+async function fetchArticlePage(uid, page, wbi) {
+  const query = signedQuery({ mid: uid, pn: page, ps: ARTICLE_PAGE_SIZE, order: 'pubdate' }, wbi.imgKey, wbi.subKey);
+  const data = await getJson(`${ARTICLE_API}?${query}`, `https://space.bilibili.com/${uid}/article`);
+  return {
+    count: Number(data?.count ?? 0),
+    articles: (data?.articles ?? [])
+      .filter((article) => article?.id)
+      .map((article) => ({
+        id: String(article.id),
+        title: plainTitle(article.title),
+        summary: plainTitle(article.summary ?? '').slice(0, 400),
+        publishedAt: new Date(Number(article.publish_time ?? article.ctime ?? 0) * 1000).toISOString()
+      }))
+  };
 }
 
 async function fetchVideoTags(bvid) {
@@ -399,11 +523,16 @@ async function crawlUploads(row, wbi, keywords) {
   let lower = row.crawledBackTo ?? null; // oldest upload of the range we walked
   let all = Boolean(row.crawledAll);
   let asked = 0;
+  let walked = 0;
   let error = null;
   let reachedEnd = true;
+  const report = {}; // filled by the walk with the archive size Bilibili announces
+
+  const askedBvids = new Set();
 
   try {
-    for await (const video of iterateUploads(row.uid, wbi)) {
+    for await (const video of iterateUploads(row.uid, wbi, report)) {
+      walked += 1;
       const iso = video.publishedAt;
       const isNewer = upper !== null && iso > upper;
       const isUnwalked = !all && (lower === null || iso <= lower);
@@ -417,14 +546,90 @@ async function crawlUploads(row, wbi, keywords) {
       }
       const tags = await fetchVideoTags(video.bvid);
       asked += 1;
+      askedBvids.add(video.bvid);
       if (highlightHits(tags, keywords).length > 0) kept.set(video.bvid, { ...video, tags });
       if (isNewer || isFirstUpload) upper = iso;
       else lower = iso;
       await sleep(TAG_GAP_MS + Math.random() * 300);
     }
-    if (reachedEnd) all = true;
+    // `complete` is only set when the source ran out of pages; a walk that stopped at
+    // the page limit is not the end of the archive.
+    if (reachedEnd && report.complete === true) all = true;
   } catch (thrown) {
     error = thrown;
+  }
+
+  // The space list hides the uploads that went into a 合集, so the collections are asked
+  // about every run — including members who have none today, because the day somebody
+  // starts a collection is exactly the day their uploads can start disappearing from the
+  // list. Only the size of each collection is remembered, so an unchanged one is not
+  // walked again. The map is rebuilt from what Bilibili lists today, so a collection that
+  // was deleted simply stops being remembered.
+  const knownCollections = row.collections ?? {};
+  let collections = {};
+  if (!error) {
+    try {
+      for (const collection of await fetchCollections(row.uid)) {
+        if (knownCollections[collection.id] === collection.total) {
+          collections[collection.id] = collection.total; // unchanged, nothing to ask
+          continue;
+        }
+        await sleep(UPLOAD_GAP_MS / 2 + Math.random() * 500);
+        for (const video of await fetchCollectionVideos(row.uid, collection.id)) {
+          if (askedBvids.has(video.bvid)) continue;
+          await sleep(TAG_GAP_MS + Math.random() * 300);
+          const tags = await fetchVideoTags(video.bvid);
+          asked += 1;
+          askedBvids.add(video.bvid);
+          if (highlightHits(tags, keywords).length > 0) kept.set(video.bvid, { ...video, tags });
+        }
+        collections[collection.id] = collection.total;
+      }
+    } catch (thrown) {
+      // A collection that cannot be read is not worth failing the member over, but a
+      // refusal has to stop the run the way any other refusal does.
+      if (isBlocked(thrown)) error = thrown;
+      else {
+        // Nothing was learned this run, so the sizes from the last one stay in place
+        // instead of being thrown away.
+        collections = { ...knownCollections };
+        warn(`the collections of ${row.uid} were not walked: ${thrown.message}`);
+      }
+    }
+  }
+
+  // 专栏 (articles): they carry no tags, so the same word list is matched against the
+  // title and the summary. The total is what says whether anything changed, and the
+  // digest catches an edit to the word list itself; either way, a run that finds nothing
+  // new spends exactly one request on the member's 专栏.
+  const digest = keywordsDigest(keywords);
+  let articles = row.articles ?? [];
+  let articlesCount = row.articlesCount ?? null;
+  let articlesDigest = row.articlesDigest ?? null;
+  if (!error) {
+    try {
+      const wbiNow = await ensureWbi();
+      const first = await fetchArticlePage(row.uid, 1, wbiNow);
+      if (articlesCount !== first.count || articlesDigest !== digest) {
+        const all = [...first.articles];
+        for (let page = 2; page <= 40 && all.length < first.count; page += 1) {
+          await sleep(TAG_GAP_MS + Math.random() * 300);
+          const next = await fetchArticlePage(row.uid, page, wbiNow);
+          all.push(...next.articles);
+          if (next.articles.length < ARTICLE_PAGE_SIZE) break;
+        }
+        // The summary is only needed to decide; the page shows the title, so it is
+        // dropped here and the cache stays small.
+        articles = all
+          .filter((article) => articleHits(article, keywords).length > 0)
+          .map((article) => ({ id: article.id, title: article.title, publishedAt: article.publishedAt }));
+        articlesCount = first.count;
+        articlesDigest = digest;
+      }
+    } catch (thrown) {
+      if (isBlocked(thrown)) error = thrown;
+      else warn(`the 专栏 of ${row.uid} were not read: ${thrown.message}`);
+    }
   }
 
   return {
@@ -432,7 +637,17 @@ async function crawlUploads(row, wbi, keywords) {
     crawledUpTo: upper,
     crawledBackTo: lower,
     crawledAll: all,
+    collections,
+    articles,
+    articlesCount,
+    articlesDigest,
     asked,
+    walked,
+    // Bilibili's own count for the whole archive, and how many the walk actually saw.
+    // The count only means something when the walk ran through the archive instead of
+    // stopping at the watermark after a page or two.
+    total: report.total ?? null,
+    walkedToEnd: reachedEnd,
     error
   };
 }
@@ -464,18 +679,45 @@ function updatedAtAttribute(iso) {
   return parts ? `${parts.date}T${parts.time}:${parts.seconds}+08:00` : '';
 }
 
-/** A tag counts as highlighted when it contains one of the words from data/highlights.json. */
-function highlightHits(tags, keywords) {
-  return (tags ?? []).filter((tag) => {
-    const text = String(tag).toLowerCase();
-    return keywords.some((word) => text.includes(word));
-  });
+/**
+ * A tag counts only when it *is* one of the tags in data/highlights.json, not when it
+ * merely contains one: `八千代` counts, and so does `月见八千代` because it is listed, but
+ * `八千代と私` does not. Both sides are normalised first (NFKC + lower case), so a
+ * full-width `！` and a plain `!` are the same thing and `Yachiyo` matches `yachiyo`.
+ */
+const normaliseTag = (text) =>
+  String(text ?? '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .trim();
+
+function highlightHits(tags, exactTags) {
+  const wanted = new Set(exactTags);
+  return (tags ?? []).filter((tag) => wanted.has(normaliseTag(tag)));
+}
+
+/**
+ * A 专栏 has no tags, only a title and a summary, so the same word list is matched
+ * against the **title** as a substring. The summary is deliberately left out: it is
+ * written by the author and often names other works too, which pulled in articles that
+ * merely mentioned the theme.
+ */
+function articleHits(article, keywords) {
+  const text = normaliseTag(article?.title ?? '');
+  // A one-character word is a fine tag but meaningless inside a title, so it is skipped.
+  return keywords.filter((word) => word.length > 1 && text.includes(word));
+}
+
+/** A short fingerprint of the word list, so a change to it re-walks the articles. */
+function keywordsDigest(keywords) {
+  return createHash('sha1').update(keywords.join('\u0000')).digest('hex').slice(0, 12);
 }
 
 async function loadHighlights() {
   try {
     const config = JSON.parse(await readFile(highlightsFile, 'utf8'));
-    return (config.keywords ?? []).map((word) => String(word).toLowerCase()).filter(Boolean);
+    // `keywords` is the old name of the field, kept working for older files.
+    return (config.tags ?? config.keywords ?? []).map(normaliseTag).filter(Boolean);
   } catch {
     warn('bilibili/data/highlights.json is missing, so no upload gets a ★ badge.');
     return [];
@@ -506,31 +748,37 @@ function clipText(text, limit) {
   return `${out.trimEnd()}…`;
 }
 
-/** One line of the opened list: just the upload, linked to Bilibili. */
-function renderUploadLine(entry, indent) {
-  const href = `https://www.bilibili.com/video/${entry.video.bvid}`;
+/** One line of the opened list: the upload or the 专栏, linked to Bilibili. */
+function renderUploadLine(entry, indent, extra = false) {
+  const href =
+    entry.kind === 'article'
+      ? `https://www.bilibili.com/read/cv${entry.article.id}`
+      : `https://www.bilibili.com/video/${entry.video.bvid}`;
   // HTML text nodes collapse runs of whitespace, and Prettier prints them collapsed.
   // Long titles are clipped so that the line keeps a stable shape.
-  const title = clipText(
-    String(entry.video.title || entry.video.bvid)
-      .replace(/\s+/g, ' ')
-      .trim(),
-    UPLOAD_TITLE_LIMIT
-  );
-  const flat = `${indent}<li><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(
-    title
+  const source =
+    entry.kind === 'article' ? entry.article.title || entry.article.id : entry.video.title || entry.video.bvid;
+  const title = clipText(String(source).replace(/\s+/g, ' ').trim(), UPLOAD_TITLE_LIMIT);
+  // A 专栏 is marked with 📄 so both kinds can sit in the same list.
+  const label = entry.kind === 'article' ? `📄 ${title}` : title;
+  // Rows past the first page carry a class, which the page's script uses to fold them.
+  const attributes = extra ? ' class="badge-extra"' : '';
+  const flat = `${indent}<li${attributes}><a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(
+    label
   )}</a></li>`;
   if (displayWidth(flat) <= PRINT_WIDTH) return flat;
-  return [`${indent}<li>`, renderAnchor(href, title, `${indent}  `), `${indent}</li>`].join('\n');
+  return [`${indent}<li${attributes}>`, renderAnchor(href, label, `${indent}  `), `${indent}</li>`].join('\n');
 }
 
-/** The ★N after a nickname: the uploads that carry a highlighted tag. */
-function renderBadge(videos, keywords) {
-  const hits = videos
-    .map((video) => ({ video, tags: highlightHits(video.tags, keywords) }))
-    .filter((entry) => entry.tags.length > 0);
+/** The ★N after a nickname: the uploads that carry a tag, plus the matching 专栏. */
+function renderBadge(videos, articles, keywords) {
+  const hits = [
+    ...videos
+      .filter((video) => highlightHits(video.tags, keywords).length > 0)
+      .map((video) => ({ kind: 'video', video, at: video.publishedAt })),
+    ...articles.map((article) => ({ kind: 'article', article, at: article.publishedAt }))
+  ].sort((a, b) => String(b.at).localeCompare(String(a.at)));
   if (hits.length === 0) return null;
-  const shown = hits.slice(0, BADGE_ITEM_LIMIT);
 
   const indent = `${ANCHOR_INDENT}  `;
   // A click hint rather than the tag words: the page swaps it per language and per
@@ -554,8 +802,16 @@ function renderBadge(videos, keywords) {
     `${ANCHOR_INDENT}<details class="upload-badge">`,
     ...summary,
     `${indent}<ul>`,
-    ...shown.map((entry) => renderUploadLine(entry, `${indent}  `)),
-    ...(hits.length > shown.length ? [`${indent}  <li class="more">…</li>`] : []),
+    // Every match is written out; the page's script folds the ones past the first page
+    // behind a "show more" row, and without JavaScript they are simply all visible.
+    ...hits.map((entry, index) => renderUploadLine(entry, `${indent}  `, index >= BADGE_PAGE_SIZE)),
+    ...(hits.length > BADGE_PAGE_SIZE
+      ? [
+          `${indent}  <li class="badge-more" hidden>`,
+          `${indent}    <button type="button" data-i18n="badgeMore">展开更多</button>`,
+          `${indent}  </li>`
+        ]
+      : []),
     `${indent}</ul>`,
     `${ANCHOR_INDENT}</details>`
   ].join('\n');
@@ -563,7 +819,7 @@ function renderBadge(videos, keywords) {
 
 function renderNameCell(row, keywords) {
   const lines = [renderAnchor(`https://space.bilibili.com/${row.uid}`, row.bilibili || '—', ANCHOR_INDENT)];
-  const badge = renderBadge(row.videos ?? [], keywords);
+  const badge = renderBadge(row.videos ?? [], row.articles ?? [], keywords);
   if (badge) lines.push(badge);
   return lines.join('\n');
 }
@@ -634,23 +890,40 @@ const previous = new Map((cache.members ?? []).map((entry) => [String(entry.uid)
 const keywords = await loadHighlights();
 
 let wbi = null;
-if (!offline) {
-  requestCookie = await collectCookies();
+let wbiFailure = null;
+
+/**
+ * The wbi keys are only needed by the web upload endpoint, which is the fallback. They
+ * are fetched the first time that fallback is actually reached, so a normal run does
+ * not spend a request on them; with BILI_WEB_ONLY the web endpoint is the only source,
+ * so there they are fetched up front.
+ */
+async function ensureWbi() {
+  if (wbi) return wbi;
+  if (wbiFailure) throw wbiFailure;
   try {
     wbi = await getWbiKeys();
+    console.log('     fetched the wbi keys for the web upload endpoint');
+    return wbi;
   } catch (error) {
+    wbiFailure = error;
     warn(`The web upload endpoint is unavailable this run: ${error.message}`);
+    throw error;
   }
+}
+
+if (!offline) {
+  requestCookie = await collectCookies();
+  if (webOnly) await ensureWbi().catch(() => {});
   await sleep(REQUEST_GAP_MS);
 }
 
 // The app endpoint needs no cookie and no wbi, so uploads are still reachable when the
 // web endpoint is being refused.
-const canFetchUploads = !webOnly || Boolean(wbi);
+const canFetchUploads = true;
 if (!offline) {
   console.log(
-    `upload list source: ${webOnly ? 'the web endpoint only' : 'the app endpoint'}` +
-      `${wbi && !webOnly ? ' (web endpoint as a fallback)' : ''}`
+    `upload list source: ${webOnly ? 'the web endpoint' : 'the app endpoint (web one behind it as a fallback)'}`
   );
 }
 
@@ -659,21 +932,30 @@ let failures = 0;
 for (const member of members) {
   const uid = String(member.uid);
   const cached = previous.get(uid);
+  const forced = forceEveryone || forceUids.has(uid);
   const row = {
     uid,
     qq: member.qq ?? '',
     bilibili: cached?.bilibili ?? '',
     fans: cached?.fans ?? null,
     // Only uploads with a highlighted tag are kept, whatever the cache still holds.
-    videos: (cached?.videos ?? []).filter((video) => highlightHits(video.tags, keywords).length > 0)
+    videos: forced ? [] : (cached?.videos ?? []).filter((video) => highlightHits(video.tags, keywords).length > 0)
   };
-  if (cached?.crawledUpTo) row.crawledUpTo = cached.crawledUpTo;
-  if (cached?.crawledBackTo) row.crawledBackTo = cached.crawledBackTo;
-  if (cached?.crawledAll) row.crawledAll = true;
+  if (forced) {
+    console.log(`force ${uid.padEnd(18)} walked from scratch, kept uploads dropped`);
+  } else {
+    if (cached?.crawledUpTo) row.crawledUpTo = cached.crawledUpTo;
+    if (cached?.crawledBackTo) row.crawledBackTo = cached.crawledBackTo;
+    if (cached?.crawledAll) row.crawledAll = true;
+    if (cached?.collections) row.collections = { ...cached.collections };
+    if (cached?.articles) row.articles = cached.articles;
+    if (Number.isInteger(cached?.articlesCount)) row.articlesCount = cached.articlesCount;
+    if (cached?.articlesDigest) row.articlesDigest = cached.articlesDigest;
+  }
   // Members whose upload list could not be refreshed last time carry a marker, so
   // that they are asked again first instead of waiting for their turn again.
-  if (cached?.uploadRetryAt) row.uploadRetryAt = cached.uploadRetryAt;
-  if (Number.isInteger(cached?.uploadTriedRun)) row.uploadTriedRun = cached.uploadTriedRun;
+  if (!forced && cached?.uploadRetryAt) row.uploadRetryAt = cached.uploadRetryAt;
+  if (!forced && Number.isInteger(cached?.uploadTriedRun)) row.uploadTriedRun = cached.uploadTriedRun;
 
   if (!offline) {
     try {
@@ -709,7 +991,18 @@ if (!offline && canFetchUploads) {
   // Never tried comes first, then whoever has been waiting the longest since the last
   // attempt: a run that gets refused still moves the queue forward for the next one.
   waiting.sort((a, b) => (a.uploadTriedRun ?? -1) - (b.uploadTriedRun ?? -1));
-  const order = [...waiting, ...rotate(rest, Math.floor(Date.now() / 86400000))];
+  const queued = [...waiting, ...rotate(rest, Math.floor(Date.now() / 86400000))];
+  const isForced = (row) => forceEveryone || forceUids.has(String(row.uid));
+  // Members asked for with --force are served first, whatever the queue says.
+  const forcedRows = queued.filter(isForced);
+  const order = [...forcedRows, ...queued.filter((row) => !isForced(row))];
+  if (forcedRows.length > 0) {
+    console.log(
+      forceEveryone
+        ? `uploads: walking all ${forcedRows.length} members from scratch.`
+        : `uploads: walking ${forcedRows.map((row) => row.uid).join(', ')} from scratch first.`
+    );
+  }
   for (const row of order) {
     if (blocked >= BLOCK_LIMIT) {
       videoSkipped += 1;
@@ -717,6 +1010,7 @@ if (!offline && canFetchUploads) {
       continue;
     }
     row.uploadTriedRun = uploadRuns;
+    const debugBefore = requests;
     try {
       const crawled = await crawlUploads(row, wbi, keywords);
       row.videos = crawled.videos;
@@ -724,6 +1018,12 @@ if (!offline && canFetchUploads) {
       row.crawledBackTo = crawled.crawledBackTo;
       if (crawled.crawledAll) row.crawledAll = true;
       else delete row.crawledAll;
+      if (Object.keys(crawled.collections).length > 0) row.collections = crawled.collections;
+      else delete row.collections;
+      if (crawled.articles.length > 0) row.articles = crawled.articles;
+      else delete row.articles;
+      if (Number.isInteger(crawled.articlesCount)) row.articlesCount = crawled.articlesCount;
+      if (crawled.articlesDigest) row.articlesDigest = crawled.articlesDigest;
       if (crawled.error) throw crawled.error;
       delete row.uploadRetryAt;
       delete row.uploadTriedRun;
@@ -731,8 +1031,18 @@ if (!offline && canFetchUploads) {
       videoRefreshed += 1;
       console.log(
         `     uploads ${String(row.uid).padEnd(18)} ${crawled.videos.length} kept, ${crawled.asked} tags asked,` +
-          ` archive ${crawled.crawledAll ? 'walked' : 'still being walked'}`
+          ` archive ${crawled.crawledAll ? 'walked' : 'still being walked'}` +
+          `${crawled.walkedToEnd && crawled.total !== null ? ` (${crawled.walked}/${crawled.total} uploads seen)` : ''}` +
+          `${process.env.BILI_DEBUG_REQUESTS ? ` [debug: ${requests - debugBefore} requests]` : ''}`
       );
+      // A 合集 or the "do not flood" grouping is a display thing; if it ever hides an
+      // upload from the list, this is where it shows up instead of staying silent.
+      if (crawled.walkedToEnd && crawled.total !== null && crawled.walked < crawled.total) {
+        warn(
+          `${row.uid} (${row.bilibili}) shows ${crawled.total} uploads but only ${crawled.walked} came back` +
+            ` — Bilibili may be grouping some of them`
+        );
+      }
     } catch (error) {
       videoFailures += 1;
       row.uploadRetryAt = new Date().toISOString();
@@ -758,12 +1068,12 @@ for (const row of rows) {
   if (!row.uploadRetryAt) delete row.uploadTriedRun;
 }
 
-// Most followers first; equal counts keep the order of members.json (Array#sort is stable).
-rows.sort((a, b) => {
-  const aHighlighted = (a.videos ?? []).some((video) => highlightHits(video.tags, keywords).length > 0);
-  const bHighlighted = (b.videos ?? []).some((video) => highlightHits(video.tags, keywords).length > 0);
-  return Number(bHighlighted) - Number(aHighlighted) || (b.fans ?? -1) - (a.fans ?? -1);
-});
+// Members with a ★ first; inside each group most followers first (Array#sort is stable,
+// so equal counts keep the order of members.json). The ★ counts both uploads and 专栏 —
+// a 专栏-only member belongs in the first group just like a video-only one.
+const isHighlighted = (row) =>
+  (row.articles ?? []).length > 0 || (row.videos ?? []).some((video) => highlightHits(video.tags, keywords).length > 0);
+rows.sort((a, b) => Number(isHighlighted(b)) - Number(isHighlighted(a)) || (b.fans ?? -1) - (a.fans ?? -1));
 
 const fresh = !offline && failures < rows.length;
 const updatedAt = fresh ? new Date().toISOString() : (cache.updatedAt ?? null);
@@ -833,3 +1143,5 @@ if (!offline && canFetchUploads && videoRefreshed === 0 && rows.length > 0) {
       'a BILI_COOKIE secret (your own SESSDATA) makes them far more reliable.'
   );
 }
+
+if (!offline) console.log(`requests: ${requests} in total.`);

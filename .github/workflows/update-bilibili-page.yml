@@ -6,6 +6,11 @@ on:
     # GitHub may delay a scheduled run by a few minutes at busy times.
     - cron: '0 22 * * *'
   workflow_dispatch:
+    inputs:
+      force_uids:
+        description: 'UIDs to walk from scratch, comma separated (optional)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -34,6 +39,9 @@ jobs:
           # SESSDATA to make the requests much less likely to be turned down by
           # Bilibili's risk control. Without it the script simply skips the cookie.
           BILI_COOKIE: ${{ secrets.BILI_COOKIE }}
+          # Optional: walking somebody from scratch — fill in force_uids when running
+          # the workflow by hand, empty on the daily run.
+          BILI_FORCE_UIDS: ${{ inputs.force_uids }}
         run: npm run update:bilibili
 
       - name: Commit the update
