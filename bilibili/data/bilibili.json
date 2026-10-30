@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T13:02:02.261Z",
+  "updatedAt": "2026-10-30T01:28:34.085Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9119,
+      "fans": 9118,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -550,7 +550,7 @@
           "publishedAt": "2026-02-13T19:01:42.000Z"
         }
       ],
-      "articlesCount": 104,
+      "articlesCount": 105,
       "articlesDigest": "12ea6900c98a"
     },
     {
@@ -770,7 +770,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4692,
+      "fans": 4691,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -1109,7 +1109,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1703,
+      "fans": 1704,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1760,7 +1760,7 @@
       "uid": "386273918",
       "qq": "腾腾 (†已升天†)",
       "bilibili": "N小哆啦吃悠哈",
-      "fans": 651,
+      "fans": 650,
       "videos": [
         {
           "bvid": "BV1ZxY262EyJ",
@@ -1894,7 +1894,7 @@
       "uid": "3546574244284714",
       "qq": "酒寄青葉[ Sakayori Iroha-sama]",
       "bilibili": "Iroha-NihoheYCY",
-      "fans": 189,
+      "fans": 188,
       "videos": [
         {
           "bvid": "BV1uFMd6FELR",
@@ -2811,7 +2811,8 @@
       "videos": [],
       "crawledAll": true,
       "articlesCount": 0,
-      "articlesDigest": "12ea6900c98a"
+      "articlesDigest": "12ea6900c98a",
+      "crawledBackTo": null
     },
     {
       "uid": "1646112448",
@@ -2826,6 +2827,18 @@
       "articlesDigest": "12ea6900c98a"
     },
     {
+      "uid": "496726675",
+      "qq": "Shytarget",
+      "bilibili": "灯火笙萧",
+      "fans": 25,
+      "videos": [],
+      "crawledUpTo": "2026-10-17T07:20:41.000Z",
+      "crawledAll": true,
+      "articlesCount": 0,
+      "articlesDigest": "12ea6900c98a",
+      "crawledBackTo": null
+    },
+    {
       "uid": "506908412",
       "qq": "birdbai",
       "bilibili": "是bai不是白",
@@ -2833,18 +2846,8 @@
       "videos": [],
       "crawledAll": true,
       "articlesCount": 1,
-      "articlesDigest": "12ea6900c98a"
-    },
-    {
-      "uid": "496726675",
-      "qq": "Shytarget",
-      "bilibili": "灯火笙萧",
-      "fans": 23,
-      "videos": [],
-      "crawledUpTo": "2026-10-17T07:20:41.000Z",
-      "crawledAll": true,
-      "articlesCount": 0,
-      "articlesDigest": "12ea6900c98a"
+      "articlesDigest": "12ea6900c98a",
+      "crawledBackTo": null
     },
     {
       "uid": "3537114444598162",
@@ -2854,7 +2857,8 @@
       "videos": [],
       "crawledAll": true,
       "articlesCount": 0,
-      "articlesDigest": "12ea6900c98a"
+      "articlesDigest": "12ea6900c98a",
+      "crawledBackTo": null
     },
     {
       "uid": "3493125033036033",
