@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T01:16:25.564Z",
+  "updatedAt": "2026-11-01T00:38:09.986Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -40,7 +40,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5655,
+      "fans": 5653,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -557,7 +557,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4865,
+      "fans": 4869,
       "videos": [
         {
           "bvid": "BV1xynu6dEw2",
@@ -567,9 +567,9 @@
             "fuju",
             "动画种草激励计划",
             "超时空辉夜姬",
-            "月读",
-            "辉夜",
             "辉夜姬",
+            "辉夜",
+            "月读",
             "福币",
             "模玩熊",
             "酒寄彩叶",
@@ -601,10 +601,10 @@
             "抽卡",
             "动画种草激励计划",
             "超时空辉夜姬",
-            "谷子",
-            "辉夜姬",
-            "黑玛瑙",
             "辉夜",
+            "黑玛瑙",
+            "辉夜姬",
+            "谷子",
             "盲袋",
             "酒寄彩叶",
             "月见八千代"
@@ -617,8 +617,8 @@
           "tags": [
             "抽卡",
             "超时空辉夜姬",
-            "辉夜",
             "谷子",
+            "辉夜",
             "盲袋",
             "帝明",
             "超时空辉夜姬！",
@@ -747,12 +747,12 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-30T13:20:48.000Z",
+      "crawledUpTo": "2026-10-31T12:19:43.000Z",
       "crawledBackTo": "2022-03-06T12:23:32.000Z",
       "crawledAll": true,
       "collections": {
         "2192668": 12,
-        "2192749": 160,
+        "2192749": 161,
         "2241401": 6,
         "2562032": 2,
         "3005228": 9,
@@ -770,7 +770,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4691,
+      "fans": 4693,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -1109,7 +1109,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1704,
+      "fans": 1705,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1266,7 +1266,7 @@
       "uid": "2191476",
       "qq": "夜夜",
       "bilibili": "夜夜Corvus",
-      "fans": 1408,
+      "fans": 1407,
       "videos": [
         {
           "bvid": "BV1qChb6sEYi",
@@ -1372,7 +1372,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1220,
+      "fans": 1219,
       "videos": [
         {
           "bvid": "BV1rvxE6HEAe",
@@ -1787,7 +1787,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 436,
+      "fans": 437,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1799,7 +1799,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-23T09:44:33.000Z",
+      "crawledUpTo": "2026-10-31T11:12:55.000Z",
       "crawledBackTo": "2024-11-08T13:18:07.000Z",
       "crawledAll": true,
       "articlesCount": 0,
@@ -1896,7 +1896,7 @@
       "uid": "3546574244284714",
       "qq": "酒寄青葉[ Sakayori Iroha-sama]",
       "bilibili": "Iroha-NihoheYCY",
-      "fans": 188,
+      "fans": 187,
       "videos": [
         {
           "bvid": "BV1uFMd6FELR",
@@ -2063,7 +2063,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-23T06:15:27.000Z",
+      "crawledUpTo": "2026-10-31T13:26:51.000Z",
       "crawledBackTo": "2023-08-27T14:03:51.000Z",
       "crawledAll": true,
       "collections": {
@@ -2089,7 +2089,7 @@
       "uid": "5527780",
       "qq": "TsukijinH",
       "bilibili": "HowieHz",
-      "fans": 184,
+      "fans": 185,
       "videos": [
         {
           "bvid": "BV15fxi6fESs",
@@ -2432,7 +2432,7 @@
       "uid": "283368950",
       "qq": "kagura",
       "bilibili": "土宫神乐_kagura",
-      "fans": 175,
+      "fans": 177,
       "videos": [
         {
           "bvid": "BV1E6VJ69EzZ",
@@ -2479,7 +2479,7 @@
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
-      "fans": 107,
+      "fans": 108,
       "videos": [
         {
           "bvid": "BV1heLy6QEer",
@@ -2509,8 +2509,17 @@
       "uid": "3546568567294825",
       "qq": "哈基扬",
       "bilibili": "哈基扬真的借东风",
-      "fans": 52,
+      "fans": 54,
       "videos": [
+        {
+          "bvid": "BV1VbxJ6LEEH",
+          "title": "小妹妹～这附近有没有人骚扰你啊",
+          "publishedAt": "2026-10-31T17:46:53.000Z",
+          "tags": [
+            "可爱",
+            "超时空辉夜姬！"
+          ]
+        },
         {
           "bvid": "BV12qht6zECt",
           "title": "＂iroha～月色真美❤️＂",
@@ -2550,7 +2559,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-09-24T16:00:00.000Z",
+      "crawledUpTo": "2026-10-31T17:46:53.000Z",
       "crawledBackTo": "2026-08-05T16:59:25.000Z",
       "crawledAll": true,
       "articlesCount": 0,
@@ -2706,7 +2715,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14793,
+      "fans": 14826,
       "videos": [],
       "crawledUpTo": "2026-10-30T14:25:39.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -2734,7 +2743,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7336,
+      "fans": 7335,
       "videos": [],
       "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -2779,7 +2788,7 @@
       "uid": "103568",
       "qq": "千羽☆星夜",
       "bilibili": "千羽☆星夜",
-      "fans": 238,
+      "fans": 239,
       "videos": [],
       "crawledUpTo": "2026-05-10T14:14:12.000Z",
       "crawledBackTo": "2019-03-10T14:08:03.000Z",
