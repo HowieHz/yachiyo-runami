@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T01:12:42.146Z",
+  "updatedAt": "2026-11-03T03:11:56.783Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -10,7 +10,7 @@
       "uid": "8254065",
       "qq": "美神自由梦",
       "bilibili": "美神自由梦",
-      "fans": 9117,
+      "fans": 9118,
       "videos": [
         {
           "bvid": "BV1Lkh467E6h",
@@ -557,7 +557,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4876,
+      "fans": 4877,
       "videos": [
         {
           "bvid": "BV1xynu6dEw2",
@@ -770,7 +770,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4692,
+      "fans": 4694,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -954,7 +954,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-10-21T12:49:27.000Z",
+      "crawledUpTo": "2026-11-02T14:22:01.000Z",
       "crawledBackTo": "2016-02-22T06:28:14.000Z",
       "crawledAll": true,
       "collections": {
@@ -1109,7 +1109,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1706,
+      "fans": 1708,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1266,7 +1266,7 @@
       "uid": "2191476",
       "qq": "夜夜",
       "bilibili": "夜夜Corvus",
-      "fans": 1408,
+      "fans": 1409,
       "videos": [
         {
           "bvid": "BV1qChb6sEYi",
@@ -1372,7 +1372,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1221,
+      "fans": 1226,
       "videos": [
         {
           "bvid": "BV1rvxE6HEAe",
@@ -1651,7 +1651,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-11-01T19:13:26.000Z",
+      "crawledUpTo": "2026-11-02T20:02:59.000Z",
       "crawledBackTo": "2019-07-25T07:53:58.000Z",
       "crawledAll": true,
       "collections": {
@@ -1660,7 +1660,7 @@
         "9423037": 12,
         "9455634": 32,
         "9455648": 18,
-        "9474052": 3
+        "9474052": 7
       },
       "articles": [
         {
@@ -1739,7 +1739,7 @@
       "uid": "2119475683",
       "qq": "Minecraft蠢民族",
       "bilibili": "蠢民族de小安",
-      "fans": 955,
+      "fans": 956,
       "videos": [],
       "crawledUpTo": "2026-10-06T15:00:00.000Z",
       "crawledBackTo": "2021-03-20T05:08:07.000Z",
@@ -1793,7 +1793,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 437,
+      "fans": 436,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1862,7 +1862,7 @@
       "uid": "300347763",
       "qq": "请小心月台空隙",
       "bilibili": "kano_hope",
-      "fans": 281,
+      "fans": 282,
       "videos": [
         {
           "bvid": "BV1WY756ZEEN",
@@ -2485,7 +2485,7 @@
       "uid": "1207999131",
       "qq": "千歌刃心",
       "bilibili": "千歌刃心",
-      "fans": 108,
+      "fans": 109,
       "videos": [
         {
           "bvid": "BV1heLy6QEer",
@@ -2721,7 +2721,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14839,
+      "fans": 14842,
       "videos": [],
       "crawledUpTo": "2026-10-30T14:25:39.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -2737,7 +2737,7 @@
       "uid": "3868042",
       "qq": "可能性の光",
       "bilibili": "青清氢倾卿",
-      "fans": 11843,
+      "fans": 11844,
       "videos": [],
       "crawledUpTo": "2025-12-21T09:43:44.000Z",
       "crawledBackTo": "2018-12-24T04:41:42.000Z",
@@ -2749,7 +2749,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7334,
+      "fans": 7333,
       "videos": [],
       "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -2767,7 +2767,7 @@
       "uid": "17229686",
       "qq": "cmdiy",
       "bilibili": "cjscmdiy",
-      "fans": 623,
+      "fans": 624,
       "videos": [],
       "crawledUpTo": "2026-10-13T19:38:30.000Z",
       "crawledBackTo": "2016-08-03T16:04:51.000Z",
