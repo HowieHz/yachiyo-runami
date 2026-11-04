@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T03:11:56.783Z",
+  "updatedAt": "2026-11-04T01:48:37.101Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -40,7 +40,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5653,
+      "fans": 5650,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -770,7 +770,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4694,
+      "fans": 4696,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -970,7 +970,7 @@
       "uid": "1064408008",
       "qq": "Huan",
       "bilibili": "洹洹洹洹洹洹",
-      "fans": 1725,
+      "fans": 1726,
       "videos": [
         {
           "bvid": "BV1ioeG6HEyf",
@@ -1109,7 +1109,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1708,
+      "fans": 1707,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1372,7 +1372,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1226,
+      "fans": 1230,
       "videos": [
         {
           "bvid": "BV1rvxE6HEAe",
@@ -1793,7 +1793,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 436,
+      "fans": 437,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -2359,8 +2359,23 @@
       "uid": "3546377361557691",
       "qq": "[に]",
       "bilibili": "OUTnet小小搬运工",
-      "fans": 187,
+      "fans": 186,
       "videos": [
+        {
+          "bvid": "BV1tQx265EM3",
+          "title": "第2回「月咏感谢祭」｜《超かぐや姫！（超辉夜姬！)》",
+          "publishedAt": "2026-11-03T17:25:34.000Z",
+          "tags": [
+            "中文字幕",
+            "剧场版",
+            "PV",
+            "超时空辉夜姬",
+            "超辉夜姬",
+            "熟肉",
+            "下集预告",
+            "vrchat"
+          ]
+        },
         {
           "bvid": "BV1kmgX67EyA",
           "title": "《超辉夜姬！》×《我推的孩子》联动动画正式公开！",
@@ -2412,7 +2427,7 @@
           ]
         }
       ],
-      "crawledUpTo": "2026-11-01T12:42:18.000Z",
+      "crawledUpTo": "2026-11-03T17:25:34.000Z",
       "crawledBackTo": "2023-08-27T14:03:51.000Z",
       "crawledAll": true,
       "collections": {
@@ -2426,7 +2441,7 @@
         "6816096": 1,
         "7005609": 40,
         "7458372": 21,
-        "7480352": 4,
+        "7480352": 5,
         "8317549": 15,
         "8327764": 12,
         "8767302": 28
@@ -2515,7 +2530,7 @@
       "uid": "3546568567294825",
       "qq": "哈基扬",
       "bilibili": "哈基扬真的借东风",
-      "fans": 54,
+      "fans": 55,
       "videos": [
         {
           "bvid": "BV1VbxJ6LEEH",
@@ -2749,7 +2764,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7333,
+      "fans": 7332,
       "videos": [],
       "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -2794,7 +2809,7 @@
       "uid": "103568",
       "qq": "千羽☆星夜",
       "bilibili": "千羽☆星夜",
-      "fans": 239,
+      "fans": 240,
       "videos": [],
       "crawledUpTo": "2026-05-10T14:14:12.000Z",
       "crawledBackTo": "2019-03-10T14:08:03.000Z",
@@ -2824,7 +2839,7 @@
       "bilibili": "SandB-SorB",
       "fans": 70,
       "videos": [],
-      "crawledUpTo": "2026-10-23T11:23:34.000Z",
+      "crawledUpTo": "2026-11-03T15:11:43.000Z",
       "crawledBackTo": "2024-11-23T15:36:46.000Z",
       "crawledAll": true,
       "articlesCount": 0,
