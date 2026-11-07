@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T01:56:37.008Z",
+  "updatedAt": "2026-11-07T01:28:02.012Z",
   "source": "https://api.bilibili.com/x/web-interface/card",
   "videoSource": "https://app.bilibili.com/x/v2/space/archive/cursor",
   "videoFallbackSource": "https://api.bilibili.com/x/space/wbi/arc/search",
@@ -40,7 +40,7 @@
       "uid": "521934713",
       "qq": "叶子今天吃什么",
       "bilibili": "睡不醒的叶子w",
-      "fans": 5650,
+      "fans": 5648,
       "videos": [
         {
           "bvid": "BV1ADge6YExm",
@@ -557,7 +557,7 @@
       "uid": "1097589073",
       "qq": "☀マネージャー打油∽🌙",
       "bilibili": "风梦坤初梦缘",
-      "fans": 4877,
+      "fans": 4879,
       "videos": [
         {
           "bvid": "BV1xynu6dEw2",
@@ -770,7 +770,7 @@
       "uid": "19333054",
       "qq": "泡泡堂",
       "bilibili": "咆哮鼠-泡泡堂",
-      "fans": 4702,
+      "fans": 4705,
       "videos": [
         {
           "bvid": "BV1F3YS6REKh",
@@ -1109,7 +1109,7 @@
       "uid": "1428565635",
       "qq": "Yachi 8000区 [千夏Tesni]",
       "bilibili": "月见八千代sama",
-      "fans": 1712,
+      "fans": 1711,
       "videos": [
         {
           "bvid": "BV1zeHx6hEiv",
@@ -1372,7 +1372,7 @@
       "uid": "196698970",
       "qq": "休",
       "bilibili": "Daniel休",
-      "fans": 1236,
+      "fans": 1240,
       "videos": [
         {
           "bvid": "BV1rvxE6HEAe",
@@ -1711,7 +1711,7 @@
       "uid": "357613233",
       "qq": "TheOneHong阿康",
       "bilibili": "TheOneHong阿康",
-      "fans": 1001,
+      "fans": 1002,
       "videos": [
         {
           "bvid": "BV1kQb76aEs8",
@@ -1793,7 +1793,7 @@
       "uid": "1866736573",
       "qq": "空崎陽奈",
       "bilibili": "日奈の最速传说",
-      "fans": 437,
+      "fans": 438,
       "videos": [
         {
           "bvid": "BV1ufR4BFEpW",
@@ -1815,7 +1815,7 @@
       "uid": "564770445",
       "qq": "Hachiman",
       "bilibili": "爱玩蛛的少年",
-      "fans": 307,
+      "fans": 308,
       "videos": [
         {
           "bvid": "BV1s4bE6BEQD",
@@ -2736,7 +2736,7 @@
       "uid": "1285171452",
       "qq": "回归初人太少",
       "bilibili": "太少tias",
-      "fans": 14864,
+      "fans": 14927,
       "videos": [],
       "crawledUpTo": "2026-11-04T14:47:54.000Z",
       "crawledBackTo": "2026-03-07T09:52:10.000Z",
@@ -2764,7 +2764,7 @@
       "uid": "583393248",
       "qq": "泠月Neka♡",
       "bilibili": "泠月Neka",
-      "fans": 7330,
+      "fans": 7334,
       "videos": [],
       "crawledUpTo": "2026-10-09T02:53:00.000Z",
       "crawledBackTo": "2022-02-21T20:47:34.000Z",
@@ -2839,7 +2839,7 @@
       "bilibili": "SandB-SorB",
       "fans": 71,
       "videos": [],
-      "crawledUpTo": "2026-11-03T15:11:43.000Z",
+      "crawledUpTo": "2026-11-06T16:46:15.000Z",
       "crawledBackTo": "2024-11-23T15:36:46.000Z",
       "crawledAll": true,
       "articlesCount": 0,
